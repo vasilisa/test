@@ -1,0 +1,48 @@
+{
+  "tags": {
+    "demoing:demo": {
+      "color": "#77bec2"
+    },
+    "recipe-editor": {
+      "color": "#1ac2ab"
+    },
+    "postgres-local": {
+      "color": "#77bec2"
+    },
+    "o16n": {
+      "color": "#00a55a"
+    },
+    "demoing:test": {
+      "color": "#a088bd"
+    },
+    "demoing:custom": {
+      "color": "#d654b9"
+    },
+    "duplicated": {
+      "color": "#3A85AD"
+    },
+    "MLops": {
+      "color": "#a088bd"
+    },
+    "deleted-recipe-editor": {},
+    "downloads": {
+      "color": "#de1ea5"
+    },
+    "origin:sql_import": {
+      "color": "#FFD83D"
+    },
+    "imported": {
+      "color": "#263238"
+    },
+    "metrics\u0026checks": {},
+    "tutorial": {
+      "color": "#FFD83D"
+    },
+    "section:MLOps": {
+      "color": "#FFD83D"
+    },
+    "academy": {
+      "color": "#d66b9b"
+    }
+  }
+}

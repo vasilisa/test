@@ -1,0 +1,48 @@
+{
+  "name": "modeling",
+  "color": "#C82423",
+  "items": [
+    {
+      "objectId": "compute_transactions_unknown_filtered",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "transactions_MES_filtered",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "transactions_train",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "transactions_MES",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "transactions_joined_prepared",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "split_transactions_joined_prepared",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "compute_transactions_joined_prepared",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "transactions_MES_filtered_prepared",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_transactions_MES_filtered_prepared",
+      "objectType": "RECIPE"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

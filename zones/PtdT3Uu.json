@@ -1,0 +1,28 @@
+{
+  "name": "CALIBRATION",
+  "color": "#D03713",
+  "items": [
+    {
+      "objectId": "train_Predict_authorized_flag__binary__1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "S7Ap55jW",
+      "objectType": "SAVED_MODEL"
+    },
+    {
+      "objectId": "score_transactions_MES_filtered",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "transactions_MES_filtered_scored",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

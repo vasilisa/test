@@ -1,0 +1,29 @@
+{
+  "type": "scenario_last_runs",
+  "params": {
+    "scenarioSmartId": "AUTOMATICDEPLOYMENT"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "tesy",
+  "dashboardCreationId": "xaPTbzm",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1669132838007
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1669132838007
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

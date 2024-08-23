@@ -1,0 +1,75 @@
+{
+  "type": "step_based",
+  "name": "SENDREPORT",
+  "active": false,
+  "runAsUser": "admin",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [],
+  "reporters": [
+    {
+      "active": true,
+      "messaging": {
+        "type": "mail-scenario",
+        "configuration": {
+          "channelId": "XjjeeLOa",
+          "subject": "LAST UPDATE FOR reward program dining_entertainment",
+          "recipient": "${recipients}",
+          "sendAsHTML": false,
+          "attachments": [],
+          "messageSource": "INLINE",
+          "templateFormat": "FREEMARKER",
+          "templateName": "default.ftl",
+          "message": "Hello, \nPlease find attached a dashboard with the last updates on the reward program dining_entertainment. \n Best regards from Dataiku "
+        }
+      },
+      "id": "L9BhsYjb",
+      "name": "Mail report",
+      "runConditionEnabled": true,
+      "runCondition": "outcome !\u003d \u0027SUCCESS\u0027",
+      "phase": "END"
+    }
+  ],
+  "params": {
+    "steps": [
+      {
+        "id": "build_0_true_d_cardholder_info_filtered",
+        "type": "build_flowitem",
+        "name": "Step #1",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "cardholder_info_filtered",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

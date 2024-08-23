@@ -1,0 +1,429 @@
+{
+  "type": "Filesystem",
+  "managed": true,
+  "featureGroup": false,
+  "shortDesc": "demo metrics and checks",
+  "formatType": "csv",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "dataiku-admin"
+    },
+    "lastModifiedOn": 1623793350995,
+    "extendedProperties": {}
+  },
+  "tags": [
+    "demoing:demo",
+    "metrics\u0026checks"
+  ],
+  "params": {
+    "connection": "filesystem_managed",
+    "path": "/MLOPSDEMO.transactions_joined",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    },
+    "variablesExpansionLoopConfig": {
+      "enabled": false,
+      "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+      "replacements": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {"name":"transaction_id","type":"bigint"},
+      {"name":"authorized_flag","type":"bigint"},
+      {"name":"purchase_date","type":"string"},
+      {"name":"card_id","type":"string"},
+      {"name":"merchant_id","type":"string"},
+      {"name":"merchant_category_id","type":"int"},
+      {"name":"item_category","type":"string"},
+      {"name":"purchase_amount","type":"double"},
+      {"name":"signature_provided","type":"bigint"},
+      {"name":"merchant_merchant_id","type":"string"},
+      {"name":"merchant_merchant_category_id","type":"int"},
+      {"name":"merchant_subsector_description","type":"string"},
+      {"name":"merchant_latitude","type":"string"},
+      {"name":"merchant_longitude","type":"string"},
+      {"name":"card_internal_card_mapping","type":"string"},
+      {"name":"card_first_active_month","type":"string"},
+      {"name":"card_reward_program","type":"string"},
+      {"name":"card_latitude","type":"float"},
+      {"name":"card_longitude","type":"float"},
+      {"name":"card_fico_score","type":"int"},
+      {"name":"card_age","type":"int"}
+    ],
+    "userModified": true
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "col_stats",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Columns statistics",
+          "level": 2
+        },
+        "configuration": {
+          "aggregates": [
+            {
+              "column": "card_reward_program",
+              "aggregated": "COUNT_NULL"
+            },
+            {
+              "column": "card_reward_program",
+              "aggregated": "COUNT_DISTINCT"
+            },
+            {
+              "column": "card_fico_score",
+              "aggregated": "MIN"
+            },
+            {
+              "column": "card_fico_score",
+              "aggregated": "MEAN"
+            },
+            {
+              "column": "card_fico_score",
+              "aggregated": "MAX"
+            }
+          ]
+        }
+      },
+      {
+        "type": "adv_col_stats",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Most frequent values",
+          "level": 3
+        },
+        "configuration": {
+          "aggregates": [
+            {
+              "column": "card_reward_program",
+              "aggregated": "MODE"
+            },
+            {
+              "column": "card_reward_program",
+              "aggregated": "TOP10_WITH_COUNTS"
+            }
+          ],
+          "numberTopValues": 10
+        }
+      },
+      {
+        "type": "percentile_stats",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Columns percentiles",
+          "level": 4
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "verify_col",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Data validity",
+          "level": 4
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "python",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "NaN_merchant_subsector",
+          "level": 8
+        },
+        "configuration": {
+          "code": "# Define here a function that returns the metric.\nimport numpy as np\nimport pandas as pd\ndef process(dataset, partition_id):\n    \n    # dataset is a dataiku.Dataset object\n    df \u003d dataset.get_dataframe()\n        \n    count_nan \u003d np.round(np.sum(pd.isnull(df[\"merchant_subsector_description\"]))/len(df[\"merchant_subsector_description\"])*100,2)\n    \n    return {\u0027% NaN merchant subsector\u0027 : count_nan}\n",
+          "envSelection": {
+            "envMode": "INHERIT"
+          }
+        }
+      },
+      {
+        "type": "cell",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Cell value",
+          "level": 9
+        },
+        "configuration": {
+          "mode": "SINGLE_CELL_STRICT",
+          "filter": {
+            "distinct": false,
+            "enabled": true,
+            "uiData": {
+              "mode": "\u0026\u0026",
+              "conditions": [
+                {
+                  "input": "transaction_id",
+                  "operator": "\u003d\u003d [number]",
+                  "col": "authorized_flag",
+                  "num": 3413.0,
+                  "num2": 0.0
+                },
+                {
+                  "input": "card_id",
+                  "operator": "\u003d\u003d [string]",
+                  "col": "authorized_flag",
+                  "string": "C_ID_002249e66d",
+                  "num": 0.0,
+                  "num2": 0.0
+                }
+              ]
+            }
+          },
+          "columns": []
+        }
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "partition": "NP",
+      "columns": [],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "records:COUNT_RECORDS",
+        "reporting:WARNING_COUNT",
+        "python:NaN merchant subsector:NaN_merchant_subsector",
+        "col_stats:MIN:card_fico_score",
+        "col_stats:MEAN:card_fico_score",
+        "col_stats:MAX:card_fico_score",
+        "check:CHECK:nan merchant subsector",
+        "adv_col_stats:MODE:card_reward_program",
+        "adv_col_stats:TOP10_WITH_COUNTS:card_reward_program",
+        "check:CHECK:most frequent reward program"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "monitor": true,
+    "checks": [
+      {
+        "type": "numericRange",
+        "minimum": 1.0,
+        "maximum": 18.0,
+        "softMinimum": 0.0,
+        "softMaximum": 0.0,
+        "minimumEnabled": true,
+        "maximumEnabled": true,
+        "softMinimumEnabled": false,
+        "softMaximumEnabled": false,
+        "metricId": "basic:COUNT_COLUMNS",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "Value in range",
+          "label": "column_count"
+        },
+        "id": "column_count",
+        "displayName": "column_count",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": false,
+        "enabled": true
+      },
+      {
+        "type": "numericRange",
+        "minimum": 300.0,
+        "maximum": 900.0,
+        "softMinimum": 450.0,
+        "softMaximum": 800.0,
+        "minimumEnabled": false,
+        "maximumEnabled": false,
+        "softMinimumEnabled": true,
+        "softMaximumEnabled": true,
+        "metricId": "col_stats:MEAN:card_fico_score",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "Value in range",
+          "label": "average fico score"
+        },
+        "id": "average fico score",
+        "displayName": "average fico score",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": false,
+        "enabled": true
+      },
+      {
+        "type": "numericRange",
+        "minimum": 0.0,
+        "maximum": 20.0,
+        "softMinimum": 0.0,
+        "softMaximum": 15.0,
+        "minimumEnabled": false,
+        "maximumEnabled": false,
+        "softMinimumEnabled": false,
+        "softMaximumEnabled": true,
+        "metricId": "python:NaN merchant subsector:NaN_merchant_subsector",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "Value in range",
+          "label": "nan merchant subsector"
+        },
+        "id": "nan merchant subsector",
+        "displayName": "nan merchant subsector",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": false,
+        "enabled": true
+      },
+      {
+        "type": "valueSet",
+        "values": [
+          "cash_back"
+        ],
+        "metricId": "adv_col_stats:MODE:card_reward_program",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "Value in set",
+          "label": "most frequent reward program"
+        },
+        "id": "most frequent reward program",
+        "displayName": "most frequent reward program",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": false,
+        "enabled": true
+      }
+    ],
+    "displayedState": {
+      "partition": "NP",
+      "checks": [
+        "average fico score",
+        "most frequent reward program",
+        "nan merchant subsector"
+      ]
+    }
+  },
+  "customFields": {}
+}

@@ -1,0 +1,42 @@
+{
+  "type": "custom_python",
+  "name": "loop_through_reports",
+  "active": false,
+  "runAsUser": "admin",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [
+    {
+      "id": "EK9NmEF3",
+      "type": "custom_python",
+      "name": "Custom trigger",
+      "delay": 3600,
+      "active": true,
+      "params": {
+        "code": "import dataiku\nfrom dataiku.scenario import Trigger\nt \u003d Trigger()\n\ndataset \u003d dataiku.Dataset(\"card_info_filtered\")\nmetrics \u003d dataset.get_last_metric_values()\n\n# metric_ids \u003d metrics.get_all_ids() # list the ids of the metrics for this dataset\n\ncheck_records \u003d metrics.get_metric_by_id(\u0027check:CHECK:number_of_records\u0027)\ncheck_status  \u003d check_records[\"lastValues\"][0][\u0027value\u0027]\nif check_status\u003d\u003d\"OK\": # your condition here\n    t.fire()\n",
+        "envSelection": {
+          "envMode": "INHERIT"
+        }
+      },
+      "graceDelaySettings": {
+        "delay": 0,
+        "checkAgainAfterGraceDelay": false
+      }
+    }
+  ],
+  "reporters": [],
+  "params": {
+    "envSelection": {
+      "envMode": "INHERIT"
+    }
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

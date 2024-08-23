@@ -1,0 +1,160 @@
+{
+    "displayName": "Compare 2 evaluations",
+    "predictionType": "BINARY_CLASSIFICATION",
+    "comparedModels": [
+        {
+            "smartId": "ME-*-Rci28BcL-MtLZcC06tlN0",
+            "isSelected": true,
+            "color": "#1f77b4",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-anxmoMdOUOFU",
+            "isSelected": true,
+            "color": "#ff7f0e",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-TYj43r0EHICN",
+            "isSelected": true,
+            "color": "#2ca02c",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-a7eVLRczvVW1",
+            "isSelected": true,
+            "color": "#d62728",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-v26uWjQhcw6s",
+            "isSelected": true,
+            "color": "#9467bd",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-2cv3tsJrlWnu",
+            "isSelected": true,
+            "color": "#8c564b",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-cykaiqEWgbbv",
+            "isSelected": true,
+            "color": "#e377c2",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-mSFiBWZcOUm7",
+            "isSelected": true,
+            "color": "#7f7f7f",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-ygKgxruHdIhM",
+            "isSelected": true,
+            "color": "#bcbd22",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-qfM2NLCRl0rf",
+            "isSelected": true,
+            "color": "#17becf",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-JchaHh9ukK18",
+            "isSelected": true,
+            "color": "#393b79",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-z5F9LcLGvaLv",
+            "isSelected": true,
+            "color": "#6b6ecf",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-3eBARoyUPsvs",
+            "isSelected": true,
+            "color": "#637939",
+            "isChampion": false
+        },
+        {
+            "smartId": "A-*-3VXem0UK-hSeUfdVg-s1-pp1-m1",
+            "isSelected": true,
+            "color": "#b5cf6b",
+            "isChampion": false
+        },
+        {
+            "smartId": "A-*-3VXem0UK-hSeUfdVg-s1-pp2-m1",
+            "isSelected": true,
+            "color": "#8c6d31",
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-OTKI10YIrqt1",
+            "isSelected": true,
+            "isChampion": false
+        },
+        {
+            "smartId": "ME-*-Rci28BcL-3RTnf2C1kAo5",
+            "isSelected": true,
+            "isChampion": false
+        }
+    ],
+    "displayParams": {
+        "displayedMetrics": [
+            "ACCURACY",
+            "PRECISION",
+            "RECALL",
+            "F1",
+            "COST_MATRIX",
+            "LOG_LOSS",
+            "ROC_AUC",
+            "CALIBRATION_LOSS",
+            "CUMULATIVE_LIFT",
+            "DATA_DRIFT"
+        ],
+        "predictionType": "BINARY_CLASSIFICATION",
+        "pinnedMetrics": [
+            "ROC_AUC"
+        ],
+        "xLabel": "model:date",
+        "yLabels": [
+            "model:algorithm",
+            "evaluation:date",
+            "evaluationDataset:dataset-name"
+        ],
+        "alsoDisplayedLabels": [],
+        "barLabels": [
+            "evaluation:date",
+            "model:name",
+            "evaluationDataset:dataset-name"
+        ],
+        "graphStyle": "BAR",
+        "sortColumn": "",
+        "sortDescending": false,
+        "showConfidenceIntervals": true,
+        "disabledMERunIds": []
+    },
+    "versionTag": {
+        "versionNumber": 7,
+        "lastModifiedBy": {
+            "login": "admin"
+        },
+        "lastModifiedOn": 1660139802347
+    },
+    "creationTag": {
+        "versionNumber": 0,
+        "lastModifiedBy": {
+            "login": "admin"
+        },
+        "lastModifiedOn": 1657555960453
+    },
+    "tags": [],
+    "customFields": {},
+    "checklists": {
+        "checklists": []
+    }
+}

@@ -1,0 +1,305 @@
+{
+  "type": "step_based",
+  "name": "Build Flow",
+  "active": false,
+  "runAsUser": "admin",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [
+    {
+      "id": "CmOqcp7G",
+      "type": "temporal",
+      "name": "Time-based",
+      "delay": 5,
+      "active": false,
+      "params": {
+        "repeatFrequency": 3,
+        "frequency": "Monthly",
+        "startingFrom": "2022-07-14",
+        "daysOfWeek": [
+          "Thursday"
+        ],
+        "monthlyRunOn": "ON_THE_DAY",
+        "minute": 30,
+        "hour": 2,
+        "timezone": "SERVER",
+        "lastUpdate": 1712334888374
+      }
+    }
+  ],
+  "reporters": [
+    {
+      "active": false,
+      "messaging": {
+        "type": "mail-scenario",
+        "configuration": {
+          "channelId": "XjjeeLOa",
+          "subject": "DSS scenario ${scenarioName}: ${outcome}",
+          "recipient": "vasilisa.skvortsova@dataiku.com",
+          "sendAsHTML": false,
+          "attachments": [
+            {
+              "type": "DATASET",
+              "params": {
+                "attachedDataset": "Rci28BcL_metrics",
+                "exportParams": {
+                  "advancedMode": false,
+                  "destinationDatasetConnection": "filesystem_managed",
+                  "destinationDatasetProjectKey": "DKU_TUT_MLOPS",
+                  "destinationType": "DOWNLOAD",
+                  "format": {
+                    "params": {
+                      "arrayMapFormat": "json",
+                      "charset": "utf8",
+                      "compress": "",
+                      "dateSerializationFormat": "ISO",
+                      "escapeChar": "\\",
+                      "fileReadFailureBehavior": "FAIL",
+                      "hiveSeparators": [
+                        "\u0002",
+                        "\u0003",
+                        "\u0004",
+                        "\u0005",
+                        "\u0006",
+                        "\u0007",
+                        "\b"
+                      ],
+                      "normalizeBooleans": false,
+                      "normalizeDoubles": true,
+                      "parseHeaderRow": true,
+                      "probableNumberOfRecords": 0,
+                      "quoteChar": "\"",
+                      "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+                      "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+                      "readMissingColumnsBehavior": "DISCARD_SILENT",
+                      "separator": ",",
+                      "skipRowsAfterHeader": 0,
+                      "skipRowsBeforeHeader": 0,
+                      "style": "excel",
+                      "writeDataTypeMismatchBehavior": "DISCARD_WARNING"
+                    },
+                    "type": "csv"
+                  },
+                  "originatingOptionId": "tsv-excel-header",
+                  "overwriteDestinationDataset": false,
+                  "selection": {
+                    "maxRecords": 100000,
+                    "ordering": {
+                      "enabled": false,
+                      "rules": []
+                    },
+                    "partitionSelectionMethod": "ALL",
+                    "samplingMethod": "FULL",
+                    "selectedPartitions": [],
+                    "targetRatio": 0.02
+                  }
+                }
+              }
+            }
+          ],
+          "messageSource": "TEMPLATE_FILE",
+          "templateFormat": "FREEMARKER",
+          "templateName": "default.ftl"
+        }
+      },
+      "id": "3XDb73WY",
+      "name": "Build Flow reporter",
+      "runConditionEnabled": false,
+      "runCondition": "outcome !\u003d \u0027SUCCESS\u0027",
+      "phase": "END"
+    },
+    {
+      "active": false,
+      "messaging": {
+        "type": "slack-scenario",
+        "configuration": {
+          "message": "DSS Scenario \u003c${scenarioRunURL}|${scenarioName}\u003e triggered by ${triggerName} : ${outcome} ${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027:white_check_mark:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027:bell:\u0027, \u0027\u0027)}",
+          "messageMode": "TEXT_MESSAGE",
+          "blocks": "[\n    {\n        \"type\": \"section\",\n        \"text\": {\n            \"type\": \"mrkdwn\",\n            \"text\": \"*DSS Scenario \u003c${scenarioRunURL}|${scenarioName}\u003e:* ${outcome} ${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027:white_check_mark:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027:bell:\u0027, \u0027\u0027)}\"\n        }\n    },\n    {\n        \"type\": \"context\",\n        \"elements\": [\n            {\n                \"type\": \"mrkdwn\",\n                \"text\": \"Triggered by ${triggerName}\"\n            }\n        ]\n    }\n]\n",
+          "mode": "WEBHOOK",
+          "webhookUrl": "https://hooks.slack.com/services/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",
+          "useProxy": true,
+          "asUser": false,
+          "linkNames": false
+        }
+      },
+      "id": "NQCyfSPJ",
+      "name": "TEST SLACK",
+      "runConditionEnabled": true,
+      "runCondition": "outcome \u003d\u003d \u0027SUCCESS\u0027",
+      "phase": "START"
+    }
+  ],
+  "params": {
+    "steps": [
+      {
+        "id": "comp_metrics",
+        "type": "compute_metrics",
+        "name": "Compute metrics on transactions",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "computes": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions",
+              "partitionsSpec": ""
+            }
+          ],
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "check_false_d_transactions",
+        "type": "check_dataset",
+        "name": "Run checks on transactions",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "checks": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions",
+              "partitionsSpec": ""
+            }
+          ],
+          "handleWarningsAs": "WARNING",
+          "computeAutomaticRules": true,
+          "ignorePartitionSelectionMode": true,
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_2_true_d_transactions_joined_prepared",
+        "type": "build_flowitem",
+        "name": "Force build transactions_joined_prepared",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined_prepared",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_FORCED_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "check_false_d_transactions_joined_prepared",
+        "type": "check_dataset",
+        "name": "Run checks on transactions_joined_prepared",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "checks": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined_prepared",
+              "partitionsSpec": ""
+            }
+          ],
+          "handleWarningsAs": "WARNING",
+          "computeAutomaticRules": true,
+          "ignorePartitionSelectionMode": true,
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_0_true_e_Rci28BcL",
+        "type": "build_flowitem",
+        "name": "Build MES",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "MODEL_EVALUATION_STORE",
+              "itemId": "Rci28BcL",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_0_true_d_Rci28BcL_metrics",
+        "type": "build_flowitem",
+        "name": "Build MES metrics",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

@@ -1,0 +1,492 @@
+{
+  "dashboardAuthorizations": {
+    "allAuthorized": false,
+    "authorizations": [
+      {
+        "objectRef": {
+          "objectId": "transactions_joined_prepared",
+          "objectType": "DATASET"
+        },
+        "modes": [
+          "READ"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "S7Ap55jW",
+          "objectType": "SAVED_MODEL"
+        },
+        "modes": [
+          "READ"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "merchant_info",
+          "objectType": "DATASET"
+        },
+        "modes": []
+      },
+      {
+        "objectRef": {
+          "objectId": "transactions_MES_filtered_scored",
+          "objectType": "DATASET"
+        },
+        "modes": []
+      },
+      {
+        "objectRef": {
+          "objectId": "AUTOMATICDEPLOYMENT",
+          "objectType": "SCENARIO"
+        },
+        "modes": [
+          "READ"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "transactions_joined",
+          "objectType": "DATASET"
+        },
+        "modes": [
+          "READ"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "TEST",
+          "objectType": "SCENARIO"
+        },
+        "modes": [
+          "READ",
+          "RUN"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "Rci28BcL",
+          "objectType": "MODEL_EVALUATION_STORE"
+        },
+        "modes": [
+          "READ"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "DATADRIFTMONITOR",
+          "objectType": "SCENARIO"
+        },
+        "modes": [
+          "RUN"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "RSprcTcf",
+          "objectType": "SAVED_MODEL"
+        },
+        "modes": [
+          "READ"
+        ]
+      }
+    ]
+  },
+  "exposedObjects": {
+    "objects": [
+      {
+        "type": "DATASET",
+        "localName": "transactions_MES_filtered_scored",
+        "quickSharingEnabled": true,
+        "rules": []
+      },
+      {
+        "type": "DATASET",
+        "localName": "transactions_train",
+        "quickSharingEnabled": false,
+        "rules": [
+          {
+            "targetProject": "PLAYGROUND",
+            "appearOnFlow": true
+          },
+          {
+            "targetProject": "PLAYGROUND_GJhagykU",
+            "appearOnFlow": true
+          },
+          {
+            "targetProject": "PLAYGROUND_NcJpAZPV",
+            "appearOnFlow": true
+          },
+          {
+            "targetProject": "PLAYGROUND_c715fGqd",
+            "appearOnFlow": true
+          },
+          {
+            "targetProject": "VASILISA",
+            "appearOnFlow": true
+          }
+        ]
+      },
+      {
+        "type": "SCENARIO",
+        "localName": "TEST",
+        "quickSharingEnabled": false,
+        "rules": [
+          {
+            "targetProject": "PLAYGROUND",
+            "appearOnFlow": true
+          }
+        ]
+      },
+      {
+        "type": "SAVED_MODEL",
+        "localName": "S7Ap55jW",
+        "quickSharingEnabled": true,
+        "rules": [
+          {
+            "targetProject": "PLAYGROUND",
+            "appearOnFlow": true
+          }
+        ]
+      },
+      {
+        "type": "DATASET",
+        "localName": "transactions_joined_prepared",
+        "quickSharingEnabled": false,
+        "rules": [
+          {
+            "targetProject": "INCREMENTDATA",
+            "appearOnFlow": true
+          }
+        ]
+      }
+    ]
+  },
+  "projectType": "REGULAR",
+  "projectAppType": "REGULAR",
+  "hasSetupSection": false,
+  "bundleExporterSettings": {
+    "exportOptions": {
+      "exportUploads": false,
+      "exportManagedFS": false,
+      "exportAnalysisModels": false,
+      "exportSavedModels": false,
+      "exportManagedFolders": false,
+      "exportModelEvaluationStores": false,
+      "exportProjectResources": true,
+      "exportLabelingTasks": false,
+      "exportAllInputDatasets": false,
+      "exportAllDatasets": false,
+      "exportAllInputManagedFolders": false,
+      "exportGitRepository": false,
+      "exportInsightsData": false,
+      "useManualPluginsInfo": false,
+      "exportSavedModelsRequiredVersions": false,
+      "exportNotebooksWithOutputs": true,
+      "exportForNewBranch": false,
+      "exportKnowledgeBanks": false,
+      "exportEditableDatasets": true,
+      "includedDatasetsData": [
+        {
+          "name": "transactions",
+          "type": "UploadedFiles"
+        },
+        {
+          "name": "merchant_info",
+          "type": "UploadedFiles"
+        },
+        {
+          "name": "cardholder_info",
+          "type": "UploadedFiles"
+        }
+      ],
+      "includedSavedModels": [
+        {
+          "id": "S7Ap55jW",
+          "name": "Predict authorized_flag (binary)"
+        }
+      ],
+      "includedModelEvaluationStores": [
+        {
+          "id": "Rci28BcL",
+          "name": "the_MES"
+        }
+      ],
+      "includedManagedFolders": [],
+      "includedCodeStudios": [],
+      "includedKnowledgeBanks": [],
+      "includedLabelingTasks": [],
+      "shareAllInputDatasets": false,
+      "exportForeignObjectsReferences": true
+    }
+  },
+  "owner": "admin",
+  "permissionsVersion": "V2",
+  "permissions": [],
+  "additionalDashboardUsers": {
+    "users": []
+  },
+  "tutorialProject": true,
+  "tutorialId": "DKU_TUT_MLOPS",
+  "settings": {
+    "flowAnchorSourcesAndSinks": false,
+    "flowDisplaySettings": {
+      "zonesGraphRenderingAlgorithm": "DOT_OLDRANK",
+      "zonesGraphConnectZones": true,
+      "zonesGraphForJobs": true
+    },
+    "gitCommitMode": "AUTO",
+    "disableAutomaticTriggers": false,
+    "integrations": {
+      "integrations": [
+        {
+          "active": true,
+          "hook": {
+            "type": "github",
+            "configuration": {
+              "useProxy": true
+            }
+          }
+        }
+      ]
+    },
+    "flowBuildSettings": {
+      "mergeSparkPipelines": false,
+      "pruneBeforeSparkPipelines": true,
+      "mergeSqlPipelines": false,
+      "pruneBeforeSqlPipelines": true,
+      "defaultRecipeHashPropagationBehavior": "ENABLED"
+    },
+    "sharingRequestsEnabled": "INHERIT",
+    "limitedVisibilityEnabled": "INHERIT",
+    "accessRequestsEnabled": "INHERIT",
+    "limitsSettings": {
+      "memSampleBytes": {
+        "soft": -1,
+        "hard": -1
+      },
+      "shakerMemTableBytes": {
+        "soft": -1,
+        "hard": -1
+      },
+      "attachmentBytes": {
+        "soft": -1,
+        "hard": -1
+      }
+    },
+    "relocationSettings": {
+      "sqlLikeRecipesInitializationMode": "RESOLVED_TABLE_REFERENCES"
+    },
+    "recipeEnginesPreferences": {
+      "forbiddenEngines": [],
+      "enginesPreferenceOrder": [],
+      "forbiddenByRecipeType": {},
+      "preferenceByRecipeType": {}
+    },
+    "codeEnvs": {
+      "python": {
+        "mode": "INHERIT",
+        "preventOverride": false
+      },
+      "r": {
+        "mode": "INHERIT",
+        "preventOverride": false
+      },
+      "julia": {
+        "mode": "INHERIT",
+        "preventOverride": false
+      }
+    },
+    "container": {
+      "containerMode": "INHERIT"
+    },
+    "containerForVisualRecipesWorkloads": {
+      "containerMode": "INHERIT"
+    },
+    "datasetsCreationSettings": {
+      "useGlobal": true,
+      "preferedStorageFormats": "CSV_ESCAPING_NOGZIP_FORHIVE,CSV_EXCEL_GZIP,PARQUET_HIVE",
+      "virtualizable": false,
+      "allowUploadsWithoutConnection": true
+    },
+    "hiveEngineCreationSettings": {
+      "useGlobal": true,
+      "executionEngine": "HIVECLI_LOCAL"
+    },
+    "sparkEngineCreationSettings": {
+      "useGlobal": true,
+      "executionEngine": "SPARK_SUBMIT",
+      "useGlobalMetastore": false
+    },
+    "impalaEngineCreationSettings": {
+      "useGlobal": true,
+      "streamMode": true
+    },
+    "wikiSettings": {
+      "promoted": false
+    },
+    "cluster": {
+      "clusterMode": "INHERIT"
+    },
+    "k8sCluster": {
+      "clusterMode": "INHERIT"
+    },
+    "virtualWebAppBackendSettings": {
+      "mode": "INHERIT",
+      "preventOverride": false,
+      "infra": {
+        "containerSelection": {
+          "containerMode": "INHERIT"
+        },
+        "overrideGlobalK8sExposition": false,
+        "exposition": {
+          "type": "local_process",
+          "params": {}
+        },
+        "scaling": {
+          "initialReplicas": 1,
+          "progressDeadlineSeconds": 600,
+          "hpa": false,
+          "hpaTargetCPUPercent": 0,
+          "hpaMetrics": [],
+          "hpaMinPods": 0,
+          "hpaMaxPods": 0,
+          "hpaAnnotations": []
+        },
+        "deploymentModifier": {
+          "config": {}
+        }
+      }
+    },
+    "dkuProperties": []
+  },
+  "name": "MLOps DEMO",
+  "imgPattern": 1,
+  "showInitials": false,
+  "metrics": {
+    "probes": [],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "columns": [],
+      "metrics": []
+    }
+  },
+  "metricsChecks": {
+    "runOnBuild": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "dataiku-admin"
+    },
+    "lastModifiedOn": 1623793165728,
+    "extendedProperties": {}
+  },
+  "description": "# Welcome to the MLOps Tutorials\n\n\u003cp class\u003d\"text-center\"\u003e\n   \u003ca href\u003d\"https://academy.dataiku.com/path/mlops\" target\u003d\"_blank\" class\u003d\"btn btn-datasets-color btn-cta-big-mod\"\u003e\u003ci class\u003d\"icon-dku-sample_project\" class\u003d\"btn-cta-big-mod-icon\" /\u003e\u0026nbsp;Learning Path\n  \u003c/a\u003e\n\u003c/p\u003e\n\nIn a series of tutorials found in the [MLOps learning path](https://academy.dataiku.com/path/mlops), you will practice making automation scenarios more robust, deploying and version project bundles using the Project Deployer and Automation node, and packaging real-time API services to API nodes. \n\nThe first tutorial that uses this project is found in the [Preparing for Production](https://academy.dataiku.com/preparing-for-production) course.",
+  "shortDesc": "The starter project for tutorials in the [MLOps learning path](https://academy.dataiku.com/path/mlops).",
+  "tags": [
+    "academy",
+    "downloads",
+    "o16n",
+    "tutorial",
+    "section:MLOps",
+    "imported"
+  ],
+  "customFields": {},
+  "checklists": {
+    "checklists": [
+      {
+        "id": "6e84bb",
+        "title": "Todo list",
+        "createdOn": 0,
+        "items": [
+          {
+            "done": false,
+            "text": "Add safeguards to the Build Flow scenario",
+            "createdOn": 1648073055093,
+            "createdBy": "sean",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "Create, deploy, and version a project bundle",
+            "createdOn": 1648073061980,
+            "createdBy": "sean",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "Send alerts if data drift rises above a threshold",
+            "createdOn": 1648073067617,
+            "createdBy": "sean",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "Automatically update a deployment",
+            "createdOn": 1648073072340,
+            "createdBy": "sean",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "Deploy an API service",
+            "createdOn": 1648073077563,
+            "createdBy": "sean",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "Manage multiple versions of an API service",
+            "createdOn": 1648073082308,
+            "createdBy": "sean",
+            "stateChangedOn": 0
+          }
+        ]
+      }
+    ]
+  }
+}

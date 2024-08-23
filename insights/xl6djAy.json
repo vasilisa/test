@@ -1,0 +1,29 @@
+{
+  "type": "scenario_run_button",
+  "params": {
+    "scenarioSmartId": "TEST"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "reporters",
+  "dashboardCreationId": "xaPTbzm",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1670769625990
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1670769625990
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

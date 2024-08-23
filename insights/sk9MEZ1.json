@@ -1,0 +1,31 @@
+{
+  "type": "metrics",
+  "params": {
+    "objectSmartId": "transactions_joined",
+    "objectType": "DATASET",
+    "metricId": "check:CHECK:nan merchant subsector"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "Check nan merchant subsector on transactions_joined",
+  "dashboardCreationId": "xaPTbzm",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1695749066559
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1695749066559
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

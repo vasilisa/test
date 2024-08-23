@@ -1,0 +1,289 @@
+{
+  "name": "fraud_detection",
+  "endpoints": [
+    {
+      "modelRef": "S7Ap55jW",
+      "useJava": true,
+      "computePropensity": false,
+      "outputExplanations": false,
+      "individualExplanationParams": {
+        "method": "ICE",
+        "nbExplanations": 3,
+        "drawInScoredSet": false,
+        "subChunkSize": 5000,
+        "shapleyBackgroundSize": 100
+      },
+      "mlFlowOutputStyle": "RAW",
+      "testQueries": [
+        {
+          "name": "transactions_MES #1",
+          "q": {
+            "features": {
+              "transaction_id": 308112,
+              "purchase_date": "2018-02-23",
+              "purchase_date_parsed": "2018-02-23T00:00:00.000Z",
+              "purchase_year": 2018,
+              "purchase_month": 2,
+              "purchase_day": 23,
+              "purchase_dow": 5,
+              "purchase_weekend": 0,
+              "purchase_hour": 0,
+              "card_id": "C_ID_69812e3e2e",
+              "merchant_id": "M_ID_89ede51747",
+              "merchant_category_id": 298,
+              "item_category": "A",
+              "purchase_amount": 239.64,
+              "signature_provided": 0,
+              "card_first_active_month": "2015-12",
+              "card_first_active_month_parsed": "2015-12-01T00:00:00.000Z",
+              "days_active": 815,
+              "card_reward_program": "cash_back",
+              "card_latitude": 44.093,
+              "card_longitude": -72.588,
+              "card_fico_score": 835,
+              "card_age": 38,
+              "card_location": "POINT(-72.588 44.093)",
+              "card_state": "Vermont",
+              "card_state_enName": "Vermont"
+            }
+          }
+        },
+        {
+          "name": "transactions_MES #2",
+          "q": {
+            "features": {
+              "transaction_id": 308114,
+              "purchase_date": "2018-02-23",
+              "purchase_date_parsed": "2018-02-23T00:00:00.000Z",
+              "purchase_year": 2018,
+              "purchase_month": 2,
+              "purchase_day": 23,
+              "purchase_dow": 5,
+              "purchase_weekend": 0,
+              "purchase_hour": 0,
+              "card_id": "C_ID_289762599f",
+              "merchant_id": "M_ID_50f575c681",
+              "merchant_category_id": 796,
+              "item_category": "C",
+              "purchase_amount": 763.23,
+              "signature_provided": 0,
+              "card_first_active_month": "2017-10",
+              "card_first_active_month_parsed": "2017-10-01T00:00:00.000Z",
+              "days_active": 145,
+              "card_reward_program": "travel",
+              "card_latitude": 36.236,
+              "card_longitude": -79.776,
+              "card_fico_score": 775,
+              "card_age": 22,
+              "card_location": "POINT(-79.776 36.236)",
+              "card_state": "North Carolina",
+              "card_state_enName": "North Carolina"
+            }
+          }
+        },
+        {
+          "name": "transactions_MES #3",
+          "q": {
+            "features": {
+              "transaction_id": 308115,
+              "purchase_date": "2018-02-23",
+              "purchase_date_parsed": "2018-02-23T00:00:00.000Z",
+              "purchase_year": 2018,
+              "purchase_month": 2,
+              "purchase_day": 23,
+              "purchase_dow": 5,
+              "purchase_weekend": 0,
+              "purchase_hour": 0,
+              "card_id": "C_ID_2803ec6e49",
+              "merchant_id": "M_ID_2d8bb669c2",
+              "merchant_category_id": 705,
+              "item_category": "D",
+              "purchase_amount": 18.16,
+              "signature_provided": 0,
+              "card_first_active_month": "2017-08",
+              "card_first_active_month_parsed": "2017-08-01T00:00:00.000Z",
+              "days_active": 206,
+              "card_reward_program": "travel",
+              "card_latitude": 47.025,
+              "card_longitude": -99.902,
+              "card_fico_score": 553,
+              "card_age": 45,
+              "card_location": "POINT(-99.902 47.025)",
+              "card_state": "North Dakota",
+              "card_state_enName": "North Dakota"
+            }
+          }
+        },
+        {
+          "name": "transactions_MES #4",
+          "q": {
+            "features": {
+              "transaction_id": 308116,
+              "purchase_date": "2018-02-23",
+              "purchase_date_parsed": "2018-02-23T00:00:00.000Z",
+              "purchase_year": 2018,
+              "purchase_month": 2,
+              "purchase_day": 23,
+              "purchase_dow": 5,
+              "purchase_weekend": 0,
+              "purchase_hour": 0,
+              "card_id": "C_ID_8cd70dc54d",
+              "merchant_id": "M_ID_aa91fc5309",
+              "merchant_category_id": 705,
+              "item_category": "B",
+              "purchase_amount": 39.28,
+              "signature_provided": 0,
+              "card_first_active_month": "2017-04",
+              "card_first_active_month_parsed": "2017-04-01T00:00:00.000Z",
+              "days_active": 328,
+              "card_reward_program": "travel",
+              "card_latitude": 45.937,
+              "card_longitude": -111.534,
+              "card_fico_score": 743,
+              "card_age": 39,
+              "card_location": "POINT(-111.534 45.937)",
+              "card_state": "Montana",
+              "card_state_enName": "Montana"
+            }
+          }
+        },
+        {
+          "name": "transactions_MES #5",
+          "q": {
+            "features": {
+              "transaction_id": 308117,
+              "purchase_date": "2018-02-23",
+              "purchase_date_parsed": "2018-02-23T00:00:00.000Z",
+              "purchase_year": 2018,
+              "purchase_month": 2,
+              "purchase_day": 23,
+              "purchase_dow": 5,
+              "purchase_weekend": 0,
+              "purchase_hour": 0,
+              "card_id": "C_ID_56322508ea",
+              "merchant_id": "M_ID_e5374dabc0",
+              "merchant_category_id": 130,
+              "item_category": "A",
+              "purchase_amount": 76.65,
+              "signature_provided": 0,
+              "card_first_active_month": "2017-12",
+              "card_first_active_month_parsed": "2017-12-01T00:00:00.000Z",
+              "days_active": 84,
+              "card_reward_program": "cash_back",
+              "card_latitude": 40.776,
+              "card_longitude": -98.959,
+              "card_fico_score": 357,
+              "card_age": 51,
+              "card_location": "POINT(-98.959 40.776)",
+              "card_state": "Nebraska",
+              "card_state_enName": "Nebraska"
+            }
+          }
+        },
+        {
+          "q": {
+            "features": {
+              "card_id": "C_ID_23626074d5",
+              "purchase_amount": 3704.17,
+              "signature_provided": 0,
+              "merchant_subsector_description": "luxury goods",
+              "merchant_state": "Wyoming"
+            }
+          }
+        }
+      ],
+      "enrichMapping": [
+        {
+          "datasetRef": "cardholder_info_copy",
+          "packagingType": "REFERENCED",
+          "on": [
+            {
+              "resourceLookupCol": "card_id"
+            }
+          ],
+          "missingLookupKeyBehavior": "IGNORE",
+          "notFoundBehavior": "IGNORE",
+          "multiMatchBehavior": "KEEP_FIRST",
+          "columnsMapping": {
+            "fico_score": "card_fico_score",
+            "age": "card_age"
+          }
+        }
+      ],
+      "healthCheckQueries": [],
+      "returnPostEnrichData": true,
+      "auditPostEnrichData": true,
+      "id": "FRAUDDETECTION107",
+      "type": "STD_PREDICTION"
+    },
+    {
+      "testQueries": [
+        {
+          "q": {
+            "data": {
+              "merchant_id": "M_ID_0003f9a7c4"
+            }
+          }
+        }
+      ],
+      "lookups": [
+        {
+          "datasetRef": "merchant_info_copy",
+          "packagingType": "REFERENCED",
+          "on": [
+            {
+              "resourceLookupCol": "merchant_id"
+            }
+          ],
+          "missingLookupKeyBehavior": "IGNORE",
+          "notFoundBehavior": "IGNORE",
+          "multiMatchBehavior": "KEEP_FIRST",
+          "columnsMapping": {
+            "merchant_id": "merchant_id",
+            "merchant_category_id": "merchant_category_id",
+            "subsector_description": "subsector_description",
+            "latitude": "latitude",
+            "longitude": "longitude"
+          }
+        }
+      ],
+      "id": "merchant_lookup",
+      "type": "DATASETS_LOOKUP"
+    }
+  ],
+  "authMethod": "PUBLIC",
+  "authRealm": {
+    "queryKeys": []
+  },
+  "oauth2Config": {
+    "keysFormat": "JWKS_URI",
+    "jwkUriConnectTimeout": 500,
+    "jwkUriReadTimeout": 500,
+    "jwkUriSizeLimit": 51200,
+    "disableSSLCertificatesCheck": false,
+    "scopeClaimFormat": "STRING",
+    "scopeClaimKey": "scope"
+  },
+  "deploymentMonitoring": [],
+  "versionTag": {
+    "versionNumber": 25,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1659622319163,
+    "extendedProperties": {}
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1657808839152,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

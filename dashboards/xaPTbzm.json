@@ -1,0 +1,331 @@
+{
+  "checklists": {
+    "checklists": []
+  },
+  "creationTag": {
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1663857800972,
+    "versionNumber": 0
+  },
+  "customFields": {},
+  "listed": false,
+  "name": "MLOPS",
+  "owner": "admin",
+  "pages": [
+    {
+      "enableCrossFilters": true,
+      "filtersParams": {
+        "panelPosition": "TOP"
+      },
+      "grid": {
+        "tiles": [
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 1,
+              "left": 0,
+              "top": 3,
+              "width": 12
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "epey4iK",
+            "insightType": "scenario_last_runs",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "MOUSEOVER",
+            "tileParams": {
+              "displayMode": "SIMPLE",
+              "range": "CURRENT_MONTH"
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "MOUSEOVER"
+            }
+          },
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 2,
+              "left": 0,
+              "top": 4,
+              "width": 2
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "xl6djAy",
+            "insightType": "scenario_run_button",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "showLastRun": false
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          },
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 2,
+              "left": 2,
+              "top": 4,
+              "width": 2
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "sOusVcs",
+            "insightType": "runnable-button",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "minimal": false,
+              "showLegend": true
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          },
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 2,
+              "left": 0,
+              "top": 0,
+              "width": 2
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "pAY6ncT",
+            "insightType": "metrics",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "displayMode": "LAST_VALUE"
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          },
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 2,
+              "left": 2,
+              "top": 0,
+              "width": 2
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "Qtlweyj",
+            "insightType": "metrics",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "displayMode": "LAST_VALUE"
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          },
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 2,
+              "left": 4,
+              "top": 0,
+              "width": 2
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "sk9MEZ1",
+            "insightType": "metrics",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "displayMode": "LAST_VALUE"
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          },
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 2,
+              "left": 6,
+              "top": 0,
+              "width": 2
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "phu9827",
+            "insightType": "metrics",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "displayMode": "LAST_VALUE"
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          },
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 2,
+              "left": 4,
+              "top": 4,
+              "width": 7
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "q3qSOOU",
+            "insightType": "scenario_run_button",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "showLastRun": false
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          }
+        ]
+      },
+      "id": "MPxbHrh",
+      "showTitle": false,
+      "title": "METRICS AND CHECKS ON A DATASET"
+    },
+    {
+      "enableCrossFilters": true,
+      "filtersParams": {
+        "panelPosition": "TOP"
+      },
+      "grid": {
+        "tiles": [
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 10,
+              "left": 0,
+              "top": 0,
+              "width": 12
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "wphbmv5",
+            "insightType": "saved-model_report",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "advancedOptions": {
+                "interactiveScoring": {
+                  "featuresOrder": [
+                    "purchase_weekend",
+                    "item_category",
+                    "purchase_amount",
+                    "signature_provided",
+                    "days_active",
+                    "card_reward_program",
+                    "card_fico_score",
+                    "card_age",
+                    "merchant_cardholder_distance"
+                  ]
+                }
+              },
+              "displayMode": "summary"
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          }
+        ]
+      },
+      "id": "lFOD2yb",
+      "showTitle": false,
+      "title": "MLFLOW"
+    }
+  ],
+  "showGrid": true,
+  "tags": [],
+  "versionTag": {
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1695768633332,
+    "versionNumber": 22
+  }
+}

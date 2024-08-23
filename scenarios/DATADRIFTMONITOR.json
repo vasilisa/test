@@ -1,0 +1,287 @@
+{
+  "type": "step_based",
+  "name": "Data drift monitor with CONDITIONS",
+  "active": false,
+  "runAsUser": "admin",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [
+    {
+      "id": "6WMKkDeM",
+      "type": "ds_modified",
+      "name": "Dataset modified",
+      "delay": 900,
+      "active": true,
+      "params": {
+        "watches": [
+          {
+            "type": "DATASET",
+            "itemId": "transactions_joined",
+            "partitionsSpec": ""
+          }
+        ],
+        "triggerWhenAllFire": false
+      },
+      "graceDelaySettings": {
+        "delay": 120,
+        "checkAgainAfterGraceDelay": true
+      }
+    }
+  ],
+  "reporters": [
+    {
+      "active": false,
+      "messaging": {
+        "type": "mail-scenario",
+        "configuration": {
+          "channelId": "XjjeeLOa",
+          "subject": "DSS scenario \"${scenarioName}\" issued a warning",
+          "sender": "\u003cSENDER\u003e@gmail.com",
+          "recipient": "{    \"mails\": [       {          \"to\": \"vasilisa.skvortsova@dataiku.com\",          \"variables\": {             \"variable1\": \"Sir\",             \"variable2\": \"some special message for You from DSS\"          }       },       {          \"to\": \"vasilisa.skvortsova@dataiku.com\",          \"variables\": {             \"variable1\": \"Madam\"          }       }    ] }",
+          "sendAsHTML": false,
+          "attachments": [
+            {
+              "type": "LOG",
+              "params": {}
+            }
+          ],
+          "messageSource": "INLINE",
+          "templateFormat": "FREEMARKER",
+          "templateName": "default.ftl",
+          "message": "Dear ${mailVariables_variable1},\n\n${if(parseJson(mailVariables).hasField(\"variable2\"), parseJson(mailVariables).get(\"variable2\"), \"message for not-john\")}\n\n\nThe “${scenarioName}” scenario returned a warning for exceeding the data drift threshold.\n\nHere’s the summary of warning events:\n\n${warningsEventsSummary}\n\nYou can find the attached scenario log. \nKind regards\n"
+        }
+      },
+      "id": "WtPm26EB",
+      "name": "Data drift warning",
+      "runConditionEnabled": true,
+      "runCondition": "stepOutcome_MES_Warn \u003d\u003d \u0027WARNING\u0027",
+      "phase": "END"
+    }
+  ],
+  "params": {
+    "steps": [
+      {
+        "id": "comp_metrics_d_transactions_joined",
+        "type": "compute_metrics",
+        "name": "Compute_Metrics",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "computes": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined",
+              "partitionsSpec": ""
+            }
+          ],
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "def_scenar_vars_transactions_row_count",
+        "type": "define_vars",
+        "name": "row_count",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "transactions_row_count \u003e 1 \u0026\u0026 outcome\u003d\u003d\"SUCCESS\"",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "variables": {
+            "row_count": "stepOutput_the_metrics)"
+          },
+          "definitions": [
+            {
+              "key": "transactions_row_count",
+              "value": "toNumber(filter(parseJson(stepOutput_Compute_Metrics)[\u0027DEMOMLOPS.transactions_joined_NP\u0027][\u0027computed\u0027],x, x[\"metricId\"]\u003d\u003d\"records:COUNT_RECORDS\")[0].value)"
+            }
+          ],
+          "evaluateValues": true
+        }
+      },
+      {
+        "id": "build_0_true_e_Rci28BcL",
+        "type": "build_flowitem",
+        "name": "Build MES",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "MODEL_EVALUATION_STORE",
+              "itemId": "Rci28BcL",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "NON_RECURSIVE_FORCED_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_0_true_m_S7Ap55jW",
+        "type": "build_flowitem",
+        "name": "Re-train the model",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "SAVED_MODEL",
+              "itemId": "S7Ap55jW",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "check_WARNING_d_transactions_joined_prepared",
+        "type": "check_dataset",
+        "name": "checks",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "checks": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined_prepared",
+              "partitionsSpec": ""
+            }
+          ],
+          "handleWarningsAs": "WARNING",
+          "computeAutomaticRules": true,
+          "ignorePartitionSelectionMode": true,
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "report0a086674f5580e0b217a38f167d62869",
+        "type": "send_report",
+        "name": "Step #7",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "failOnMessageNotSent": true,
+          "messaging": {
+            "type": "slack-scenario",
+            "configuration": {
+              "message": "DSS Scenario \u003c${scenarioRunURL}|${scenarioName}\u003e triggered by ${triggerName} : ${outcome} ${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027:white_check_mark:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027:bell:\u0027, \u0027\u0027)}",
+              "messageMode": "TEXT_MESSAGE",
+              "blocks": "[\n    {\n        \"type\": \"section\",\n        \"text\": {\n            \"type\": \"mrkdwn\",\n            \"text\": \"*DSS Scenario \u003c${scenarioRunURL}|${scenarioName}\u003e:* ${outcome} ${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027:white_check_mark:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027:bell:\u0027, \u0027\u0027)}\"\n        }\n    },\n    {\n        \"type\": \"context\",\n        \"elements\": [\n            {\n                \"type\": \"mrkdwn\",\n                \"text\": \"Triggered by ${triggerName}\"\n            }\n        ]\n    }\n]\n",
+              "mode": "WEBHOOK",
+              "webhookUrl": "https://hooks.slack.com/services/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",
+              "useProxy": true,
+              "asUser": false,
+              "linkNames": false
+            }
+          }
+        }
+      },
+      {
+        "id": "comp_metrics_d_transactions_joined_prepared_1",
+        "type": "compute_metrics",
+        "name": "build dataset",
+        "runConditionType": "RUN_CONDITIONALLY",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "transactions_row_count \u003e 1 \u0026\u0026 outcome\u003d\u003d\"SUCCESS\"",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "computes": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined_prepared",
+              "partitionsSpec": ""
+            }
+          ],
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "set_project_vars",
+        "type": "set_project_vars",
+        "name": "Step #12",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "variables": {},
+          "definitions": [
+            {
+              "key": "check",
+              "value": "transactions_row_count"
+            }
+          ],
+          "evaluateValues": true
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

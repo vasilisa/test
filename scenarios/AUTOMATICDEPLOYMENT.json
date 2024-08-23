@@ -1,0 +1,141 @@
+{
+  "type": "step_based",
+  "name": "Automatic Deployment",
+  "active": false,
+  "runAsUser": "admin",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [
+    {
+      "id": "CSfho5T9",
+      "type": "ds_modified",
+      "name": "Dataset modified",
+      "delay": 900,
+      "active": true,
+      "params": {
+        "watches": [
+          {
+            "type": "DATASET",
+            "itemId": "transactions_train",
+            "partitionsSpec": ""
+          }
+        ],
+        "triggerWhenAllFire": false
+      },
+      "graceDelaySettings": {
+        "delay": 120,
+        "checkAgainAfterGraceDelay": true
+      }
+    }
+  ],
+  "reporters": [],
+  "params": {
+    "steps": [
+      {
+        "id": "build_0_true_d_transactions_train",
+        "type": "build_flowitem",
+        "name": "Build training data",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_train",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_0_true_m_S7Ap55jW",
+        "type": "build_flowitem",
+        "name": "Retrain the model",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "SAVED_MODEL",
+              "itemId": "S7Ap55jW",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "bundle automatic_deployment",
+        "type": "prepare_bundle",
+        "name": "Create bundle",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "bundleId": "automatic_deployment",
+          "transmogrify": true,
+          "publishedProjectKey": "DKU_TUT_MLOPS",
+          "publishOnDeployer": true
+        }
+      },
+      {
+        "id": "deploy DKU_TUT_MLOPS-on-automation10",
+        "type": "update_projectdeployer_deployment",
+        "name": "Update deployment",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "deploymentId": "DKU_TUT_MLOPS-on-automation-v11",
+          "newVersionId": "automatic_deployment"
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

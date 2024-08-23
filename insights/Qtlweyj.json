@@ -1,0 +1,31 @@
+{
+  "type": "metrics",
+  "params": {
+    "objectSmartId": "transactions_joined",
+    "objectType": "DATASET",
+    "metricId": "python:NaN merchant subsector:NaN_merchant_subsector"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "NaN merchant sector",
+  "dashboardCreationId": "xaPTbzm",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1695748947109
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1695748947109
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

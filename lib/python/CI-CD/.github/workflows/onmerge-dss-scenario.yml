@@ -1,0 +1,29 @@
+name: run run_scenario.py
+
+on:
+  pull_request_target:
+    types:
+      - closed
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true # the merge was succesful
+    runs-on: macos-latest # isssues with python versions on ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9.6' # install the python version needed
+
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: execute py script # run python script where DSS python api is called
+        run: python run_scenario.py
+    
+

@@ -1,0 +1,81 @@
+{
+  "type": "evaluation",
+  "neverRecomputeExistingPartitions": false,
+  "optionalDependencies": false,
+  "params": {
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    }
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "variables": {},
+  "dkuProperties": [],
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "transactions_MES_filtered",
+          "deps": []
+        }
+      ]
+    },
+    "model": {
+      "items": [
+        {
+          "ref": "S7Ap55jW",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "evaluationStore": {
+      "items": [
+        {
+          "ref": "Rci28BcL",
+          "appendMode": false
+        }
+      ]
+    },
+    "main": {
+      "items": []
+    },
+    "metrics": {
+      "items": [
+        {
+          "ref": "metrics",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "labels": [],
+  "versionTag": {
+    "versionNumber": 18,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1697715387473
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "lucie"
+    },
+    "lastModifiedOn": 1643143032831
+  },
+  "description": "[the_MES](model_evaluation_store:Rci28BcL)\n\n[Compare 2 evaluations](model_comparison:IUACs7Qq)\n\n\n[transactions_MES_filtered](dataset:transactions_MES_filtered)\n\n\n[Wiki MLops](http://localhost:12000/projects/DKU_TUT_MLOPS/wiki/2/MLops)",
+  "shortDesc": "Model Evaluation Store with Data and performance drifts ",
+  "tags": [
+    "MLops",
+    "demoing:demo"
+  ],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

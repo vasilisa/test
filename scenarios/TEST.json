@@ -1,0 +1,97 @@
+{
+  "type": "step_based",
+  "name": "reporters examples",
+  "active": false,
+  "runAsUser": "admin",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [],
+  "reporters": [
+    {
+      "active": false,
+      "messaging": {
+        "type": "mail-scenario",
+        "configuration": {
+          "channelId": "XjjeeLOa",
+          "subject": "DSS scenario ${scenarioName}: ${outcome}",
+          "recipient": "vasilisa.skvortsova@dataiku.com",
+          "sendAsHTML": false,
+          "attachments": [],
+          "messageSource": "TEMPLATE_FILE",
+          "templateFormat": "FREEMARKER",
+          "templateName": "default.ftl"
+        }
+      },
+      "id": "NmQSHTjG",
+      "name": "Mail reporter",
+      "runConditionEnabled": true,
+      "runCondition": "outcome !\u003d \u0027SUCCESS\u0027",
+      "phase": "END"
+    },
+    {
+      "active": true,
+      "messaging": {
+        "type": "slack-scenario",
+        "configuration": {
+          "message": "DSS Scenario \u003c${scenarioRunURL}|${scenarioName}\u003e triggered by ${triggerName} : ${outcome} ${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027:white_check_mark:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027:bell:\u0027, \u0027\u0027)}\n\n\u003c@here\u003e\n\u003c@VasilisaSkvortsova\u003e\n\ncheck this out: \n\n${allEventsSummary}",
+          "messageMode": "BLOCK_KIT_API",
+          "blocks": "[\n    {\n        \"type\": \"section\",\n        \"text\": {\n            \"type\": \"mrkdwn\",\n            \"text\": \"*DSS Scenario \u003c${scenarioRunURL}|${scenarioName}\u003e:* ${outcome} ${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027:white_check_mark:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027:bell:\u0027, \u0027\u0027)}\"\n        }\n    },\n    {\n        \"type\": \"context\",\n        \"elements\": [\n            {\n                \"type\": \"mrkdwn\",\n                \"text\": \"@here Triggered by ${triggerName}\"\n            }\n        ]\n    }\n]\n",
+          "mode": "WEBHOOK",
+          "webhookUrl": "https://hooks.slack.com/services/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",
+          "useProxy": true,
+          "username": "Vasilisa",
+          "iconEmoji": "👻",
+          "asUser": false,
+          "linkNames": false,
+          "useGlobalChannel": true,
+          "channelId": "A045TCTRPUJ"
+        }
+      },
+      "id": "f45qI1mR",
+      "name": "Slack reporter",
+      "runConditionEnabled": true,
+      "runCondition": "outcome \u003d\u003d \u0027SUCCESS\u0027",
+      "phase": "END"
+    }
+  ],
+  "params": {
+    "steps": [
+      {
+        "id": "build_0_true_d_merchant_info_copy_d_cardholder_info_copy_d_transactions_prepared",
+        "type": "build_flowitem",
+        "name": "build dataset merchant_info_copy dataset cardholder_info_copy dataset transactions_prepared",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_prepared_date"
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

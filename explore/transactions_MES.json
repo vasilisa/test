@@ -1,0 +1,143 @@
+{
+  "charts": [],
+  "script": {
+    "analysisColumnData": {},
+    "coloring": {
+      "individualColumns": [],
+      "scheme": "MEANING_AND_STATUS",
+      "valueColoringMode": "HASH"
+    },
+    "columnWidthsByName": {
+      "authorized_flag": 128,
+      "card_age": 100,
+      "card_fico_score": 128,
+      "card_first_active_month": 188,
+      "card_first_active_month_parsed": 260,
+      "card_id": 120,
+      "card_latitude": 113,
+      "card_location": 169,
+      "card_longitude": 120,
+      "card_reward_program": 158,
+      "card_state": 120,
+      "card_state_enName": 143,
+      "days_active": 100,
+      "item_category": 113,
+      "merchant_cardholder_distance": 225,
+      "merchant_category_id": 165,
+      "merchant_id": 127,
+      "merchant_latitude": 143,
+      "merchant_location": 143,
+      "merchant_longitude": 150,
+      "merchant_state": 120,
+      "merchant_state_enName": 173,
+      "merchant_subsector_description": 240,
+      "purchase_amount": 128,
+      "purchase_date": 141,
+      "purchase_date_parsed": 190,
+      "purchase_day": 105,
+      "purchase_dow": 105,
+      "purchase_hour": 113,
+      "purchase_month": 120,
+      "purchase_weekend": 135,
+      "purchase_year": 113,
+      "signature_provided": 150,
+      "transaction_id": 120
+    },
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "explorationFilters": [
+      {
+        "active": true,
+        "alphanumFilter": {
+          "column": "purchase_date",
+          "params": {
+            "mode": "full_string",
+            "normalization": "exact"
+          },
+          "selectedValues": [],
+          "type": "alphanum"
+        },
+        "column": "purchase_date",
+        "currentMode": "FACET",
+        "facet": {
+          "column": "purchase_date",
+          "columnType": "ALPHANUM",
+          "currentMode": "ALPHANUM",
+          "selectedValues": {},
+          "sort": "count",
+          "type": "facet"
+        },
+        "type": "columnFilter",
+        "validityFilter": {
+          "column": "purchase_date",
+          "params": {
+            "empty": true,
+            "nok": true,
+            "ok": true,
+            "type": "DateSource"
+          },
+          "type": "validity"
+        }
+      }
+    ],
+    "explorationSampling": {
+      "_refreshTrigger": 0,
+      "autoRefreshSample": false,
+      "selection": {
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "latestPartitionsN": 1,
+        "maxReadUncompressedBytes": -1,
+        "maxRecords": 10000,
+        "maxStoredBytes": 104857600,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "partitionSelectionMethod": "ALL",
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "targetRatio": 0.02,
+        "timeout": -1,
+        "withinFirstN": -1
+      }
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "maxProcessedMemTableBytes": -1,
+    "previewMode": "ALL_ROWS",
+    "sorting": [
+      {
+        "ascending": false,
+        "column": "purchase_date"
+      }
+    ],
+    "steps": [],
+    "vizSampling": {
+      "_refreshTrigger": 0,
+      "autoRefreshSample": false,
+      "selection": {
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "latestPartitionsN": 1,
+        "maxReadUncompressedBytes": -1,
+        "maxRecords": -1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "partitionSelectionMethod": "ALL",
+        "samplingMethod": "FULL",
+        "targetRatio": 0.02,
+        "useMemTable": false,
+        "withinFirstN": -1
+      }
+    }
+  }
+}

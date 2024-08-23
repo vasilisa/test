@@ -1,0 +1,28 @@
+{
+  "type": "runnable-button",
+  "params": {
+    "runAsUser": "admin",
+    "runnableType": "pyrunnable_builtin-macros_list-datasets-using-connection",
+    "config": {
+      "all_projects": true,
+      "connection": "PostgreSQL-local"
+    }
+  },
+  "owner": "admin",
+  "listed": true,
+  "name": "PostgreSQL-local",
+  "dashboardCreationId": "xaPTbzm",
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1670770622277,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

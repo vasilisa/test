@@ -1,0 +1,36 @@
+{
+  "name": "Metrics and Checks",
+  "layout": "WIKI_ARTICLE",
+  "attachments": [
+    {
+      "attachmentType": "DSS_OBJECT",
+      "taggableType": "MODEL_EVALUATION_STORE",
+      "smartId": "Rci28BcL",
+      "details": {
+        "objectDisplayName": "the_MES",
+        "userDisplayName": "Administrator"
+      },
+      "attachedBy": "admin",
+      "attachedOn": 1669756109976
+    }
+  ],
+  "versionTag": {
+    "versionNumber": 21,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1698855101448
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1669756097949
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "uiData": {
+    "mode": "CUSTOM",
+    "conditions": [
+      {
+        "input": "transaction_id",
+        "col": "authorized_flag",
+        "num": 0,
+        "operator": "\u003d\u003d [number]"
+      }
+    ]
+  },
+  "expression": "diff(val(\u0027purchase_date_parsed\u0027), asDate(\u0027${quarter_start}\u0027, \u0027yyyy-MM-dd HH:mm\u0027), \u0027seconds\u0027) \u003e\u003d 0 \u0026\u0026 diff(val(\u0027purchase_date_parsed\u0027), asDate(\u0027${quarter_finish}\u0027, \u0027yyyy-MM-dd HH:mm\u0027), \u0027seconds\u0027) \u003c 0",
+  "$status": {
+    "validated": true,
+    "fullyTranslated": true,
+    "ok": true,
+    "message": "Unknown DSS variable: quarter_start",
+    "sql": "\"purchase_date_parsed\" - \u00272017-10-01 00:00:00\u0027 \u003e\u003d 0 AND \"purchase_date_parsed\" - \u00272017-12-31 00:00:00\u0027 \u003c 0"
+  },
+  "distinct": false,
+  "enabled": true
+}

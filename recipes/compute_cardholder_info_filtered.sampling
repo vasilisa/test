@@ -1,0 +1,27 @@
+{
+  "uiData": {
+    "mode": "\u0026\u0026",
+    "$latestOperator": "\u0026\u0026",
+    "$filterOptions": "rules",
+    "conditions": [
+      {
+        "input": "reward_program",
+        "col": "first_active_month",
+        "string": "${reward_program}",
+        "$showList": false,
+        "num": 0,
+        "operator": "contains"
+      },
+      {
+        "input": "fico_score",
+        "col": "first_active_month",
+        "$showList": false,
+        "num": 200,
+        "operator": "\u003e  [number]"
+      }
+    ]
+  },
+  "$status": {},
+  "distinct": false,
+  "enabled": true
+}

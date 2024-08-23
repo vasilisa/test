@@ -1,0 +1,47 @@
+{
+  "type": "step_based",
+  "name": "run macro",
+  "active": false,
+  "runAsUser": "admin",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [],
+  "reporters": [],
+  "params": {
+    "steps": [
+      {
+        "id": "runmacro_pyrunnable_builtin-macros_project-connections-audit",
+        "type": "runnable",
+        "name": "connections audit",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "runnableType": "pyrunnable_builtin-macros_delete-model-old-versions",
+          "config": {
+            "keep_versions": 3,
+            "perform_deletion": false,
+            "model_id": "S7Ap55jW"
+          },
+          "adminConfig": {},
+          "proceedOnFailure": false
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

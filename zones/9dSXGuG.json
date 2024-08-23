@@ -1,0 +1,24 @@
+{
+  "name": "Input",
+  "color": "#F9BE40",
+  "items": [
+    {
+      "objectId": "merchant_info_copy",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "cardholder_info_copy",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "transactions",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

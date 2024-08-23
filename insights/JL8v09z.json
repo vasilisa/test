@@ -1,0 +1,29 @@
+{
+  "type": "scenario_last_runs",
+  "params": {
+    "scenarioSmartId": "AUTOMATICDEPLOYMENT"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "Last runs of scenario Automatic Deployment",
+  "dashboardCreationId": "xaPTbzm",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1669374938401
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1669374938401
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

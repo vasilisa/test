@@ -1,0 +1,24 @@
+{
+  "name": "model evaluation",
+  "color": "#4B8021",
+  "items": [
+    {
+      "objectId": "evaluate_on_transactions_MES_filtered",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Rci28BcL",
+      "objectType": "MODEL_EVALUATION_STORE"
+    },
+    {
+      "objectId": "metrics",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

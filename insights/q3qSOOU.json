@@ -1,0 +1,29 @@
+{
+  "type": "scenario_run_button",
+  "params": {
+    "scenarioSmartId": "DATADRIFTMONITOR"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "Run scenario Data drift monitor",
+  "dashboardCreationId": "xaPTbzm",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1695749989594
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1695749989594
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

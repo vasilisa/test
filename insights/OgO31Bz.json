@@ -1,0 +1,29 @@
+{
+  "type": "project_activity",
+  "params": {
+    "projectKey": "DKU_TUT_PARTITION_FILEBASED"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "AUC",
+  "dashboardCreationId": "xaPTbzm",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1669132677773
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1669132677773
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

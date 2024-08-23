@@ -1,0 +1,32 @@
+{
+    "displayName": "new comparison",
+    "predictionType": "REGRESSION",
+    "comparedModels": [],
+    "displayParams": {
+        "pinnedMetrics": [],
+        "yLabels": [],
+        "alsoDisplayedLabels": [],
+        "sortDescending": false,
+        "showConfidenceIntervals": true,
+        "disabledMERunIds": []
+    },
+    "versionTag": {
+        "versionNumber": 0,
+        "lastModifiedBy": {
+            "login": "admin"
+        },
+        "lastModifiedOn": 1685622836825
+    },
+    "creationTag": {
+        "versionNumber": 0,
+        "lastModifiedBy": {
+            "login": "admin"
+        },
+        "lastModifiedOn": 1685622836825
+    },
+    "tags": [],
+    "customFields": {},
+    "checklists": {
+        "checklists": []
+    }
+}

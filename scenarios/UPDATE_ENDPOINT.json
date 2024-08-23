@@ -1,0 +1,93 @@
+{
+  "type": "step_based",
+  "name": "Update_Endpoint",
+  "active": false,
+  "runAsUser": "admin",
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [],
+  "reporters": [],
+  "params": {
+    "steps": [
+      {
+        "id": "build_0_true_m_S7Ap55jW",
+        "type": "build_flowitem",
+        "name": "Step #1",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "SAVED_MODEL",
+              "itemId": "S7Ap55jW",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "package fraud_detection",
+        "type": "prepare_lambda_package",
+        "name": "Step #2",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "serviceId": "fraud_detection",
+          "packageId": "retrained_model",
+          "transmogrify": true,
+          "targetVariable": "version_id",
+          "publishToAPIDeployer": true,
+          "publishedServiceId": "fraud_detection"
+        }
+      },
+      {
+        "id": "deploy fraud-detection-v2",
+        "type": "update_apideployer_deployment",
+        "name": "Step #3",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "isFullUpdate": false,
+          "deploymentId": "fraud_detection-on-api-infra-v11",
+          "newVersionId": "${version_id}"
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {}
+}

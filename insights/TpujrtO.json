@@ -1,0 +1,28 @@
+{
+  "type": "saved-model_report",
+  "params": {
+    "savedModelSmartId": "S7Ap55jW"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "Full report of model Predict authorized_flag (binary)",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1659445283496
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1659445283496
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

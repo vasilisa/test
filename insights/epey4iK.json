@@ -1,0 +1,29 @@
+{
+  "type": "scenario_last_runs",
+  "params": {
+    "scenarioSmartId": "TEST"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "Last runs of scenario reporters examples",
+  "dashboardCreationId": "xaPTbzm",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1670769585290
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1670769585290
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
