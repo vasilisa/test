@@ -129,7 +129,7 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
@@ -152,7 +152,7 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
@@ -360,12 +360,13 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [
+          "MONTH",
           "WEEK"
         ],
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Date"
         },
@@ -478,7 +479,7 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
@@ -602,21 +603,34 @@
         "sendToInput": "main"
       },
       "purchase_weekend": {
-        "generate_derivative": false,
-        "numerical_handling": "REGULAR",
+        "impute_constant_value": "0",
+        "category_handling": "DUMMIFY",
         "missing_handling": "IMPUTE",
-        "missing_impute_with": "MEAN",
-        "impute_constant_value": 0.0,
-        "keep_regular": false,
-        "rescaling": "AVGSTD",
-        "quantile_bin_nb_bins": 4,
-        "binarize_threshold_mode": "MEDIAN",
-        "binarize_constant_threshold": 0.0,
-        "datetime_cyclical_periods": [],
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": true,
+        "dummy_drop": "AUTO",
+        "impact_method": "M_ESTIMATOR",
+        "impact_m": 10,
+        "impact_kfold": true,
+        "impact_kfold_k": 5,
+        "impact_kfold_seed": 1337,
+        "ordinal_order": "COUNT",
+        "ordinal_ascending": false,
+        "ordinal_default_mode": "HIGHEST",
+        "ordinal_default_value": 0,
+        "frequency_default_mode": "EXPLICIT",
+        "frequency_default_value": 0.0,
+        "frequency_normalized": true,
         "role": "INPUT",
-        "type": "NUMERIC",
+        "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -1051,7 +1065,7 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "CATEGORY",
         "state": {
           "userModified": false,
@@ -3142,13 +3156,13 @@
         "name": "Custom algo custom-catboost-classifier",
         "params": {
           "n_estimators": [
-            50.0,
-            100.0
+            50,
+            100
           ],
           "learning_rate": [
             0.2
           ],
-          "random_state": 1337.0
+          "random_state": 1337
         },
         "supportsSampleWeights": false,
         "acceptsSparseMatrix": false,
