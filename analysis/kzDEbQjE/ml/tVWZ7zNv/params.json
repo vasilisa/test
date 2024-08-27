@@ -4315,7 +4315,8 @@
     "disabledCapabilities": []
   },
   "envSelection": {
-    "envMode": "USE_BUILTIN_MODE"
+    "envMode": "EXPLICIT_ENV",
+    "envName": "visualML"
   },
   "containerSelection": {
     "containerMode": "INHERIT"
