@@ -50,12 +50,12 @@
       {
         "sourceValue": "0",
         "mappedValue": 0,
-        "sampleFreq": 1023
+        "sampleFreq": 1137
       },
       {
         "sourceValue": "1",
         "mappedValue": 1,
-        "sampleFreq": 8977
+        "sampleFreq": 8863
       }
     ],
     "per_feature": {
@@ -71,12 +71,47 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "merchant_merchant_id": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": true,
+        "dummy_drop": "AUTO",
+        "impact_method": "M_ESTIMATOR",
+        "impact_m": 10,
+        "impact_kfold": true,
+        "impact_kfold_k": 5,
+        "impact_kfold_seed": 1337,
+        "ordinal_order": "COUNT",
+        "ordinal_ascending": false,
+        "ordinal_default_mode": "HIGHEST",
+        "ordinal_default_value": 0,
+        "frequency_default_mode": "EXPLICIT",
+        "frequency_default_value": 0.0,
+        "frequency_normalized": true,
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "Text"
         },
         "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
@@ -94,10 +129,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -117,10 +152,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -143,26 +178,8 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
-          "dssWantsToSet": {
-            "generate_derivative": false,
-            "numerical_handling": "REGULAR",
-            "missing_handling": "IMPUTE",
-            "missing_impute_with": "MEAN",
-            "impute_constant_value": 0.0,
-            "keep_regular": false,
-            "rescaling": "AVGSTD",
-            "quantile_bin_nb_bins": 4,
-            "binarize_threshold_mode": "MEDIAN",
-            "binarize_constant_threshold": 0.0,
-            "datetime_cyclical_periods": [],
-            "role": "INPUT",
-            "type": "NUMERIC",
-            "customHandlingCode": "",
-            "customProcessorWantsMatrix": false,
-            "sendToInput": "main"
-          },
           "recordedMeaning": "DoubleMeaning"
         },
         "customHandlingCode": "",
@@ -193,10 +210,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -216,12 +233,47 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "card_internal_card_mapping": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": true,
+        "dummy_drop": "AUTO",
+        "impact_method": "M_ESTIMATOR",
+        "impact_m": 10,
+        "impact_kfold": true,
+        "impact_kfold_k": 5,
+        "impact_kfold_seed": 1337,
+        "ordinal_order": "COUNT",
+        "ordinal_ascending": false,
+        "ordinal_default_mode": "HIGHEST",
+        "ordinal_default_value": 0,
+        "frequency_default_mode": "EXPLICIT",
+        "frequency_default_value": 0.0,
+        "frequency_normalized": true,
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "Text"
         },
         "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
@@ -251,10 +303,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -286,10 +338,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "USStateMeaning"
         },
@@ -308,13 +360,12 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [
-          "MONTH",
           "WEEK"
         ],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Date"
         },
@@ -346,10 +397,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "USStateMeaning"
         },
@@ -381,10 +432,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "USStateMeaning"
         },
@@ -407,7 +458,7 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -427,10 +478,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -453,26 +504,8 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
-          "dssWantsToSet": {
-            "generate_derivative": false,
-            "numerical_handling": "REGULAR",
-            "missing_handling": "IMPUTE",
-            "missing_impute_with": "MEAN",
-            "impute_constant_value": 0.0,
-            "keep_regular": false,
-            "rescaling": "AVGSTD",
-            "quantile_bin_nb_bins": 4,
-            "binarize_threshold_mode": "MEDIAN",
-            "binarize_constant_threshold": 0.0,
-            "datetime_cyclical_periods": [],
-            "role": "INPUT",
-            "type": "NUMERIC",
-            "customHandlingCode": "",
-            "customProcessorWantsMatrix": false,
-            "sendToInput": "main"
-          },
           "recordedMeaning": "DoubleMeaning"
         },
         "customHandlingCode": "",
@@ -491,10 +524,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
@@ -513,14 +546,14 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [
-          "YEAR",
           "QUARTER",
+          "YEAR",
           "WEEK"
         ],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Date"
         },
@@ -530,12 +563,8 @@
       },
       "transaction_id": {
         "generate_derivative": false,
-        "numerical_handling": "REGULAR",
-        "missing_handling": "IMPUTE",
-        "missing_impute_with": "MEDIAN",
         "impute_constant_value": 0.0,
         "keep_regular": false,
-        "rescaling": "AVGSTD",
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
@@ -584,10 +613,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -619,10 +648,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DateSource"
         },
@@ -642,10 +671,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -665,10 +694,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
@@ -700,10 +729,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "GeoPoint"
         },
@@ -723,10 +752,33 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "LongMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "merchant_merchant_category_id": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "keep_regular": false,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "datetime_cyclical_periods": [],
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -758,10 +810,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -770,7 +822,7 @@
         "sendToInput": "main"
       },
       "merchant_subsector_description": {
-        "category_handling": "FREQUENCY",
+        "category_handling": "DUMMIFY",
         "missing_handling": "NONE",
         "missing_impute_with": "MODE",
         "dummy_clip": "MAX_NB_CATEGORIES",
@@ -793,11 +845,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "categorical_rescaling": "AVGSTD",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -817,10 +868,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
@@ -872,10 +923,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "GeoPoint"
         },
@@ -898,7 +949,7 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
@@ -930,10 +981,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -968,7 +1019,7 @@
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "USStateMeaning"
         },
@@ -1000,10 +1051,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": true,
+          "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DateSource"
         },
@@ -1025,99 +1076,6 @@
           "userModified": false,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
-        },
-        "customHandlingCode": "",
-        "customProcessorWantsMatrix": false,
-        "sendToInput": "main"
-      },
-      "merchant_merchant_id": {
-        "category_handling": "DUMMIFY",
-        "missing_handling": "NONE",
-        "missing_impute_with": "MODE",
-        "dummy_clip": "MAX_NB_CATEGORIES",
-        "cumulative_proportion": 0.95,
-        "min_samples": 10,
-        "max_nb_categories": 100,
-        "max_cat_safety": 200,
-        "nb_bins_hashing": 1048576,
-        "hash_whole_categories": true,
-        "dummy_drop": "AUTO",
-        "impact_method": "M_ESTIMATOR",
-        "impact_m": 10,
-        "impact_kfold": true,
-        "impact_kfold_k": 5,
-        "impact_kfold_seed": 1337,
-        "ordinal_order": "COUNT",
-        "ordinal_ascending": false,
-        "ordinal_default_mode": "HIGHEST",
-        "ordinal_default_value": 0,
-        "frequency_default_mode": "EXPLICIT",
-        "frequency_default_value": 0.0,
-        "frequency_normalized": true,
-        "role": "INPUT",
-        "type": "CATEGORY",
-        "state": {
-          "userModified": false,
-          "autoModifiedByDSS": false,
-          "recordedMeaning": "Text"
-        },
-        "customHandlingCode": "",
-        "customProcessorWantsMatrix": false,
-        "sendToInput": "main"
-      },
-      "merchant_merchant_category_id": {
-        "generate_derivative": false,
-        "numerical_handling": "REGULAR",
-        "missing_handling": "IMPUTE",
-        "missing_impute_with": "MEAN",
-        "impute_constant_value": 0.0,
-        "keep_regular": false,
-        "rescaling": "AVGSTD",
-        "quantile_bin_nb_bins": 4,
-        "binarize_threshold_mode": "MEDIAN",
-        "binarize_constant_threshold": 0.0,
-        "datetime_cyclical_periods": [],
-        "role": "INPUT",
-        "type": "NUMERIC",
-        "state": {
-          "userModified": false,
-          "autoModifiedByDSS": false,
-          "recordedMeaning": "LongMeaning"
-        },
-        "customHandlingCode": "",
-        "customProcessorWantsMatrix": false,
-        "sendToInput": "main"
-      },
-      "card_internal_card_mapping": {
-        "category_handling": "DUMMIFY",
-        "missing_handling": "NONE",
-        "missing_impute_with": "MODE",
-        "dummy_clip": "MAX_NB_CATEGORIES",
-        "cumulative_proportion": 0.95,
-        "min_samples": 10,
-        "max_nb_categories": 100,
-        "max_cat_safety": 200,
-        "nb_bins_hashing": 1048576,
-        "hash_whole_categories": true,
-        "dummy_drop": "AUTO",
-        "impact_method": "M_ESTIMATOR",
-        "impact_m": 10,
-        "impact_kfold": true,
-        "impact_kfold_k": 5,
-        "impact_kfold_seed": 1337,
-        "ordinal_order": "COUNT",
-        "ordinal_ascending": false,
-        "ordinal_default_mode": "HIGHEST",
-        "ordinal_default_value": 0,
-        "frequency_default_mode": "EXPLICIT",
-        "frequency_default_value": 0.0,
-        "frequency_normalized": true,
-        "role": "INPUT",
-        "type": "CATEGORY",
-        "state": {
-          "userModified": false,
-          "autoModifiedByDSS": false,
-          "recordedMeaning": "Text"
         },
         "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
@@ -1148,31 +1106,7 @@
     }
   },
   "assertionsParams": {
-    "assertions": [
-      {
-        "name": "Assertion 1",
-        "filter": {
-          "distinct": false,
-          "enabled": true,
-          "uiData": {
-            "mode": "\u0026\u0026",
-            "conditions": [
-              {
-                "input": "card_fico_score",
-                "operator": "\u003e  [number]",
-                "col": "purchase_date",
-                "num": 200.0,
-                "num2": 0.0
-              }
-            ]
-          }
-        },
-        "assertionCondition": {
-          "expectedValidRatio": 0.77,
-          "expectedClass": "1"
-        }
-      }
-    ]
+    "assertions": []
   },
   "overridesParams": {
     "overrides": []
@@ -1320,7 +1254,7 @@
         },
         "values": [
           6,
-          15
+          16
         ],
         "range": {
           "min": 6,
@@ -1380,7 +1314,7 @@
         }
       },
       "allow_sparse_matrices": false,
-      "enabled": false
+      "enabled": true
     },
     "extra_trees": {
       "n_estimators": {
@@ -2024,7 +1958,7 @@
         }
       },
       "n_jobs": 2,
-      "enabled": false
+      "enabled": true
     },
     "neural_network": {
       "layer_sizes": {
@@ -2617,7 +2551,7 @@
       },
       "max_delta_step": {
         "gridMode": "EXPLICIT",
-        "randomMode": "RANGE",
+        "randomMode": "EXPLICIT",
         "limit": {
           "min": 0.0
         },
@@ -2686,8 +2620,7 @@
         "gridMode": "EXPLICIT",
         "randomMode": "RANGE",
         "limit": {
-          "min": 0.0,
-          "max": 1.0
+          "min": 0.0
         },
         "values": [
           0.0
@@ -2703,8 +2636,7 @@
         "gridMode": "EXPLICIT",
         "randomMode": "RANGE",
         "limit": {
-          "min": 1.0E-23,
-          "max": 1.0
+          "min": 1.0E-23
         },
         "values": [
           1.0
@@ -2731,6 +2663,9 @@
           "binary_logistic": {
             "enabled": false
           },
+          "count_poisson": {
+            "enabled": false
+          },
           "multi_softprob": {
             "enabled": false
           },
@@ -2741,6 +2676,9 @@
             "enabled": true
           },
           "reg_logistic": {
+            "enabled": false
+          },
+          "reg_tweedie": {
             "enabled": false
           }
         }
@@ -3204,17 +3142,17 @@
         "name": "Custom algo custom-catboost-classifier",
         "params": {
           "n_estimators": [
-            50,
-            100
+            50.0,
+            100.0
           ],
           "learning_rate": [
             0.2
           ],
-          "random_state": 1337
+          "random_state": 1337.0
         },
         "supportsSampleWeights": false,
         "acceptsSparseMatrix": false,
-        "enabled": true
+        "enabled": false
       }
     },
     "keras": {
@@ -3245,7 +3183,7 @@
         ],
         "range": {
           "min": 1,
-          "max": 10,
+          "max": 7,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3264,7 +3202,7 @@
         ],
         "range": {
           "min": 1,
-          "max": 10,
+          "max": 7,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3339,10 +3277,10 @@
           }
         }
       },
-      "start_p": 2,
+      "start_p": 1,
       "max_p": 5,
       "max_d": 2,
-      "start_q": 2,
+      "start_q": 1,
       "max_q": 5,
       "start_P": 1,
       "max_P": 2,
@@ -3366,7 +3304,7 @@
         ],
         "range": {
           "min": 2,
-          "max": 10,
+          "max": 7,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3382,7 +3320,7 @@
         ],
         "range": {
           "min": 3,
-          "max": 30,
+          "max": 31,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3398,7 +3336,7 @@
         ],
         "range": {
           "min": 3,
-          "max": 10,
+          "max": 11,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3414,7 +3352,7 @@
         ],
         "range": {
           "min": 3,
-          "max": 10,
+          "max": 11,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3583,8 +3521,8 @@
           1
         ],
         "range": {
-          "min": 1,
-          "max": 10,
+          "min": 10,
+          "max": 20,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3606,7 +3544,9 @@
           "min": 1.0E-23
         },
         "values": [
-          1.0
+          0.5,
+          1.0,
+          2.0
         ],
         "range": {
           "min": 0.1,
@@ -3670,10 +3610,10 @@
       "batch_normalization": {
         "values": {
           "false": {
-            "enabled": true
+            "enabled": false
           },
           "true": {
-            "enabled": false
+            "enabled": true
           }
         }
       },
@@ -3728,8 +3668,8 @@
           1
         ],
         "range": {
-          "min": 1,
-          "max": 10,
+          "min": 10,
+          "max": 20,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3745,7 +3685,7 @@
         ],
         "range": {
           "min": 1,
-          "max": 10,
+          "max": 4,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3760,8 +3700,8 @@
           40
         ],
         "range": {
-          "min": 10,
-          "max": 100,
+          "min": 30,
+          "max": 50,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3895,8 +3835,8 @@
           1
         ],
         "range": {
-          "min": 1,
-          "max": 10,
+          "min": 10,
+          "max": 20,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3911,8 +3851,8 @@
           32
         ],
         "range": {
-          "min": 10,
-          "max": 100,
+          "min": 16,
+          "max": 64,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -3943,8 +3883,8 @@
           8
         ],
         "range": {
-          "min": 1,
-          "max": 10,
+          "min": 4,
+          "max": 8,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -4016,8 +3956,8 @@
           1
         ],
         "range": {
-          "min": 1,
-          "max": 10,
+          "min": 10,
+          "max": 20,
           "nbValues": 3,
           "scaling": "LINEAR"
         }
@@ -4192,24 +4132,7 @@
       "equalDurationFolds": false
     },
     "metrics": {
-      "customMetrics": [
-        {
-          "greaterIsBetter": true,
-          "needsProbability": false,
-          "type": "MODEL",
-          "name": "Custom Metric #1",
-          "metricCode": "def score(y_valid, y_pred):\n    \"\"\"\n    Custom scoring function.\n    Must return a float quantifying the estimator prediction quality.\n    - y_valid is a pandas Series\n    - y_pred is a numpy ndarray with shape:\n            - (nb_records,) for regression problems and classification problems\n            where \u0027needs probas\u0027 (see below) is false\n            (for classification, the values are the numeric class indexes)\n            - (nb_records, nb_classes) for classification problems where\n            \u0027needs probas\u0027 is true\n    - [optional] X_valid is a dataframe with shape (nb_records, nb_input_features)\n    - [optional] sample_weight is a numpy ndarray with shape (nb_records,)\n                    NB: this option requires a variable set as \"Sample weights\"\n    \"\"\"\n    ",
-          "description": ""
-        },
-        {
-          "greaterIsBetter": true,
-          "needsProbability": false,
-          "type": "MODEL",
-          "name": "Custom Metric #2",
-          "metricCode": "def score(y_valid, y_pred):\n    \"\"\"\n    Custom scoring function.\n    Must return a float quantifying the estimator prediction quality.\n    - y_valid is a pandas Series\n    - y_pred is a numpy ndarray with shape:\n            - (nb_records,) for regression problems and classification problems\n            where \u0027needs probas\u0027 (see below) is false\n            (for classification, the values are the numeric class indexes)\n            - (nb_records, nb_classes) for classification problems where\n            \u0027needs probas\u0027 is true\n    - [optional] X_valid is a dataframe with shape (nb_records, nb_input_features)\n    - [optional] sample_weight is a numpy ndarray with shape (nb_records,)\n                    NB: this option requires a variable set as \"Sample weights\"\n    \"\"\"\n    ",
-          "description": "test metric"
-        }
-      ],
+      "customMetrics": [],
       "evaluationMetric": "ROC_AUC",
       "thresholdOptimizationMetric": "F1",
       "costMatrixWeights": {
@@ -4242,13 +4165,13 @@
         "enabled": false,
         "rules": []
       },
-      "samplingMethod": "CLASS_REBALANCE_TARGET_NB_APPROX",
+      "samplingMethod": "HEAD_SEQUENTIAL",
       "maxRecords": 100000,
       "targetRatio": 0.02,
-      "column": "authorized_flag",
       "ascending": true,
       "withinFirstN": -1,
-      "maxReadUncompressedBytes": -1
+      "maxReadUncompressedBytes": -1,
+      "seed": 1337
     },
     "ssdTrainingRatio": 0.8,
     "ssdStratified": false,
