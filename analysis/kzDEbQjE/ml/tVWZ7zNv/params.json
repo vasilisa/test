@@ -1380,7 +1380,7 @@
         }
       },
       "allow_sparse_matrices": false,
-      "enabled": true
+      "enabled": false
     },
     "extra_trees": {
       "n_estimators": {
@@ -2024,7 +2024,7 @@
         }
       },
       "n_jobs": 2,
-      "enabled": true
+      "enabled": false
     },
     "neural_network": {
       "layer_sizes": {
@@ -2757,7 +2757,7 @@
       "early_stopping_rounds": 4,
       "tweedie_variance_power": 1.5,
       "allow_sparse_matrices": false,
-      "enabled": true
+      "enabled": false
     },
     "deep_neural_network_regression": {
       "learning_rate": {
@@ -3204,17 +3204,17 @@
         "name": "Custom algo custom-catboost-classifier",
         "params": {
           "n_estimators": [
-            50.0,
-            100.0
+            50,
+            100
           ],
           "learning_rate": [
             0.2
           ],
-          "random_state": 1337.0
+          "random_state": 1337
         },
         "supportsSampleWeights": false,
         "acceptsSparseMatrix": false,
-        "enabled": false
+        "enabled": true
       }
     },
     "keras": {
