@@ -189,17 +189,13 @@
         {
           "name": "transactions",
           "type": "UploadedFiles"
-        },
-        {
-          "name": "merchant_info",
-          "type": "UploadedFiles"
-        },
-        {
-          "name": "cardholder_info",
-          "type": "UploadedFiles"
         }
       ],
       "includedSavedModels": [
+        {
+          "id": "h2pmDYwT",
+          "name": "custom algo (binary)"
+        },
         {
           "id": "S7Ap55jW",
           "name": "Predict authorized_flag (binary)"
