@@ -20,7 +20,7 @@
         "id": "custom_python_qsPxeO/DRDA+sRaLhMixjg",
         "type": "custom_python",
         "name": "Bundle creation",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
