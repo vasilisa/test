@@ -80,7 +80,10 @@
         "resetScenarioStatus": false,
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
-        "params": {}
+        "params": {
+          "deploymentId": "MLOPSDEMO-on-UAT",
+          "newVersionId": "v02"
+        }
       }
     ]
   },
