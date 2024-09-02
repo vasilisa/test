@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1725260972484
+        "lastUpdate": 1725260986227
       }
     }
   ],
@@ -180,7 +180,7 @@
           "checks": [
             {
               "type": "DATASET",
-              "itemId": "transactions",
+              "itemId": "transactions_joined_prepared",
               "partitionsSpec": ""
             }
           ],
