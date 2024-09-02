@@ -211,7 +211,7 @@
     "checks": [
       {
         "type": "python",
-        "code": "# Define here a function that returns the outcome of the rule check.\ndef process(last_values, dataset, partition_id):\n    # last_values is a dict of the last values of the metrics,\n    # with the values as a dataiku.metrics.MetricDataPoint.\n    # dataset is a dataiku.Dataset object\n    min_flag \u003d int(last_values[\u0027col_stats:MIN:authorized_flag\u0027].get_value())\n    max_flag \u003d int(last_values[\u0027col_stats:MAX:authorized_flag\u0027].get_value())\n\n    if max_flag - min_flag \u003d\u003d 1:\n        return \u0027OK\u0027, \u0027Expected target values\u0027\n    else:\n        return \u0027ERROR\u0027, \u0027Unexpected target values\u0027",
+        "code": "# Define here a function that returns the outcome of the rule check.\ndef process(last_values, dataset, partition_id):\n    # last_values is a dict of the last values of the metrics,\n    # with the values as a dataiku.metrics.MetricDataPoint.\n    # dataset is a dataiku.Dataset object\n    min_flag \u003d int(last_values[\u0027col_stats:MIN:purchase_amount\u0027].get_value())\n    max_flag \u003d int(last_values[\u0027col_stats:MAX:purchase_amount\u0027].get_value())\n\n    if max_flag - min_flag \u003e 100:\n        return \u0027OK\u0027, \u0027Expected target values\u0027\n    else:\n        return \u0027ERROR\u0027, \u0027Unexpected target values\u0027",
         "envSelection": {
           "envMode": "USE_BUILTIN_MODE",
           "envName": ""
