@@ -1,7 +1,22 @@
 {
   "connection": "Postgres-local",
   "name": "admin\u0027s notebook on Postgres-local",
-  "cells": [],
+  "cells": [
+    {
+      "id": "4o5fnfqm479",
+      "type": "QUERY",
+      "code": "select count(distinct \"merchant_id\") as unique_merchants \nfrom ${transactions_joined_prepared}\n",
+      "querySettings": {
+        "addLimitToStatement": true,
+        "statementsOutOfTransaction": false,
+        "inheritConf": "default",
+        "extraConf": [],
+        "addDkuUdf": false,
+        "statementsParseMode": "SPLIT",
+        "statementsExecutionMode": "PREPARED"
+      }
+    }
+  ],
   "automationLocal": false,
   "creationTag": {
     "versionNumber": 0,
