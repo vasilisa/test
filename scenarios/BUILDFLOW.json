@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1725260986227
+        "lastUpdate": 1725261007475
       }
     }
   ],
@@ -140,6 +140,35 @@
   "params": {
     "steps": [
       {
+        "id": "build_2_true_d_transactions_joined_prepared",
+        "type": "build_flowitem",
+        "name": "Force build transactions_joined_prepared",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined_prepared",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
         "id": "comp_metrics",
         "type": "compute_metrics",
         "name": "Compute metrics on transactions",
@@ -187,35 +216,6 @@
           "handleWarningsAs": "WARNING",
           "computeAutomaticRules": true,
           "ignorePartitionSelectionMode": true,
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "build_2_true_d_transactions_joined_prepared",
-        "type": "build_flowitem",
-        "name": "Force build transactions_joined_prepared",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "builds": [
-            {
-              "type": "DATASET",
-              "itemId": "transactions_joined_prepared",
-              "partitionsSpec": ""
-            }
-          ],
-          "jobType": "RECURSIVE_FORCED_BUILD",
-          "autoUpdateSchemaBeforeEachRecipeRun": false,
-          "stopAtFlowZoneBoundary": false,
-          "refreshHiveMetastore": true,
-          "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
         }
       },
