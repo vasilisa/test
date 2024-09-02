@@ -268,7 +268,7 @@
       },
       {
         "type": "python",
-        "enabled": true,
+        "enabled": false,
         "computeOnBuildMode": "NO",
         "meta": {
           "name": "Purchase amount",
@@ -365,14 +365,14 @@
       },
       {
         "type": "sql_query",
-        "enabled": false,
+        "enabled": true,
         "computeOnBuildMode": "NO",
         "meta": {
           "name": "Unique Merchants",
           "level": 9
         },
         "configuration": {
-          "code": "select count(distinct \"merchant_state\") as unique_merchants \nfrom \"MLOPSDEMO_transactions_joined_prepared\"\"\n",
+          "code": "select count(distinct \"merchant_state\") as unique_merchants \nfrom \"MLOPSDEMO_transactions_joined_prepared\"\n",
           "canRunOnImpala": true,
           "singleAggregate": false,
           "perColumn": false,
