@@ -552,6 +552,24 @@
         "computeOnBuildMode": "PARTITION",
         "autoRun": true,
         "enabled": true
+      },
+      {
+        "type": "valueSet",
+        "values": [
+          "D",
+          "C"
+        ],
+        "metricId": "python:Most authorized item category:Most/least authorized categories",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "",
+          "label": ""
+        },
+        "id": "ukNRjhGD",
+        "displayName": "Most authorized item category (Most/least authorized categories) is among 2 values",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
       }
     ],
     "displayedState": {
