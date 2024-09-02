@@ -1,12 +1,12 @@
 {
   "type": "join",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "customMeta": {
     "kv": {}
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
@@ -17,11 +17,11 @@
           "deps": []
         },
         {
-          "ref": "merchant_info_copy",
+          "ref": "merchant_info_SQL",
           "deps": []
         },
         {
-          "ref": "cardholder_info_copy",
+          "ref": "cardholder_info_SQL",
           "deps": []
         }
       ]
@@ -38,14 +38,6 @@
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 19,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1710344858386,
-    "extendedProperties": {}
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {

@@ -191,6 +191,7 @@
         "enabled": false
       },
       "prefix": "merchant",
+      "originLabel": "merchant_info_SQL",
       "index": 1
     },
     {
@@ -200,6 +201,7 @@
         "enabled": false
       },
       "prefix": "card",
+      "originLabel": "cardholder_info_SQL",
       "index": 2
     }
   ],
