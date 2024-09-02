@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1712334888374
+        "lastUpdate": 1725260949957
       }
     }
   ],
@@ -131,7 +131,7 @@
         }
       },
       "id": "NQCyfSPJ",
-      "name": "TEST SLACK",
+      "name": "Slack  reporter",
       "runConditionEnabled": true,
       "runCondition": "outcome \u003d\u003d \u0027SUCCESS\u0027",
       "phase": "START"
