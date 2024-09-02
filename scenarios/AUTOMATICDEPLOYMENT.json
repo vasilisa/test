@@ -131,7 +131,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "deploymentId": "MLOPSDEMO-on-UAT",
+          "deploymentId": "MLOPSDEMO-on-UAT-AUTO",
           "newVersionId": "automatic_deployment"
         }
       }
