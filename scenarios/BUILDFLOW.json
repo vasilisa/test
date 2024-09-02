@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1725261007475
+        "lastUpdate": 1725261023696
       }
     }
   ],
@@ -196,33 +196,6 @@
         "id": "check_false_d_transactions",
         "type": "check_dataset",
         "name": "Run checks on transactions",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "checks": [
-            {
-              "type": "DATASET",
-              "itemId": "transactions_joined_prepared",
-              "partitionsSpec": ""
-            }
-          ],
-          "handleWarningsAs": "WARNING",
-          "computeAutomaticRules": true,
-          "ignorePartitionSelectionMode": true,
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "check_false_d_transactions_joined_prepared",
-        "type": "check_dataset",
-        "name": "Run checks on transactions_joined_prepared",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
