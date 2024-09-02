@@ -131,7 +131,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "deploymentId": "DKU_TUT_MLOPS-on-automation-v11",
+          "deploymentId": "MLOPSDEMO-on-UAT",
           "newVersionId": "automatic_deployment"
         }
       }
