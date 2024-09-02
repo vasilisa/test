@@ -42,7 +42,7 @@
         "id": "build_0_true_d_transactions_train",
         "type": "build_flowitem",
         "name": "Build training data",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -71,7 +71,7 @@
         "id": "build_0_true_m_S7Ap55jW",
         "type": "build_flowitem",
         "name": "Retrain the model",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -112,7 +112,8 @@
         "params": {
           "bundleId": "automatic_deployment",
           "transmogrify": true,
-          "publishedProjectKey": "DKU_TUT_MLOPS",
+          "targetVariable": "bundle_id",
+          "publishedProjectKey": "MLOPSDEMO",
           "publishOnDeployer": true
         }
       },
