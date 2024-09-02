@@ -53,6 +53,10 @@
     {
       "objectId": "compute_transactions_joined_geo",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "transactions_joined_prepared_rules",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
