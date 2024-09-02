@@ -435,7 +435,6 @@
         "percentile_stats:P25:purchase_amount",
         "col_stats:MIN:purchase_date",
         "python:purchase_amount:Purchase amount",
-        "sql_query:unique_merchants:SQL probe #9",
         "sql_query:unique_merchants:Unique Merchants",
         "python:Most authorized item category:Most/least authorized categories"
       ]
