@@ -71,7 +71,7 @@
         "id": "deploy null",
         "type": "update_projectdeployer_deployment",
         "name": "update deployment",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
