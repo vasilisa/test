@@ -1,7 +1,6 @@
 {
   "type": "prediction_scoring",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "params": {
     "containerSelection": {
       "containerMode": "INHERIT"
@@ -12,6 +11,7 @@
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
@@ -43,19 +43,13 @@
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 2,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1659442752012
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1658408380554
+    "lastModifiedOn": 1658408380554,
+    "extendedProperties": {}
   },
   "tags": [],
   "customFields": {},
