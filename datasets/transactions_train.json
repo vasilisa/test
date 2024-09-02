@@ -1,5 +1,5 @@
 {
-  "type": "Filesystem",
+  "type": "PostgreSQL",
   "managed": true,
   "featureGroup": false,
   "formatType": "csv",
@@ -70,20 +70,26 @@
   },
   "tags": [],
   "params": {
-    "connection": "filesystem_managed",
-    "path": "/MLOPSDEMO.transactions_train",
+    "writeWithCopyBadDataBehavior": "NOVERIFY_ERROR",
+    "connection": "Postgres-local",
     "notReadyIfEmpty": false,
-    "filesSelectionRules": {
-      "mode": "ALL",
-      "excludeRules": [],
-      "includeRules": [],
-      "explicitFiles": []
-    },
+    "mode": "table",
+    "partitioningType": "custom",
+    "normalizeDoubles": true,
+    "table": "${projectKey}_transactions_train",
+    "tableCreationMode": "auto",
+    "writeInsertBatchSize": 10000,
+    "noDropOnSchemaMismatch": false,
+    "writeJDBCBadDataBehavior": "DISCARD_ROW",
+    "readColsWithUnknownTzAsDates": false,
+    "readSQLDateColsAsDSSDates": true,
     "variablesExpansionLoopConfig": {
       "enabled": false,
       "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
       "replacements": []
-    }
+    },
+    "sparkJdbcAccess": "NONE",
+    "numPartitions": -1
   },
   "schema": {
     "columns": [
