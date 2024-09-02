@@ -49,10 +49,6 @@
     {
       "objectId": "transactions_joined_prepared_rules",
       "objectType": "DATASET"
-    },
-    {
-      "objectId": "transactions_joined_prepared_rules_1",
-      "objectType": "DATASET"
     }
   ],
   "shared": [],
