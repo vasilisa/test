@@ -45,6 +45,10 @@
     {
       "objectId": "h2pmDYwT",
       "objectType": "SAVED_MODEL"
+    },
+    {
+      "objectId": "transactions_joined_geo",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
