@@ -536,6 +536,23 @@
         "computeOnBuildMode": "PARTITION",
         "autoRun": true,
         "enabled": true
+      },
+      {
+        "type": "python",
+        "code": "def process(last_values, dataset, partition_id):\n    \"\"\"\n    Function that returns the outcome of the rule\n\n    :param dict(str, dataiku.metrics.MetricDataPoint) last_values: last values of the metrics\n    :param dataiku.Dataset dataset: dataset on which the rule is computed\n    :param str partition_id: The id of the partition where the rule is computed\n    :return: (state, message) with state one of \u0027Error\u0027, \u0027Warning\u0027, or \u0027OK\u0027 and\n              optional observed value message\n    \"\"\"\n    # Get the last value of a metric using last_values[\"metric id\"].get_value(),\n    # using the available metrics table on the left to find the id\n    \n    \"sql_query:unique_merchants:SQL probe #9\"\u003e10\n\n    return \u0027Warning\u0027, \u0027No rule definition implemented yet\u0027\n",
+        "envSelection": {
+          "envMode": "USE_BUILTIN_MODE",
+          "envName": ""
+        },
+        "meta": {
+          "name": "",
+          "label": ""
+        },
+        "id": "1ppAWXgb",
+        "displayName": "Python code",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
       }
     ],
     "displayedState": {
