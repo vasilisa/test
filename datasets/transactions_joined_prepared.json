@@ -602,6 +602,22 @@
         "computeOnBuildMode": "PARTITION",
         "autoRun": true,
         "enabled": true
+      },
+      {
+        "type": "ColumnEmptyRule",
+        "columns": [
+          "authorized_flag"
+        ],
+        "thresholdType": "MIN_PERCENTAGE_EMPTY",
+        "minimum": 1.0,
+        "minimumEnabled": true,
+        "softMinimum": 0.0,
+        "softMinimumEnabled": false,
+        "id": "x9u6VOqU",
+        "displayName": "More than 1% of authorized_flag is empty",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
       }
     ],
     "displayedState": {
