@@ -1,9 +1,8 @@
 {
   "type": "shaker",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "params": {
-    "engineType": "DSS",
+    "engineType": "SQL",
     "engineParams": {
       "spark": {
         "readParams": {
@@ -52,6 +51,7 @@
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
