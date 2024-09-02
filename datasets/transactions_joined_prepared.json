@@ -357,7 +357,7 @@
           "level": 9
         },
         "configuration": {
-          "code": "select count(distinct \"merchant_id\") as unique_merchants \nfrom ${transactions_joined_prepared}\n",
+          "code": "select count(distinct \"merchant_id\") as unique_merchants \nfrom \"MLOPSDEMO_transactions_joined_prepared\"\n",
           "canRunOnImpala": true,
           "singleAggregate": false,
           "perColumn": false,
