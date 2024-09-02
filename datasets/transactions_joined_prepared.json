@@ -350,14 +350,14 @@
       },
       {
         "type": "sql_query",
-        "enabled": true,
+        "enabled": false,
         "computeOnBuildMode": "NO",
         "meta": {
           "name": "Unique Merchants",
           "level": 9
         },
         "configuration": {
-          "code": "select count(distinct \"merchant_id\") as unique_merchants \nfrom ${MLOPSDEMO_transactions_joined_prepared}\n",
+          "code": "select count(distinct \"merchant_state\") as unique_merchants \nfrom \"MLOPSDEMO_transactions_joined_prepared\"\"\n",
           "canRunOnImpala": true,
           "singleAggregate": false,
           "perColumn": false,
@@ -365,19 +365,18 @@
         }
       },
       {
-        "type": "sql_query",
-        "enabled": false,
+        "type": "python",
+        "enabled": true,
         "computeOnBuildMode": "NO",
         "meta": {
-          "name": "SQL probe #10",
-          "level": 9
+          "name": "Most/least authorized categories",
+          "level": 8
         },
         "configuration": {
-          "code": "-- the metrics values and names are taken from the columns of the select statement\nSELECT 42 AS metric_1, \u0027xxx\u0027 AS metric_2 FROM ${DKU_DATASET_TABLE_NAME}\n-- when partitioned, a filter for the WHERE clause can be added like:\n-- WHERE ${DKU_PARTITION_FILTER} \n-- when the dataset is a sql query, the select query is available as\n-- ${DKU_DATASET_QUERY} and, if any, statements before and after the\n-- select as ${DKU_DATASET_PRE_QUERIES} and  ${DKU_DATASET_POST_QUERIES}\n",
-          "canRunOnImpala": true,
-          "singleAggregate": false,
-          "perColumn": false,
-          "columns": []
+          "code": "import numpy as np\n\n# Define here a function that returns the metric.\ndef process(dataset, partition_id):\n   # dataset is a dataiku.Dataset object\n   df \u003d dataset.get_dataframe()\n   df.authorized_flag.fillna(0, inplace\u003dTrue)\n   df_per_category \u003d (df\n                   .groupby(\u0027item_category\u0027)\n                   .agg({\u0027authorized_flag\u0027:np.mean})\n                   .sort_values(\u0027authorized_flag\u0027, ascending\u003dFalse)\n               )\n   most_authorized_category \u003d df_per_category.index[0]\n   least_authorized_category \u003d df_per_category.index[-1]\n\n   return {\u0027Most authorized item category\u0027 : most_authorized_category,\n       \u0027Least authorized item category\u0027 : least_authorized_category}",
+          "envSelection": {
+            "envMode": "INHERIT"
+          }
         }
       }
     ],
