@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1725261023696
+        "lastUpdate": 1725261031666
       }
     }
   ],
@@ -223,7 +223,7 @@
         "id": "build_0_true_e_Rci28BcL",
         "type": "build_flowitem",
         "name": "Build MES",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -252,7 +252,7 @@
         "id": "build_0_true_d_Rci28BcL_metrics",
         "type": "build_flowitem",
         "name": "Build MES metrics",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
