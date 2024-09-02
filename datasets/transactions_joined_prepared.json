@@ -550,7 +550,7 @@
         "id": "NCtqq34m",
         "displayName": "max_purchase_in_euro (Purchase Amount in Euro) is below 10000",
         "computeOnBuildMode": "PARTITION",
-        "autoRun": true,
+        "autoRun": false,
         "enabled": true
       },
       {
@@ -568,7 +568,7 @@
         "id": "ukNRjhGD",
         "displayName": "Most authorized item category (Most/least authorized categories) is among 2 values",
         "computeOnBuildMode": "PARTITION",
-        "autoRun": true,
+        "autoRun": false,
         "enabled": true
       },
       {
@@ -584,7 +584,7 @@
         "id": "HC1nvjVe",
         "displayName": "More than 10 values in merchant_category_id are unique",
         "computeOnBuildMode": "PARTITION",
-        "autoRun": true,
+        "autoRun": false,
         "enabled": true
       }
     ],
