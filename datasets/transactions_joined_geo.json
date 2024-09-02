@@ -60,8 +60,31 @@
     "numPartitions": -1
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"transaction_id","type":"bigint"},
+      {"name":"authorized_flag","type":"bigint"},
+      {"name":"purchase_date","type":"string"},
+      {"name":"card_id","type":"string"},
+      {"name":"merchant_id","type":"string"},
+      {"name":"merchant_category_id","type":"bigint"},
+      {"name":"item_category","type":"string"},
+      {"name":"purchase_amount","type":"double"},
+      {"name":"signature_provided","type":"bigint"},
+      {"name":"merchant_merchant_id","type":"string"},
+      {"name":"merchant_merchant_category_id","type":"double"},
+      {"name":"merchant_subsector_description","type":"string"},
+      {"name":"merchant_latitude","type":"double"},
+      {"name":"merchant_longitude","type":"double"},
+      {"name":"merchantstate","type":"string"},
+      {"name":"card_internal_card_mapping","type":"string"},
+      {"name":"card_first_active_month","type":"string"},
+      {"name":"card_reward_program","type":"string"},
+      {"name":"card_latitude","type":"double"},
+      {"name":"card_longitude","type":"double"},
+      {"name":"card_fico_score","type":"bigint"},
+      {"name":"card_age","type":"bigint"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
