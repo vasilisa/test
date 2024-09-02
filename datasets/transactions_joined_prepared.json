@@ -514,6 +514,28 @@
         "computeOnBuildMode": "PARTITION",
         "autoRun": false,
         "enabled": true
+      },
+      {
+        "type": "numericRange",
+        "minimum": 0.0,
+        "maximum": 100000.0,
+        "softMinimum": 0.0,
+        "softMaximum": 0.0,
+        "minimumEnabled": false,
+        "maximumEnabled": true,
+        "softMinimumEnabled": false,
+        "softMaximumEnabled": false,
+        "metricId": "python:max_purchase_in_euro:Purchase Amount in Euro",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "",
+          "label": ""
+        },
+        "id": "NCtqq34m",
+        "displayName": "max_purchase_in_euro (Purchase Amount in Euro) is below 100000",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
       }
     ],
     "displayedState": {
