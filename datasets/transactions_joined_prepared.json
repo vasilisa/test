@@ -495,7 +495,7 @@
       },
       {
         "type": "numericRange",
-        "minimum": 1.0,
+        "minimum": 10000.0,
         "maximum": 0.0,
         "softMinimum": 0.0,
         "softMaximum": 0.0,
