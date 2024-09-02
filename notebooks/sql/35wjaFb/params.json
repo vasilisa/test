@@ -5,7 +5,7 @@
     {
       "id": "4o5fnfqm479",
       "type": "QUERY",
-      "code": "select count(distinct \"merchant_id\") as unique_merchants \nfrom ${transactions_joined_prepared}\n",
+      "code": "select count(distinct \"merchant_id\") as unique_merchants \nfrom ${tr\"MLOPSDEMO_transactions_mes_filtered_scored\"ansactions_joined_prepared}\n",
       "querySettings": {
         "addLimitToStatement": true,
         "statementsOutOfTransaction": false,
