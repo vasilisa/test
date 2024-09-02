@@ -570,6 +570,22 @@
         "computeOnBuildMode": "PARTITION",
         "autoRun": true,
         "enabled": true
+      },
+      {
+        "type": "ColumnUniqueValuesRule",
+        "columns": [
+          "merchant_category_id"
+        ],
+        "thresholdType": "MIN_COUNT",
+        "minimum": 10.0,
+        "minimumEnabled": true,
+        "softMinimum": 0.0,
+        "softMinimumEnabled": false,
+        "id": "HC1nvjVe",
+        "displayName": "More than 10 values in merchant_category_id are unique",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
       }
     ],
     "displayedState": {
