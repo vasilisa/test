@@ -518,13 +518,13 @@
       {
         "type": "numericRange",
         "minimum": 0.0,
-        "maximum": 10000.0,
+        "maximum": 0.0,
         "softMinimum": 0.0,
-        "softMaximum": 0.0,
+        "softMaximum": 10000.0,
         "minimumEnabled": false,
-        "maximumEnabled": true,
+        "maximumEnabled": false,
         "softMinimumEnabled": false,
-        "softMaximumEnabled": false,
+        "softMaximumEnabled": true,
         "metricId": "python:max_purchase_in_euro:Purchase Amount in Euro",
         "autoComputeMetric": false,
         "meta": {
