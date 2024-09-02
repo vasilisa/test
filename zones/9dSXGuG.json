@@ -21,6 +21,14 @@
     {
       "objectId": "transactions_SQL",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_cardholder_info_SQL",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "cardholder_info_SQL",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
