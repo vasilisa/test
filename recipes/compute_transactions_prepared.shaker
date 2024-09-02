@@ -88,6 +88,7 @@
   "coloring": {
     "scheme": "MEANING_AND_STATUS",
     "individualColumns": [],
-    "valueColoringMode": "HASH"
+    "valueColoringMode": "HASH",
+    "individualColumnsRules": []
   }
 }

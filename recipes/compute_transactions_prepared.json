@@ -1,7 +1,6 @@
 {
   "type": "shaker",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "params": {
     "engineParams": {
       "spark": {
@@ -46,7 +45,10 @@
         "pipelineAllowStart": true,
         "pipelineAllowMerge": true
       },
-      "maxThreads": 8
+      "maxThreads": 8,
+      "containerSelection": {
+        "containerMode": "INHERIT"
+      }
     }
   },
   "customMeta": {
@@ -54,13 +56,14 @@
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
     "main": {
       "items": [
         {
-          "ref": "transactions",
+          "ref": "transactions_SQL",
           "deps": []
         }
       ]
@@ -77,14 +80,6 @@
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 16,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1710345191412,
-    "extendedProperties": {}
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
