@@ -1,7 +1,6 @@
 {
   "type": "shaker",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "params": {
     "engineParams": {
       "spark": {
@@ -40,7 +39,10 @@
         "pipelineAllowStart": true,
         "pipelineAllowMerge": true
       },
-      "maxThreads": 8
+      "maxThreads": 8,
+      "containerSelection": {
+        "containerMode": "INHERIT"
+      }
     }
   },
   "customMeta": {
@@ -48,6 +50,7 @@
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
@@ -71,19 +74,13 @@
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 8,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1698792139253
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "dataiku-admin"
     },
-    "lastModifiedOn": 1623793733244
+    "lastModifiedOn": 1623793733244,
+    "extendedProperties": {}
   },
   "tags": [],
   "customFields": {},

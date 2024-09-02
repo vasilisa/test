@@ -5,10 +5,6 @@
   "explorationSampling": {
     "_refreshTrigger": 0,
     "selection": {
-      "filter": {
-        "distinct": false,
-        "enabled": false
-      },
       "latestPartitionsN": 1,
       "maxRecords": 10000,
       "maxRecordsForDisplay": -1,
@@ -17,12 +13,17 @@
         "enabled": false
       },
       "withinFirstN": -1,
-      "partitionSelectionMethod": "ALL",
       "maxStoredBytes": 104857600,
+      "ascending": true,
+      "timeout": -1,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "partitionSelectionMethod": "ALL",
       "targetRatio": 0.02,
       "maxReadUncompressedBytes": -1,
-      "samplingMethod": "HEAD_SEQUENTIAL",
-      "timeout": -1
+      "samplingMethod": "HEAD_SEQUENTIAL"
     },
     "autoRefreshSample": false
   },
@@ -206,19 +207,22 @@
       "partitionSelectionMethod": "ALL",
       "targetRatio": 0.02,
       "maxReadUncompressedBytes": -1,
-      "samplingMethod": "FULL"
+      "samplingMethod": "FULL",
+      "ascending": true
     },
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
   "columnWidthsByName": {
     "merchant_latitude": 143,
+    "merchant_merchant_id": 190,
     "purchase_date_parsed_day": 195,
     "purchase_day": 105,
     "card_fico_score": 128,
     "purchase_month": 120,
     "merchant_id": 127,
     "card_longitude": 120,
+    "card_internal_card_mapping": 232,
     "item_category": 113,
     "merchant_state_enName": 173,
     "purchase_date_parsed": 190,
@@ -237,6 +241,7 @@
     "card_latitude": 113,
     "merchant_location": 169,
     "merchant_category_id": 165,
+    "merchant_merchant_category_id": 233,
     "card_id": 120,
     "merchant_subsector_description": 240,
     "merchant_longitude": 150,
@@ -255,6 +260,7 @@
   "coloring": {
     "scheme": "MEANING_AND_STATUS",
     "individualColumns": [],
-    "valueColoringMode": "HASH"
+    "valueColoringMode": "HASH",
+    "individualColumnsRules": []
   }
 }
