@@ -269,7 +269,11 @@
       "columns": [],
       "metrics": [
         "basic:COUNT_COLUMNS",
-        "records:COUNT_RECORDS"
+        "records:COUNT_RECORDS",
+        "col_stats:MAX:authorized_flag",
+        "col_stats:MIN:authorized_flag",
+        "col_stats:MAX:purchase_amount",
+        "col_stats:MIN:purchase_amount"
       ]
     }
   },
