@@ -1,7 +1,6 @@
 {
   "type": "sampling",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "params": {
     "selection": {
       "useMemTable": false,
@@ -55,7 +54,10 @@
         "pipelineAllowStart": true,
         "pipelineAllowMerge": true
       },
-      "lowerCaseSchemaIfEngineRequiresIt": false
+      "lowerCaseSchemaIfEngineRequiresIt": false,
+      "containerSelection": {
+        "containerMode": "INHERIT"
+      }
     }
   },
   "customMeta": {
@@ -63,13 +65,14 @@
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
     "main": {
       "items": [
         {
-          "ref": "cardholder_info_copy",
+          "ref": "cardholder_info_SQL",
           "deps": []
         }
       ]
@@ -86,14 +89,6 @@
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 5,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1710344791025,
-    "extendedProperties": {}
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
