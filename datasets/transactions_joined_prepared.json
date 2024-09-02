@@ -357,7 +357,23 @@
           "level": 9
         },
         "configuration": {
-          "code": "select count(distinct \"merchant_id\") as unique_merchants \nfrom \"MLOPSDEMO_transactions_joined_prepared\"\n",
+          "code": "select count(distinct \"merchant_id\") as unique_merchants \nfrom ${\u0027MLOPSDEMO_transactions_joined_prepared\u0027}\n",
+          "canRunOnImpala": true,
+          "singleAggregate": false,
+          "perColumn": false,
+          "columns": []
+        }
+      },
+      {
+        "type": "sql_query",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "SQL probe #10",
+          "level": 9
+        },
+        "configuration": {
+          "code": "-- the metrics values and names are taken from the columns of the select statement\nSELECT 42 AS metric_1, \u0027xxx\u0027 AS metric_2 FROM ${DKU_DATASET_TABLE_NAME}\n-- when partitioned, a filter for the WHERE clause can be added like:\n-- WHERE ${DKU_PARTITION_FILTER} \n-- when the dataset is a sql query, the select query is available as\n-- ${DKU_DATASET_QUERY} and, if any, statements before and after the\n-- select as ${DKU_DATASET_PRE_QUERIES} and  ${DKU_DATASET_POST_QUERIES}\n",
           "canRunOnImpala": true,
           "singleAggregate": false,
           "perColumn": false,
