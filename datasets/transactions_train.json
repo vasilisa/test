@@ -292,7 +292,7 @@
           "label": ""
         },
         "id": "SDC9P4yX",
-        "displayName": "Python code",
+        "displayName": "Min/Max authorized Flag",
         "computeOnBuildMode": "PARTITION",
         "autoRun": true,
         "enabled": true
