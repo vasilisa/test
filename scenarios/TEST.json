@@ -106,6 +106,31 @@
           "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
         }
+      },
+      {
+        "id": "report4c5bebe652a1d83f4333bdbb311939d0",
+        "type": "send_report",
+        "name": "Step #2",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "failOnMessageNotSent": true,
+          "messaging": {
+            "type": "msft-teams-scenario",
+            "configuration": {
+              "message": "${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027✅\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027🔴\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027🔶\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027🔔\u0027, \u0027\u0027)} DSS Scenario [${scenarioName}](${scenarioRunURL}) triggered by ${triggerName}: **${outcome}**",
+              "webhookType": "WORKFLOWS",
+              "useProxy": true
+            }
+          }
+        }
       }
     ]
   },
