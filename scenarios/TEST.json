@@ -36,7 +36,7 @@
       "phase": "END"
     },
     {
-      "active": true,
+      "active": false,
       "messaging": {
         "type": "slack-scenario",
         "configuration": {
@@ -110,5 +110,6 @@
     ]
   },
   "automationLocal": false,
-  "customFields": {}
+  "customFields": {},
+  "markedAsTest": false
 }
