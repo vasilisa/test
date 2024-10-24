@@ -12,7 +12,25 @@
     "suppressTriggersWhileRunning": true
   },
   "tags": [],
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "Ek6Gl33A",
+      "type": "custom_python",
+      "name": "Custom trigger",
+      "delay": 3600,
+      "active": true,
+      "params": {
+        "code": "from dataiku.scenario import Trigger\nt \u003d Trigger()\nif True: # your condition here\n    t.fire()",
+        "envSelection": {
+          "envMode": "INHERIT"
+        }
+      },
+      "graceDelaySettings": {
+        "delay": 0,
+        "checkAgainAfterGraceDelay": false
+      }
+    }
+  ],
   "reporters": [
     {
       "active": false,
