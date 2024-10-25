@@ -151,10 +151,14 @@
       {
         "type": "DATASET",
         "localName": "transactions_joined_prepared",
-        "quickSharingEnabled": false,
+        "quickSharingEnabled": true,
         "rules": [
           {
             "targetProject": "INCREMENTDATA",
+            "appearOnFlow": true
+          },
+          {
+            "targetProject": "DEMODHL",
             "appearOnFlow": true
           }
         ]
