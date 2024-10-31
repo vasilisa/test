@@ -45,10 +45,6 @@
     {
       "objectId": "h2pmDYwT",
       "objectType": "SAVED_MODEL"
-    },
-    {
-      "objectId": "transactions_joined_prepared_rules",
-      "objectType": "DATASET"
     }
   ],
   "shared": [],
