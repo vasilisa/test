@@ -50,7 +50,7 @@
       "id": "NmQSHTjG",
       "name": "Mail reporter",
       "runConditionEnabled": true,
-      "runCondition": "outcome !\u003d \u0027SUCCESS\u0027",
+      "runCondition": "outcome \u003d\u003d \u0027SUCCESS\u0027",
       "phase": "END"
     },
     {
