@@ -37,9 +37,9 @@
       "messaging": {
         "type": "mail-scenario",
         "configuration": {
-          "channelId": "XjjeeLOa",
+          "channelId": "VS_test_emails",
           "subject": "DSS scenario ${scenarioName}: ${outcome}",
-          "recipient": "vasilisa.skvortsova@dataiku.com",
+          "recipient": "${recipients}",
           "sendAsHTML": false,
           "attachments": [],
           "messageSource": "TEMPLATE_FILE",
