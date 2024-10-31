@@ -20,7 +20,7 @@
       "delay": 3600,
       "active": true,
       "params": {
-        "code": "from dataiku.scenario import Trigger\nt \u003d Trigger()\nif True: # your condition here\n    t.fire()",
+        "code": "import dataiku \nfrom dataiku.scenario import Trigger\n\nt \u003d Trigger()\nif True: # your condition here\n    t.fire()",
         "envSelection": {
           "envMode": "INHERIT"
         }
