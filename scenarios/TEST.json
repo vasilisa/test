@@ -39,7 +39,7 @@
         "configuration": {
           "channelId": "VS_test_emails",
           "subject": "DSS scenario ${scenarioName}: ${outcome}",
-          "recipient": "${recipients}",
+          "recipient": "${recipient_list}",
           "sendAsHTML": false,
           "attachments": [],
           "messageSource": "TEMPLATE_FILE",
