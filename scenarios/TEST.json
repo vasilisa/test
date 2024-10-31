@@ -20,7 +20,7 @@
       "delay": 3600,
       "active": true,
       "params": {
-        "code": "import dataiku \nfrom dataiku.scenario import Trigger\n# get the variable from\nreward_program \u003d dataiku.get_custom_variables()[\"reward_program\"]\n\nt \u003d Trigger()\nif reward_program \u003d\u003d \"reward_program\": \n    t.fire()",
+        "code": "import dataiku \nfrom dataiku.scenario import Trigger\n# get the variable from\nreward_program \u003d dataiku.get_custom_variables()[\"reward_program\"]\n\nt \u003d Trigger()\nif reward_program \u003d\u003d \"dining\": \n    t.fire()",
         "envSelection": {
           "envMode": "INHERIT"
         }
