@@ -128,7 +128,7 @@
       {
         "id": "report4c5bebe652a1d83f4333bdbb311939d0",
         "type": "send_report",
-        "name": "Step #2",
+        "name": "Send Teams message on the step",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
