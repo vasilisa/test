@@ -63,7 +63,7 @@
           "blocks": "[\n    {\n        \"type\": \"section\",\n        \"text\": {\n            \"type\": \"mrkdwn\",\n            \"text\": \"*DSS Scenario \u003c${scenarioRunURL}|${scenarioName}\u003e:* ${outcome} ${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027:white_check_mark:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027:red_circle:\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027:bell:\u0027, \u0027\u0027)}\"\n        }\n    },\n    {\n        \"type\": \"context\",\n        \"elements\": [\n            {\n                \"type\": \"mrkdwn\",\n                \"text\": \"@here Triggered by ${triggerName}\"\n            }\n        ]\n    }\n]\n",
           "mode": "WEBHOOK",
           "webhookUrl": "https://ikuiku.webhook.office.com/webhookb2/c8648e23-d7e9-4a93-a4f3-43fee9139827@46de9a18-f826-49ea-ae07-61dd0f86f4ba/IncomingWebhook/6163facf83e446dcaf36e4bfbe22aa61/0af094a3-d7d1-4bc1-9752-00af14f513ec/V2Qxw5b7AU3JZfDUr6-2BZkX-Qh49PpqBqOJKU6nOH_P41",
-          "useProxy": true,
+          "useProxy": false,
           "username": "Vasilisa",
           "iconEmoji": "👻",
           "asUser": false,
