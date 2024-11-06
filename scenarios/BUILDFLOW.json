@@ -33,7 +33,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730904535841
+        "lastUpdate": 1730904745318
       }
     },
     {
@@ -87,7 +87,7 @@
         "minute": 45,
         "hour": 14,
         "timezone": "SERVER",
-        "lastUpdate": 1730904535841
+        "lastUpdate": 1730904745318
       }
     }
   ],
@@ -114,8 +114,8 @@
       },
       "id": "3XDb73WY",
       "name": "Build Flow reporter",
-      "runConditionEnabled": false,
-      "runCondition": "outcome !\u003d \u0027SUCCESS\u0027",
+      "runConditionEnabled": true,
+      "runCondition": "outcome \u003d\u003d \u0027SUCCESS\u0027",
       "phase": "END"
     },
     {
