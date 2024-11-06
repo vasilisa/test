@@ -33,7 +33,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730900494623
+        "lastUpdate": 1730900504965
       }
     },
     {
@@ -223,7 +223,7 @@
       {
         "id": "report44747d7e23eee2c4a7b01e2ee3b16f5e",
         "type": "send_report",
-        "name": "send message",
+        "name": "send warning message",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "WARNING"
