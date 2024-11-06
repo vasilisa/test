@@ -111,7 +111,7 @@
           "definitions": [
             {
               "key": "transactions_row_count",
-              "value": "toNumber(filter(parseJson(stepOutput_Compute_Metrics)[\u0027DEMOMLOPS.transactions_joined_NP\u0027][\u0027computed\u0027],x, x[\"metricId\"]\u003d\u003d\"records:COUNT_RECORDS\")[0].value)"
+              "value": "toNumber(filter(parseJson(stepOutput_Compute_Metrics)[\u0027MLOPSDEMO.transactions_joined_NP\u0027][\u0027computed\u0027],x, x[\"metricId\"]\u003d\u003d\"records:COUNT_RECORDS\")[0].value)"
             }
           ],
           "evaluateValues": true
@@ -283,5 +283,6 @@
     ]
   },
   "automationLocal": false,
-  "customFields": {}
+  "customFields": {},
+  "markedAsTest": false
 }
