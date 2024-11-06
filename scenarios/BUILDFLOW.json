@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730896769148
+        "lastUpdate": 1730896802740
       }
     },
     {
@@ -395,7 +395,7 @@
           "variables": {},
           "definitions": [
             {
-              "key": "outputRules",
+              "key": "output_json",
               "value": "parseJson(stepOutput_Rules)"
             }
           ],
