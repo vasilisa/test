@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730875094615
+        "lastUpdate": 1730875120089
       }
     }
   ],
@@ -40,9 +40,9 @@
       "messaging": {
         "type": "mail-scenario",
         "configuration": {
-          "channelId": "XjjeeLOa",
+          "channelId": "VS_test_emails",
           "subject": "DSS scenario ${scenarioName}: ${outcome}",
-          "recipient": "vasilisa.skvortsova@dataiku.com",
+          "recipient": "${recipients}",
           "sendAsHTML": false,
           "attachments": [
             {
