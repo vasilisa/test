@@ -47,7 +47,13 @@
     "displayedState": {
       "partition": "NP",
       "columns": [],
-      "metrics": []
+      "metrics": [
+        "model_perf:AUC",
+        "model_perf:ACCURACY",
+        "model_perf:AVERAGE_PRECISION",
+        "model_perf:DATA_DRIFT",
+        "model_perf:F1"
+      ]
     }
   },
   "metricsChecks": {
