@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730894797722
+        "lastUpdate": 1730894883928
       }
     },
     {
@@ -239,7 +239,7 @@
               "webhookUrl": "https://ikuiku.webhook.office.com/webhookb2/c8648e23-d7e9-4a93-a4f3-43fee9139827@46de9a18-f826-49ea-ae07-61dd0f86f4ba/IncomingWebhook/6163facf83e446dcaf36e4bfbe22aa61/0af094a3-d7d1-4bc1-9752-00af14f513ec",
               "webhookType": "WORKFLOWS",
               "useProxy": true,
-              "useGlobalChannel": true,
+              "useGlobalChannel": false,
               "channelId": "REPORTER"
             }
           }
