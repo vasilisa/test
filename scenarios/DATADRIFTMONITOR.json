@@ -202,7 +202,7 @@
       {
         "id": "report0a086674f5580e0b217a38f167d62869",
         "type": "send_report",
-        "name": "Step #7",
+        "name": "Send Slack Message",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
