@@ -445,7 +445,7 @@
     "checks": [
       {
         "type": "numericRange",
-        "minimum": 16.0,
+        "minimum": 25.0,
         "maximum": 0.0,
         "softMinimum": 0.0,
         "softMaximum": 0.0,
