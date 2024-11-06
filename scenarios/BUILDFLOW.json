@@ -33,7 +33,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730900308196
+        "lastUpdate": 1730900494623
       }
     },
     {
@@ -226,7 +226,6 @@
         "name": "send message",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
-          "SUCCESS",
           "WARNING"
         ],
         "runConditionExpression": "",
