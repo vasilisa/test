@@ -132,8 +132,7 @@
       {"name":"card_state_enName","type":"string"},
       {"name":"proba_0","type":"double"},
       {"name":"proba_1","type":"double"},
-      {"name":"prediction","type":"string"},
-      {"name":"explanations","type":"string"}
+      {"name":"prediction","type":"string"}
     ],
     "userModified": true
   },
