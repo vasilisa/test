@@ -20,7 +20,15 @@ recipients = project.get_variables()["standard"]["recipient_list"]
 
     
 # Sending custom reports
-sender = scenario.get_message_sender("VS_test_emails", "local-mail") # A messaging channel
-sender.set_params(sender="dss@company.com", recipient=recipients)
 
-sender.send(subject="The scenario is doing well", message="New data scored")
+message_sender = scenario.get_message_sender("VS_test_emails")
+
+# You can then call send() with message params.
+# params are specific to each message channel types
+
+# SMTP mail example
+message_sender.send(sender="vasilisa.skvortsova@dataiku.com", recipient=recipients, subject="All is well", message="Scenario is working as expected")
+
+# You can also call set_params to set params on the sender that will be reused for all subsequent 'send' calls
+#message_sender.set_params(sender="dss@company.com", recipent="data-scientists@company.com")
+#message_sender.send(subject="All is well", message="Scenario is working as expected")
