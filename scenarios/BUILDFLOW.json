@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730896127067
+        "lastUpdate": 1730896315055
       }
     },
     {
@@ -395,7 +395,7 @@
           "variables": {},
           "definitions": [
             {
-              "key": "",
+              "key": "MinFicoScore",
               "value": "toNumber(filter(parseJson(stepOutput_Compute_Metrics)[\u0027ProjectID.FolderID_NP\u0027][\u0027computed\u0027], x, x[\"metricId\"]\u003d\u003d\"basic:COUNT_FILES\")[0].value)"
             }
           ],
