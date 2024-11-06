@@ -1,7 +1,7 @@
 {
   "type": "step_based",
   "name": "Build Flow",
-  "active": true,
+  "active": false,
   "runAsUser": "admin",
   "checklists": {
     "checklists": []
@@ -30,7 +30,41 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730883649911
+        "lastUpdate": 1730883762843
+      }
+    },
+    {
+      "id": "GigF0Zeh",
+      "type": "sql_query",
+      "name": "SQL query change",
+      "delay": 900,
+      "active": false,
+      "params": {
+        "connection": "Postgres-local",
+        "sql": "",
+        "hasLimit": true,
+        "limit": 10000
+      },
+      "graceDelaySettings": {
+        "delay": 120,
+        "checkAgainAfterGraceDelay": true
+      }
+    },
+    {
+      "id": "IfDjHmEW",
+      "type": "custom_python",
+      "name": "Custom trigger",
+      "delay": 3600,
+      "active": false,
+      "params": {
+        "code": "from dataiku.scenario import Trigger\nt \u003d Trigger()\nif True: # your condition here\n    t.fire()",
+        "envSelection": {
+          "envMode": "INHERIT"
+        }
+      },
+      "graceDelaySettings": {
+        "delay": 0,
+        "checkAgainAfterGraceDelay": false
       }
     }
   ],
