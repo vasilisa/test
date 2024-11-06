@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730886121931
+        "lastUpdate": 1730894161667
       }
     },
     {
@@ -41,7 +41,7 @@
       "active": false,
       "params": {
         "connection": "Postgres-local",
-        "sql": "",
+        "sql": "SELECT COUNT(*) AS row_count\nFROM transactions_MES_filtered;",
         "hasLimit": true,
         "limit": 10000
       },
