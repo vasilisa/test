@@ -20,7 +20,7 @@ recipients = project.get_variables()["standard"]["recipient_list"]
 
     
 # Sending custom reports
-sender = scenario.get_message_sender("mail-scenario", "local-mail") # A messaging channel
+sender = scenario.get_message_sender("VS_test_emails", "local-mail") # A messaging channel
 sender.set_params(sender="dss@company.com", recipient=recipients)
 
 sender.send(subject="The scenario is doing well", message="New data scored")
