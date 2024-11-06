@@ -20,8 +20,8 @@
       "delay": 5,
       "active": false,
       "params": {
-        "repeatFrequency": 3,
-        "frequency": "Monthly",
+        "repeatFrequency": 1,
+        "frequency": "Minutely",
         "startingFrom": "2022-07-14",
         "daysOfWeek": [
           "Thursday"
@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730874638160
+        "lastUpdate": 1730875094615
       }
     }
   ],
