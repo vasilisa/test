@@ -1,7 +1,7 @@
 {
   "type": "step_based",
   "name": "Build Flow",
-  "active": false,
+  "active": true,
   "runAsUser": "admin",
   "checklists": {
     "checklists": []
@@ -33,7 +33,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730904339881
+        "lastUpdate": 1730904376078
       }
     },
     {
@@ -41,7 +41,7 @@
       "type": "sql_query",
       "name": "SQL query change",
       "delay": 900,
-      "active": true,
+      "active": false,
       "params": {
         "connection": "Postgres-local",
         "sql": "SELECT COUNT(*) AS row_count\nFROM transactions_MES_filtered;",
@@ -87,7 +87,7 @@
         "minute": 45,
         "hour": 14,
         "timezone": "SERVER",
-        "lastUpdate": 1730904339881
+        "lastUpdate": 1730904376078
       }
     }
   ],
