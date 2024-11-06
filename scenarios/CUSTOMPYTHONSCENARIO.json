@@ -2,14 +2,6 @@
   "type": "custom_python",
   "name": "Custom Python Scenario",
   "active": false,
-  "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1730879342575,
-    "extendedProperties": {}
-  },
   "checklists": {
     "checklists": []
   },
