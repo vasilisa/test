@@ -121,7 +121,7 @@
       {"name":"card_reward_program","type":"string"},
       {"name":"card_latitude","type":"double"},
       {"name":"card_longitude","type":"double"},
-      {"name":"card_fico_score","type":"double"},
+      {"name":"card_fico_score","type":"bigint"},
       {"name":"card_age","type":"bigint"},
       {"name":"merchant_location","type":"string"},
       {"name":"merchant_cardholder_distance","type":"double"},
