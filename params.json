@@ -95,12 +95,6 @@
     "objects": [
       {
         "type": "DATASET",
-        "localName": "transactions_MES_filtered_scored",
-        "quickSharingEnabled": true,
-        "rules": []
-      },
-      {
-        "type": "DATASET",
         "localName": "transactions_train",
         "quickSharingEnabled": false,
         "rules": [

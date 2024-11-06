@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730883762843
+        "lastUpdate": 1730886121931
       }
     },
     {
@@ -239,13 +239,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "builds": [
-            {
-              "type": "DATASET",
-              "itemId": "transactions_MES_filtered_scored",
-              "partitionsSpec": ""
-            }
-          ],
+          "builds": [],
           "jobType": "RECURSIVE_BUILD",
           "autoUpdateSchemaBeforeEachRecipeRun": false,
           "stopAtFlowZoneBoundary": false,
@@ -268,13 +262,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "builds": [
-            {
-              "type": "DATASET",
-              "itemId": "transactions_MES_filtered_scored",
-              "partitionsSpec": ""
-            }
-          ],
+          "builds": [],
           "jobType": "RECURSIVE_BUILD",
           "autoUpdateSchemaBeforeEachRecipeRun": false,
           "stopAtFlowZoneBoundary": false,

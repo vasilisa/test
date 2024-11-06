@@ -11,14 +11,6 @@
       "objectType": "SAVED_MODEL"
     },
     {
-      "objectId": "score_transactions_MES_filtered",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "transactions_MES_filtered_scored",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "train_custom_algo__binary_",
       "objectType": "RECIPE"
     },
