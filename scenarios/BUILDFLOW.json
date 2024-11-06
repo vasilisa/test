@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730896802740
+        "lastUpdate": 1730897378643
       }
     },
     {
@@ -379,9 +379,9 @@
         }
       },
       {
-        "id": "def_scenar_vars_",
-        "type": "define_vars",
-        "name": "Define Scenario Var",
+        "id": "custom_python_2irEzGJljH3/QOL5k7/MeA",
+        "type": "custom_python",
+        "name": "ExtractMetrics",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
@@ -392,14 +392,11 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "variables": {},
-          "definitions": [
-            {
-              "key": "output_json",
-              "value": "parseJson(stepOutput_Rules)"
-            }
-          ],
-          "evaluateValues": true
+          "script": "import dataiku \n\n\n\ndeploy_status \u003d update.get_result()[\u0027prepareSyncReport\u0027][\u0027success\u0027]\nprint(deploy_status)\nScenario().set_scenario_variables(VariableName_deploy_status\u003ddeploy_status)\n",
+          "envSelection": {
+            "envMode": "INHERIT"
+          },
+          "proceedOnFailure": false
         }
       }
     ]
