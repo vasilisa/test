@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730899217617
+        "lastUpdate": 1730899292542
       }
     },
     {
@@ -141,7 +141,7 @@
         "id": "build_2_true_d_transactions_joined_prepared",
         "type": "build_flowitem",
         "name": "Force build transactions_joined_prepared",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -170,7 +170,7 @@
         "id": "comp_metrics",
         "type": "compute_metrics",
         "name": "Compute metrics on transactions",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -194,7 +194,7 @@
         "id": "check_false_d_transactions",
         "type": "check_dataset",
         "name": "Rules",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -221,12 +221,12 @@
         "id": "report44747d7e23eee2c4a7b01e2ee3b16f5e",
         "type": "send_report",
         "name": "send message",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
         ],
-        "runConditionExpression": "stepOutcome_Rules\u003d\u003d\u0027WARNING\u0027",
+        "runConditionExpression": "",
         "resetScenarioStatus": false,
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
@@ -327,7 +327,7 @@
         "id": "build_0_true_d_transactions_MES_filtered_scored_1",
         "type": "build_flowitem",
         "name": "Score unknown transactions (copy)",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -350,7 +350,7 @@
         "id": "build_0_true_e_Rci28BcL",
         "type": "build_flowitem",
         "name": "Build MES",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -379,7 +379,7 @@
         "id": "build_0_true_d_Rci28BcL_metrics",
         "type": "build_flowitem",
         "name": "Build MES metrics",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -408,7 +408,7 @@
         "id": "build_0_true_d_transactions_MES_filtered",
         "type": "build_flowitem",
         "name": "Step #9",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -422,6 +422,35 @@
             {
               "type": "DATASET",
               "itemId": "transactions_MES_filtered",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_0_true_d_transactions_joined",
+        "type": "build_flowitem",
+        "name": "build transactions joined",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined",
               "partitionsSpec": ""
             }
           ],
