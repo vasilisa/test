@@ -6,7 +6,7 @@
   "cleanTemporaryVersionsPostJob": false,
   "name": "Predict authorized_flag (binary)",
   "contentType": "prediction/py_memory",
-  "activeVersion": "1730886297273",
+  "activeVersion": "1730900208601",
   "inlineVersions": [],
   "conditionalOutputs": [],
   "partitioning": {
