@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730874233844
+        "lastUpdate": 1730874638160
       }
     }
   ],
@@ -320,7 +320,13 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "builds": [],
+          "builds": [
+            {
+              "type": "SAVED_MODEL",
+              "itemId": "S7Ap55jW",
+              "partitionsSpec": ""
+            }
+          ],
           "jobType": "RECURSIVE_BUILD",
           "autoUpdateSchemaBeforeEachRecipeRun": false,
           "stopAtFlowZoneBoundary": false,
