@@ -3339,8 +3339,8 @@
     "customMeasures": [],
     "labels": []
   },
-  "lastTrainIndex": 1,
-  "lastTrainJobId": "sched_build_2023-10-31T22-14-18.141",
+  "lastTrainIndex": 2,
+  "lastTrainJobId": "Scenario_build_Predict_authorized_flag__binary__2024-11-06T13-36-47.649",
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
