@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730875120089
+        "lastUpdate": 1730875288796
       }
     }
   ],
@@ -42,68 +42,9 @@
         "configuration": {
           "channelId": "VS_test_emails",
           "subject": "DSS scenario ${scenarioName}: ${outcome}",
-          "recipient": "${recipients}",
+          "recipient": "${recipient_list}",
           "sendAsHTML": false,
-          "attachments": [
-            {
-              "type": "DATASET",
-              "params": {
-                "attachedDataset": "Rci28BcL_metrics",
-                "exportParams": {
-                  "advancedMode": false,
-                  "destinationDatasetConnection": "filesystem_managed",
-                  "destinationDatasetProjectKey": "DKU_TUT_MLOPS",
-                  "destinationType": "DOWNLOAD",
-                  "format": {
-                    "params": {
-                      "arrayMapFormat": "json",
-                      "charset": "utf8",
-                      "compress": "",
-                      "dateSerializationFormat": "ISO",
-                      "escapeChar": "\\",
-                      "fileReadFailureBehavior": "FAIL",
-                      "hiveSeparators": [
-                        "\u0002",
-                        "\u0003",
-                        "\u0004",
-                        "\u0005",
-                        "\u0006",
-                        "\u0007",
-                        "\b"
-                      ],
-                      "normalizeBooleans": false,
-                      "normalizeDoubles": true,
-                      "parseHeaderRow": true,
-                      "probableNumberOfRecords": 0,
-                      "quoteChar": "\"",
-                      "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
-                      "readDataTypeMismatchBehavior": "DISCARD_WARNING",
-                      "readMissingColumnsBehavior": "DISCARD_SILENT",
-                      "separator": ",",
-                      "skipRowsAfterHeader": 0,
-                      "skipRowsBeforeHeader": 0,
-                      "style": "excel",
-                      "writeDataTypeMismatchBehavior": "DISCARD_WARNING"
-                    },
-                    "type": "csv"
-                  },
-                  "originatingOptionId": "tsv-excel-header",
-                  "overwriteDestinationDataset": false,
-                  "selection": {
-                    "maxRecords": 100000,
-                    "ordering": {
-                      "enabled": false,
-                      "rules": []
-                    },
-                    "partitionSelectionMethod": "ALL",
-                    "samplingMethod": "FULL",
-                    "selectedPartitions": [],
-                    "targetRatio": 0.02
-                  }
-                }
-              }
-            }
-          ],
+          "attachments": [],
           "messageSource": "TEMPLATE_FILE",
           "templateFormat": "FREEMARKER",
           "templateName": "default.ftl"
