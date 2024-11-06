@@ -461,13 +461,13 @@
     "checks": [
       {
         "type": "numericRange",
-        "minimum": 16.0,
+        "minimum": 22.0,
         "maximum": 0.0,
         "softMinimum": 22.0,
         "softMaximum": 0.0,
-        "minimumEnabled": false,
+        "minimumEnabled": true,
         "maximumEnabled": false,
-        "softMinimumEnabled": true,
+        "softMinimumEnabled": false,
         "softMaximumEnabled": false,
         "metricId": "col_stats:MIN:card_age",
         "autoComputeMetric": false,
