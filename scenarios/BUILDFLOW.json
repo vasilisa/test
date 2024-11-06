@@ -33,7 +33,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730900557303
+        "lastUpdate": 1730900633696
       }
     },
     {
@@ -370,29 +370,6 @@
               "partitionsSpec": ""
             }
           ],
-          "jobType": "RECURSIVE_BUILD",
-          "autoUpdateSchemaBeforeEachRecipeRun": false,
-          "stopAtFlowZoneBoundary": false,
-          "refreshHiveMetastore": true,
-          "handleWarningsAs": "WARNING",
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "build_0_true_d_transactions_MES_filtered_scored_1",
-        "type": "build_flowitem",
-        "name": "Score unknown transactions (copy)",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "builds": [],
           "jobType": "RECURSIVE_BUILD",
           "autoUpdateSchemaBeforeEachRecipeRun": false,
           "stopAtFlowZoneBoundary": false,
