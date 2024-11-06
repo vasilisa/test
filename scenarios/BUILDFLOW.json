@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730876778146
+        "lastUpdate": 1730877034605
       }
     }
   ],
@@ -294,8 +294,8 @@
         "params": {
           "builds": [
             {
-              "type": "SAVED_MODEL",
-              "itemId": "S7Ap55jW",
+              "type": "MODEL_EVALUATION_STORE",
+              "itemId": "Rci28BcL",
               "partitionsSpec": ""
             }
           ],
