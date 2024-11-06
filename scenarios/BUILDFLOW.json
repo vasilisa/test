@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730899078649
+        "lastUpdate": 1730899217617
       }
     },
     {
@@ -313,7 +313,7 @@
           "messaging": {
             "type": "msft-teams-scenario",
             "configuration": {
-              "message": "${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027✅\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027🔴\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027🔶\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027🔔\u0027, \u0027\u0027)} DSS Scenario [${scenarioName}](${scenarioRunURL}) triggered by ${triggerName}: **${outcome}**",
+              "message": "\n${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027✅\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027🔴\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027🔶\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027🔔\u0027, \u0027\u0027)} The number of columns is correct DSS Scenario [${scenarioName}](${scenarioRunURL}) triggered by ${triggerName}: **${outcome}**",
               "webhookUrl": "https://ikuiku.webhook.office.com/webhookb2/c8648e23-d7e9-4a93-a4f3-43fee9139827@46de9a18-f826-49ea-ae07-61dd0f86f4ba/IncomingWebhook/6163facf83e446dcaf36e4bfbe22aa61/0af094a3-d7d1-4bc1-9752-00af14f513ec/V2Qxw5b7AU3JZfDUr6-2BZkX-Qh49PpqBqOJKU6nOH_P41",
               "webhookType": "OFFICE365",
               "useProxy": true,
