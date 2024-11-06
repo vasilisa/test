@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730876613549
+        "lastUpdate": 1730876778146
       }
     }
   ],
@@ -174,7 +174,7 @@
           "SUCCESS",
           "WARNING"
         ],
-        "runConditionExpression": "StepName_Rules\u003d\u003d\u0027OK\u0027",
+        "runConditionExpression": "StepOUtcome_Rules\u003d\u003d\u0027SUCCESS\u0027",
         "resetScenarioStatus": false,
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
