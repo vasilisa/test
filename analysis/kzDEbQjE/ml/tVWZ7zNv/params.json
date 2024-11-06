@@ -3179,7 +3179,7 @@
         },
         "supportsSampleWeights": false,
         "acceptsSparseMatrix": false,
-        "enabled": true
+        "enabled": false
       }
     },
     "keras": {
