@@ -9,6 +9,38 @@
     {
       "objectId": "cardholder_info_filtered",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_transactions_prepared",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "transactions_prepared_date",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "merchant_info_SQL",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "cardholder_info_SQL",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_transactions_joined",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "transactions_joined",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_merchant_info_SQL",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "compute_cardholder_info_SQL",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
