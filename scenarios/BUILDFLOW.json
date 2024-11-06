@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730875288796
+        "lastUpdate": 1730875354519
       }
     }
   ],
@@ -44,7 +44,12 @@
           "subject": "DSS scenario ${scenarioName}: ${outcome}",
           "recipient": "${recipient_list}",
           "sendAsHTML": false,
-          "attachments": [],
+          "attachments": [
+            {
+              "type": "LOG",
+              "params": {}
+            }
+          ],
           "messageSource": "TEMPLATE_FILE",
           "templateFormat": "FREEMARKER",
           "templateName": "default.ftl"
