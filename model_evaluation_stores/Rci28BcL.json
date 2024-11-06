@@ -1,209 +1,199 @@
 {
-    "rebuildBehavior": "EXPLICIT",
-    "name": "the_MES",
-    "metrics": {
-        "probes": [],
-        "engineConfig": {
-            "padRunsWithMetrics": false,
-            "hive": {
-                "active": true,
-                "extraConf": []
-            },
-            "basic": {},
-            "dss": {
-                "active": true,
-                "selection": {
-                    "useMemTable": false,
-                    "filter": {
-                        "distinct": false,
-                        "enabled": false
-                    },
-                    "partitionSelectionMethod": "ALL",
-                    "latestPartitionsN": 1,
-                    "ordering": {
-                        "enabled": false,
-                        "rules": []
-                    },
-                    "samplingMethod": "FULL",
-                    "maxRecords": -1,
-                    "targetRatio": 0.02,
-                    "withinFirstN": -1,
-                    "maxReadUncompressedBytes": -1
-                }
-            },
-            "sql": {
-                "active": true
-            },
-            "impala": {
-                "active": true
-            },
-            "spark": {
-                "active": true,
-                "extraConf": []
-            },
-            "python": {}
-        },
-        "displayedState": {
-            "partition": "NP",
-            "columns": [],
-            "metrics": []
+  "rebuildBehavior": "EXPLICIT",
+  "name": "the_MES",
+  "metrics": {
+    "probes": [],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "ascending": true,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
         }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
     },
-    "metricsChecks": {
-        "runOnBuild": false,
-        "checks": [
-            {
-                "metricId": "model_perf:AUC",
-                "minimum": 0.95,
-                "maximum": 0.0,
-                "softMinimum": 0.95,
-                "softMaximum": 0.0,
-                "minimumEnabled": false,
-                "maximumEnabled": false,
-                "softMinimumEnabled": true,
-                "softMaximumEnabled": false,
-                "type": "numericRange",
-                "meta": {
-                    "name": "Value in range",
-                    "label": "AUC"
-                },
-                "computeOnBuildMode": "PARTITION"
-            },
-            {
-                "metricId": "model_perf:DATA_DRIFT",
-                "minimum": 0.0,
-                "maximum": 0.0,
-                "softMinimum": 0.0,
-                "softMaximum": 0.5,
-                "minimumEnabled": false,
-                "maximumEnabled": false,
-                "softMinimumEnabled": false,
-                "softMaximumEnabled": true,
-                "type": "numericRange",
-                "meta": {
-                    "name": "Value in range",
-                    "label": "data drift > 0.5"
-                },
-                "computeOnBuildMode": "PARTITION"
-            },
-            {
-                "code": "# Define here a function that returns the outcome of the check.\nimport dataiku\nimport json\nimport numpy as np\nclient = dataiku.api_client()\nproject = client.get_project(\"DKU_TUT_MLOPS\")\nmes     = project.get_model_evaluation_store(\"Rci28BcL\") # the name of the MES\n\ndef process(last_values, model_evaluation_store, model_evaluation_id):\n    \n    # last_values is a dict of the last values of the metrics,\n    # with the values as a dataiku.metrics.MetricDataPoint.\n    # model_evaluation_store is a dataiku.ModelEvaluationStore object\n    # date_str = last_values['model_perf:DATA_DRIFT'].get_value() \n    \n    #  do not change the inputs as they are required by the process function \n    \n    me    = mes.get_latest_model_evaluation()\n    drift = me.compute_data_drift() # compute data drift \n\n    feature_importance_drift = drift.drift_model_result.feature_drift_importance # get feature drift values they can only be positive  \n    \n    # print(feature_importance_drift.keys())\n    col=[\"merchant_subsector_description\"] # name of the column you want to check the drift for \n    \n    index = feature_importance_drift[\"columns\"].index(col[0])\n    \n    drift_value = feature_importance_drift[\"columnDriftScores\"][index]\n    \n    if drift_value > 0.05:\n        return \"WARNING\",json.dumps(dict(zip(col,[np.round(drift_value,2)])))\n    else:\n        return \"OK\", json.dumps(dict(zip(col,[np.round(drift_value,2)])))\n    ",
-                "envSelection": {
-                    "envMode": "INHERIT"
-                },
-                "type": "python",
-                "meta": {
-                    "name": "Custom check",
-                    "label": "drift_merchant_subsector"
-                },
-                "computeOnBuildMode": "PARTITION"
-            },
-            {
-                "code": "# Define here a function that returns the outcome of the check.\nimport dataiku\nimport json\nimport numpy as np\n\nclient = dataiku.api_client()\n\n\nproject = client.get_project(\"DKU_TUT_MLOPS\")\nmes = project.get_model_evaluation_store(\"Rci28BcL\") # the name of the MES\n\ndef process(last_values, model_evaluation_store, model_evaluation_id):\n    # last_values is a dict of the last values of the metrics,\n    # with the values as a dataiku.metrics.MetricDataPoint.\n    # model_evaluation_store is a dataiku.ModelEvaluationStore object\n    # print(last_values)\n    # date_str = last_values['python:model_perf:DATA_DRIFT'].get_value()\n    date_str = last_values['model_perf:DATA_DRIFT'].get_value()\n    \n    \n    me    = mes.get_latest_model_evaluation()\n    drift = me.compute_data_drift() # compute data drift \n\n    feature_importance_drift = drift.drift_model_result.feature_drift_importance # get feature drift values \n    \n    # print(feature_importance_drift.keys())\n    col=[\"signature_provided\",\"merchant_subsector_description\"]\n    \n    drift_value = []\n    for col_name in col: \n        index = feature_importance_drift[\"columns\"].index(col_name)\n        drift_value.append(feature_importance_drift[\"columnDriftScores\"][index])\n    \n    drift_check = [x > 0.05 for x in drift_value]\n    \n    if any(drift_check):\n        return \"WARNING\", json.dumps(dict(zip(col,np.round(drift_value,2))))\n    else:\n        return \"OK\", json.dumps(dict(zip(col,np.round(drift_value,2))))\n",
-                "envSelection": {
-                    "envMode": "INHERIT"
-                },
-                "type": "python",
-                "meta": {
-                    "name": "Custom check",
-                    "label": "drift_important_features_combined"
-                },
-                "computeOnBuildMode": "PARTITION"
-            }
-        ],
-        "displayedState": {
-            "partition": "NP",
-            "checks": [
-                "accuracy",
-                "data drift < 0.45",
-                "drift_merchant_subsector"
-            ]
-        }
-    },
-    "flowOptions": {
-        "virtualizable": false,
-        "rebuildBehavior": "NORMAL",
-        "crossProjectBuildBehavior": "DEFAULT"
-    },
-    "partitioning": {
-        "ignoreNonMatchingFile": false,
-        "considerMissingRequestedPartitionsAsEmpty": false,
-        "dimensions": []
-    },
-    "displayParams": {
-        "displayedMetrics": [
-            "ACCURACY",
-            "PRECISION",
-            "RECALL",
-            "F1",
-            "COST_MATRIX",
-            "LOG_LOSS",
-            "ROC_AUC",
-            "CALIBRATION_LOSS",
-            "CUMULATIVE_LIFT",
-            "DATA_DRIFT"
-        ],
-        "predictionType": "BINARY_CLASSIFICATION",
-        "pinnedMetrics": [],
-        "xLabel": "evaluation:date",
-        "yLabels": [
-            "model:name",
-            "evaluationDataset:dataset-name"
-        ],
-        "alsoDisplayedLabels": [],
-        "barLabels": [
-            "evaluation:date",
-            "model:name",
-            "evaluationDataset:dataset-name"
-        ],
-        "graphStyle": "LINE",
-        "sortColumn": "refStr",
-        "sortDescending": true,
-        "showConfidenceIntervals": true,
-        "disabledMERunIds": [
-            "cykaiqEWgbbv",
-            "v26uWjQhcw6s",
-            "qfM2NLCRl0rf",
-            "z5F9LcLGvaLv",
-            "ygKgxruHdIhM",
-            "JchaHh9ukK18",
-            "a7eVLRczvVW1",
-            "mSFiBWZcOUm7",
-            "anxmoMdOUOFU",
-            "MtLZcC06tlN0",
-            "bzCBF9SnNKOe",
-            "yySkO3VuRGji",
-            "2cv3tsJrlWnu",
-            "TYj43r0EHICN",
-            "3eBARoyUPsvs",
-            "pZkpvhTPJRdQ",
-            "mt1LKqmiYZSs",
-            "Zv9KXQzYmJ69",
-            "yyed6rLqvMlp",
-            "cfeDubulUASn"
-        ]
-    },
-    "governSyncOptOut": false,
-    "versionTag": {
-        "versionNumber": 357,
-        "lastModifiedBy": {
-            "login": "admin"
-        },
-        "lastModifiedOn": 1698856397330
-    },
-    "creationTag": {
-        "versionNumber": 0,
-        "lastModifiedBy": {
-            "login": "lucie"
-        },
-        "lastModifiedOn": 1643143030603
-    },
-    "tags": [
-        "demoing:demo",
-        "metrics&checks"
-    ],
-    "customFields": {},
-    "checklists": {
-        "checklists": []
+    "displayedState": {
+      "partition": "NP",
+      "columns": [],
+      "metrics": []
     }
+  },
+  "metricsChecks": {
+    "runOnBuild": false,
+    "checks": [
+      {
+        "type": "numericRange",
+        "minimum": 0.95,
+        "maximum": 0.0,
+        "softMinimum": 0.95,
+        "softMaximum": 0.0,
+        "minimumEnabled": false,
+        "maximumEnabled": false,
+        "softMinimumEnabled": true,
+        "softMaximumEnabled": false,
+        "metricId": "model_perf:AUC",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "Value in range",
+          "label": "AUC"
+        },
+        "displayName": "",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
+      },
+      {
+        "type": "numericRange",
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "softMinimum": 0.0,
+        "softMaximum": 0.5,
+        "minimumEnabled": false,
+        "maximumEnabled": false,
+        "softMinimumEnabled": false,
+        "softMaximumEnabled": true,
+        "metricId": "model_perf:DATA_DRIFT",
+        "autoComputeMetric": false,
+        "meta": {
+          "name": "Value in range",
+          "label": "data drift \u003e 0.5"
+        },
+        "displayName": "",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
+      },
+      {
+        "type": "python",
+        "code": "# Define here a function that returns the outcome of the check.\nimport dataiku\nimport json\nimport numpy as np\nclient \u003d dataiku.api_client()\nproject \u003d client.get_project(\"DKU_TUT_MLOPS\")\nmes     \u003d project.get_model_evaluation_store(\"Rci28BcL\") # the name of the MES\n\ndef process(last_values, model_evaluation_store, model_evaluation_id):\n    \n    # last_values is a dict of the last values of the metrics,\n    # with the values as a dataiku.metrics.MetricDataPoint.\n    # model_evaluation_store is a dataiku.ModelEvaluationStore object\n    # date_str \u003d last_values[\u0027model_perf:DATA_DRIFT\u0027].get_value() \n    \n    #  do not change the inputs as they are required by the process function \n    \n    me    \u003d mes.get_latest_model_evaluation()\n    drift \u003d me.compute_data_drift() # compute data drift \n\n    feature_importance_drift \u003d drift.drift_model_result.feature_drift_importance # get feature drift values they can only be positive  \n    \n    # print(feature_importance_drift.keys())\n    col\u003d[\"merchant_subsector_description\"] # name of the column you want to check the drift for \n    \n    index \u003d feature_importance_drift[\"columns\"].index(col[0])\n    \n    drift_value \u003d feature_importance_drift[\"columnDriftScores\"][index]\n    \n    if drift_value \u003e 0.05:\n        return \"WARNING\",json.dumps(dict(zip(col,[np.round(drift_value,2)])))\n    else:\n        return \"OK\", json.dumps(dict(zip(col,[np.round(drift_value,2)])))\n    ",
+        "envSelection": {
+          "envMode": "INHERIT"
+        },
+        "meta": {
+          "name": "Custom check",
+          "label": "drift_merchant_subsector"
+        },
+        "displayName": "",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
+      },
+      {
+        "type": "python",
+        "code": "# Define here a function that returns the outcome of the check.\nimport dataiku\nimport json\nimport numpy as np\n\nclient \u003d dataiku.api_client()\n\n\nproject \u003d client.get_project(\"DKU_TUT_MLOPS\")\nmes \u003d project.get_model_evaluation_store(\"Rci28BcL\") # the name of the MES\n\ndef process(last_values, model_evaluation_store, model_evaluation_id):\n    # last_values is a dict of the last values of the metrics,\n    # with the values as a dataiku.metrics.MetricDataPoint.\n    # model_evaluation_store is a dataiku.ModelEvaluationStore object\n    # print(last_values)\n    # date_str \u003d last_values[\u0027python:model_perf:DATA_DRIFT\u0027].get_value()\n    date_str \u003d last_values[\u0027model_perf:DATA_DRIFT\u0027].get_value()\n    \n    \n    me    \u003d mes.get_latest_model_evaluation()\n    drift \u003d me.compute_data_drift() # compute data drift \n\n    feature_importance_drift \u003d drift.drift_model_result.feature_drift_importance # get feature drift values \n    \n    # print(feature_importance_drift.keys())\n    col\u003d[\"signature_provided\",\"merchant_subsector_description\"]\n    \n    drift_value \u003d []\n    for col_name in col: \n        index \u003d feature_importance_drift[\"columns\"].index(col_name)\n        drift_value.append(feature_importance_drift[\"columnDriftScores\"][index])\n    \n    drift_check \u003d [x \u003e 0.05 for x in drift_value]\n    \n    if any(drift_check):\n        return \"WARNING\", json.dumps(dict(zip(col,np.round(drift_value,2))))\n    else:\n        return \"OK\", json.dumps(dict(zip(col,np.round(drift_value,2))))\n",
+        "envSelection": {
+          "envMode": "INHERIT"
+        },
+        "meta": {
+          "name": "Custom check",
+          "label": "drift_important_features_combined"
+        },
+        "displayName": "",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
+      }
+    ],
+    "displayedState": {
+      "partition": "NP",
+      "checks": [
+        "accuracy",
+        "data drift \u003c 0.45",
+        "drift_merchant_subsector"
+      ]
+    }
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "displayParams": {
+    "displayedMetrics": [],
+    "allAvailableMetrics": [],
+    "pinnedMetrics": [],
+    "yLabels": [],
+    "alsoDisplayedLabels": [],
+    "barLabels": [],
+    "graphStyle": "LINE",
+    "sortColumn": "refStr",
+    "sortDescending": true,
+    "showConfidenceIntervals": true,
+    "disabledMERunIds": [
+      "cykaiqEWgbbv",
+      "v26uWjQhcw6s",
+      "qfM2NLCRl0rf",
+      "z5F9LcLGvaLv",
+      "ygKgxruHdIhM",
+      "JchaHh9ukK18",
+      "a7eVLRczvVW1",
+      "mSFiBWZcOUm7",
+      "anxmoMdOUOFU",
+      "MtLZcC06tlN0",
+      "bzCBF9SnNKOe",
+      "yySkO3VuRGji",
+      "2cv3tsJrlWnu",
+      "TYj43r0EHICN",
+      "3eBARoyUPsvs",
+      "pZkpvhTPJRdQ",
+      "mt1LKqmiYZSs",
+      "Zv9KXQzYmJ69",
+      "yyed6rLqvMlp",
+      "cfeDubulUASn"
+    ]
+  },
+  "governSyncOptOut": false,
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "lucie"
+    },
+    "lastModifiedOn": 1643143030603,
+    "extendedProperties": {}
+  },
+  "tags": [
+    "demoing:demo",
+    "metrics\u0026checks"
+  ],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
 }
