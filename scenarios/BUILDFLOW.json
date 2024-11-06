@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730894650484
+        "lastUpdate": 1730894666031
       }
     },
     {
@@ -141,7 +141,7 @@
         "id": "build_2_true_d_transactions_joined_prepared",
         "type": "build_flowitem",
         "name": "Force build transactions_joined_prepared",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -170,7 +170,7 @@
         "id": "comp_metrics",
         "type": "compute_metrics",
         "name": "Compute metrics on transactions",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
