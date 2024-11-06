@@ -1,6 +1,6 @@
 {
   "type": "step_based",
-  "name": "Data drift monitor with CONDITIONS",
+  "name": "Data drift monitor with conditions",
   "active": false,
   "runAsUser": "admin",
   "checklists": {
