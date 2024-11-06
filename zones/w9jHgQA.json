@@ -1,7 +1,24 @@
 {
   "name": "TEST",
   "color": "#F9BE40",
-  "items": [],
+  "items": [
+    {
+      "objectId": "transactions_prepared_date",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_transactions_joined",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "transactions_joined",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_transactions_prepared",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "tags": [],
   "customFields": {},

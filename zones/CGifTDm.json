@@ -3,22 +3,6 @@
   "color": "#465A64",
   "items": [
     {
-      "objectId": "compute_transactions_prepared",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "transactions_joined",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "transactions_prepared_date",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "compute_transactions_joined",
-      "objectType": "RECIPE"
-    },
-    {
       "objectId": "compute_cardholder_info_filtered",
       "objectType": "RECIPE"
     },
