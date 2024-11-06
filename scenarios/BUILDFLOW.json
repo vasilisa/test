@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730898544895
+        "lastUpdate": 1730898584141
       }
     },
     {
@@ -283,7 +283,7 @@
           "builds": [
             {
               "type": "DATASET",
-              "itemId": "transactions_MES_filtered",
+              "itemId": "transactions_MES_filtered_scored",
               "partitionsSpec": ""
             }
           ],
