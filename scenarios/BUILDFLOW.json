@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1725261031666
+        "lastUpdate": 1730872666759
       }
     }
   ],
@@ -195,7 +195,7 @@
       {
         "id": "check_false_d_transactions",
         "type": "check_dataset",
-        "name": "Run checks on transactions",
+        "name": "Run rules transactions",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
@@ -274,5 +274,6 @@
     ]
   },
   "automationLocal": false,
-  "customFields": {}
+  "customFields": {},
+  "markedAsTest": false
 }
