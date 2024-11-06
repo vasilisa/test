@@ -465,9 +465,9 @@
         "maximum": 0.0,
         "softMinimum": 22.0,
         "softMaximum": 0.0,
-        "minimumEnabled": true,
+        "minimumEnabled": false,
         "maximumEnabled": false,
-        "softMinimumEnabled": false,
+        "softMinimumEnabled": true,
         "softMaximumEnabled": false,
         "metricId": "col_stats:MIN:card_age",
         "autoComputeMetric": false,
@@ -699,6 +699,25 @@
         "softMaximumEnabled": false,
         "id": "45bUCEZi",
         "displayName": "Record count is above 1",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
+      },
+      {
+        "type": "ColumnAvgInRangeRule",
+        "columns": [
+          "card_age"
+        ],
+        "minimum": 0.0,
+        "minimumEnabled": false,
+        "maximum": 0.0,
+        "maximumEnabled": false,
+        "softMinimum": 0.0,
+        "softMinimumEnabled": false,
+        "softMaximum": 50.0,
+        "softMaximumEnabled": true,
+        "id": "jfMFDJm1",
+        "displayName": "Avg of card_age is below 50",
         "computeOnBuildMode": "PARTITION",
         "autoRun": true,
         "enabled": true
