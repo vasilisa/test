@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730898956331
+        "lastUpdate": 1730898985677
       }
     },
     {
@@ -296,6 +296,33 @@
         }
       },
       {
+        "id": "report1fe37f036838c3d8e7454ca604deed54",
+        "type": "send_report",
+        "name": "Send Message",
+        "runConditionType": "RUN_CONDITIONALLY",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "VariableName_column_count_status\u003d\u003d\u0027OK\u0027",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "failOnMessageNotSent": true,
+          "messaging": {
+            "type": "msft-teams-scenario",
+            "configuration": {
+              "message": "${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027✅\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027🔴\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027🔶\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027🔔\u0027, \u0027\u0027)} DSS Scenario [${scenarioName}](${scenarioRunURL}) triggered by ${triggerName}: **${outcome}**",
+              "webhookType": "OFFICE365",
+              "useProxy": true,
+              "useGlobalChannel": false,
+              "channelId": "REPORTER"
+            }
+          }
+        }
+      },
+      {
         "id": "build_0_true_d_transactions_MES_filtered_scored_1",
         "type": "build_flowitem",
         "name": "Score unknown transactions (copy)",
@@ -403,33 +430,6 @@
           "refreshHiveMetastore": true,
           "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "report1fe37f036838c3d8e7454ca604deed54",
-        "type": "send_report",
-        "name": "Send Message",
-        "runConditionType": "RUN_CONDITIONALLY",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "VariableName_column_count_status\u003d\u003d\u0027OK\u0027",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "failOnMessageNotSent": true,
-          "messaging": {
-            "type": "msft-teams-scenario",
-            "configuration": {
-              "message": "${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027✅\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027🔴\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027🔶\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027🔔\u0027, \u0027\u0027)} DSS Scenario [${scenarioName}](${scenarioRunURL}) triggered by ${triggerName}: **${outcome}**",
-              "webhookType": "OFFICE365",
-              "useProxy": true,
-              "useGlobalChannel": true,
-              "channelId": "REPORTER"
-            }
-          }
         }
       }
     ]
