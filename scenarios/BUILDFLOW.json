@@ -1,7 +1,7 @@
 {
   "type": "step_based",
   "name": "Build Flow",
-  "active": false,
+  "active": true,
   "runAsUser": "admin",
   "checklists": {
     "checklists": []
@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730883641321
+        "lastUpdate": 1730883649911
       }
     }
   ],
