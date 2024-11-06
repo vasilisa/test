@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730896338444
+        "lastUpdate": 1730896549248
       }
     },
     {
@@ -396,7 +396,7 @@
           "definitions": [
             {
               "key": "MinFicoScore",
-              "value": "toNumber(filter(parseJson(stepOutput_Rules)[\u0027ProjectID.FolderID_NP\u0027][\u0027computed\u0027], x, x[\"metricId\"]\u003d\u003d\"basic:COUNT_FILES\")[0].value)"
+              "value": "toNumber(filter(parseJson(stepOutput_Rules)[\u0027MLOPSDEMO\u0027][\u0027computed\u0027], x, x[\"metricId\"]\u003d\u003d\"basic:column_count\")[0].value)"
             }
           ],
           "evaluateValues": true
