@@ -25,18 +25,18 @@
   "refitModel": false,
   "outputProbaPercentiles": false,
   "outputProbabilities": true,
-  "forceOriginalEngine": true,
+  "forceOriginalEngine": false,
   "treatmentRatio": 0,
   "individualExplanationParams": {
     "drawInScoredSet": false,
     "subChunkSize": 1000,
-    "method": "SHAPLEY",
+    "method": "ICE",
     "shapleyBackgroundSize": 100,
     "nbExplanations": 3
   },
   "forcedClassifierThreshold": 0,
   "batchSize": 100,
-  "outputExplanations": true,
+  "outputExplanations": false,
   "overrideModelSpecifiedThreshold": false,
   "sparkParams": {
     "pipelineAllowMerge": true,
