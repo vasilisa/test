@@ -666,6 +666,25 @@
         "computeOnBuildMode": "PARTITION",
         "autoRun": true,
         "enabled": true
+      },
+      {
+        "type": "ColumnMedianInRangeRule",
+        "columns": [
+          "card_fico_score"
+        ],
+        "minimum": 0.0,
+        "minimumEnabled": false,
+        "maximum": 0.0,
+        "maximumEnabled": false,
+        "softMinimum": 1000.0,
+        "softMinimumEnabled": true,
+        "softMaximum": 0.0,
+        "softMaximumEnabled": false,
+        "id": "7WAxnI9j",
+        "displayName": "Median of card_fico_score is above 1000",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": true,
+        "enabled": true
       }
     ],
     "displayedState": {
