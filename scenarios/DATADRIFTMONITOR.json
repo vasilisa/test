@@ -121,32 +121,6 @@
         }
       },
       {
-        "id": "def_scenar_vars_transactions_row_count",
-        "type": "define_vars",
-        "name": "row_count",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "transactions_row_count \u003e 1 \u0026\u0026 outcome\u003d\u003d\"SUCCESS\"",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "variables": {
-            "row_count": "stepOutput_the_metrics)"
-          },
-          "definitions": [
-            {
-              "key": "transactions_row_count",
-              "value": "toNumber(filter(parseJson(stepOutput_Compute_Metrics)[\u0027MLOPSDEMO.transactions_joined_NP\u0027][\u0027computed\u0027],x, x[\"metricId\"]\u003d\u003d\"records:COUNT_RECORDS\")[0].value)"
-            }
-          ],
-          "evaluateValues": true
-        }
-      },
-      {
         "id": "build_0_true_e_Rci28BcL",
         "type": "build_flowitem",
         "name": "Build MES",
@@ -253,6 +227,32 @@
               "linkNames": false
             }
           }
+        }
+      },
+      {
+        "id": "def_scenar_vars_transactions_row_count",
+        "type": "define_vars",
+        "name": "row_count",
+        "runConditionType": "DISABLED",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "transactions_row_count \u003e 1 \u0026\u0026 outcome\u003d\u003d\"SUCCESS\"",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "variables": {
+            "row_count": "stepOutput_the_metrics)"
+          },
+          "definitions": [
+            {
+              "key": "transactions_row_count",
+              "value": "toNumber(filter(parseJson(stepOutput_Compute_Metrics)[\u0027MLOPSDEMO.transactions_joined_NP\u0027][\u0027computed\u0027],x, x[\"metricId\"]\u003d\u003d\"records:COUNT_RECORDS\")[0].value)"
+            }
+          ],
+          "evaluateValues": true
         }
       },
       {
