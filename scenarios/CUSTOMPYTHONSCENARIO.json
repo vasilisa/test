@@ -10,7 +10,9 @@
     "squashDelayedTriggers": true,
     "suppressTriggersWhileRunning": true
   },
-  "tags": [],
+  "tags": [
+    "custom python scenario"
+  ],
   "triggers": [],
   "reporters": [],
   "params": {
