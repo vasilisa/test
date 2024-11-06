@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730898584141
+        "lastUpdate": 1730898678184
       }
     },
     {
@@ -259,7 +259,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "script": "import dataiku\nfrom dataiku.scenario import Scenario\n\nclient  \u003d dataiku.api_client()\nproject \u003d client.get_project(dataiku.default_project_key())\n\ndataset \u003d project.get_dataset(\"transactions_joined\")\nruleset \u003d dataset.get_data_quality_rules()\nrules   \u003d ruleset.list_rules()\n\n# Returns a list of DSSDataQualityRule\n\nfor rule in rules:\n        # Access to main information of the rule\n        print(\"Rule id: %s\" % rule.id)\n        print(\"name: %s\" % rule.name)\n        \n        \n# get a specific rule and it\u0027s outcome: get the first rule \nrule \u003d ruleset.get_last_rules_results()[0]\nprint(rule.get_raw())\n\n# set Rule outcome as the Scenario Variable \nScenario().set_scenario_variables(VariableName_column_count_status\u003drule.outcome)",
+          "script": "import dataiku\nfrom dataiku.scenario import Scenario\n\nclient  \u003d dataiku.api_client()\nproject \u003d client.get_project(dataiku.default_project_key())\n\ndataset \u003d project.get_dataset(\"transactions_joined\")\nruleset \u003d dataset.get_data_quality_rules()\nrules   \u003d ruleset.list_rules()\n\n# Returns a list of DSSDataQualityRule\n\nfor rule in rules:\n        # Access to main information of the rule\n        print(\"Rule id: %s\" % rule.id)\n        print(\"name: %s\" % rule.name)\n        \n        \n# get a specific rule and it\u0027s outcome: get the first rule \nrule \u003d ruleset.get_last_rules_results()[0]\nprint(rule.get_raw())\n\n# set Rule outcome as the Scenario Variable \nScenario().set_scenario_variables(column_count_status\u003drule.outcome)",
           "envSelection": {
             "envMode": "INHERIT"
           },
