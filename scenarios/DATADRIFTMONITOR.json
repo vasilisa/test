@@ -256,37 +256,10 @@
         }
       },
       {
-        "id": "check_WARNING_d_transactions_joined_prepared",
-        "type": "check_dataset",
-        "name": "checks",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "checks": [
-            {
-              "type": "DATASET",
-              "itemId": "transactions_joined_prepared",
-              "partitionsSpec": ""
-            }
-          ],
-          "handleWarningsAs": "WARNING",
-          "computeAutomaticRules": true,
-          "ignorePartitionSelectionMode": true,
-          "proceedOnFailure": false
-        }
-      },
-      {
         "id": "comp_metrics_d_transactions_joined_prepared_1",
         "type": "compute_metrics",
         "name": "build dataset",
-        "runConditionType": "RUN_CONDITIONALLY",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -310,7 +283,7 @@
         "id": "set_project_vars",
         "type": "set_project_vars",
         "name": "Step #12",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
