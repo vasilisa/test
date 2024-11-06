@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730894533751
+        "lastUpdate": 1730894633586
       }
     },
     {
@@ -115,6 +115,24 @@
       "runConditionEnabled": true,
       "runCondition": "outcome \u003d\u003d \u0027SUCCESS\u0027",
       "phase": "START"
+    },
+    {
+      "active": true,
+      "messaging": {
+        "type": "msft-teams-scenario",
+        "configuration": {
+          "message": "{  \n   \"type\":\"message\",  \n   \"attachments\":[  \n      {  \n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",  \n         \"contentUrl\":null,  \n         \"content\":{  \n            \"$schema\":\"http://adaptivecards.io/schemas/adaptive-card.json\",  \n            \"type\":\"AdaptiveCard\",  \n            \"version\":\"1.6\",  \n            \"body\":[  \n                \n            {\n                \"type\": \"ColumnSet\",\n                \"columns\": [\n                    {\n                        \"type\": \"Column\",\n                        \"items\": [\n                            {\n                   \n                                \"type\": \"Image\",\n                                \"style\": \"Person\",\n                                \"url\":  \"https://adaptivecards.io/content/cats/3.png\",\n                                \"altText\": \"${creator.name}\",\n                                \"size\": \"Medium\"\n                            }\n                        ],\n                        \"width\": \"auto\"\n                    },\n                    {\n                        \"type\": \"Column\",\n                        \"items\": [\n                            {\n                                \"type\": \"TextBlock\",\n                                \"text\":  \"Hi \u003cat\u003eVasilisa Skvortsova\u003c/at\u003e\",\n                                \"weight\": \"Bolder\",\n                                \"wrap\": true\n                            }\n                           \n                        ],\n                        \"width\": \"stretch\"\n                    },\n\n                    {\n                        \"type\": \"Column\",\n                        \"items\": [\n                            {\n                                \"type\": \"TextBlock\",\n                                \"text\": \"Project: ${scenarioProjectKey}\",\n                                \"weight\": \"Bolder\",\n                                \"wrap\": true\n                            },\n                            {\n                                \"type\": \"TextBlock\",\n                                \"spacing\": \"None\",\n                                \"text\": \"scenario [${scenarioName}](${scenarioRunURL}) with outcome: ${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027\u0026#x2705;\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027\u0026#x1F534;\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027, \u0027\u0026#x1F514;\u0027, \u0027\u0027)}: **${outcome}**\",\n                                \"isSubtle\": true,\n                                \"wrap\": true\n                            },\n                            {\n                                \"type\": \"TextBlock\",\n                                \"text\": \"**Trigger**: ${triggerType}\",\n                                \"wrap\": true\n                            }\n                        ],\n               \n                        \"width\": \"stretch\"\n                    }\n                \n                ]\n            }\n        ],\n        \"msteams\": \n            {\n                \"entities\": \n                [\n                    {\n                        \"type\": \"mention\",\n                        \"text\": \"\u003cat\u003eVasilisa Skvortsova\u003c/at\u003e\",\n                        \"mentioned\": \n                        {\n                        \"id\": \"vasilisa.skvortsova@dataiku.com\",\n                        \"name\": \"Vasilisa Skvortsova\"\n                        }\n                    }\n                \n                ]\n            },\n\n        \"actions\": [\n        {\n            \"type\": \"Action.OpenUrl\",\n            \"title\": \"View in Dataiku\",\n            \"url\": \"${dssURL}\"\n        }\n    ]\n    }\n    }\n    ]\n}\n",
+          "webhookType": "WORKFLOWS",
+          "useProxy": true,
+          "useGlobalChannel": true,
+          "channelId": "REPORTER"
+        }
+      },
+      "id": "PS9ZG58y",
+      "name": "teams-reporter",
+      "runConditionEnabled": true,
+      "runCondition": "outcome \u003d\u003d \u0027SUCCESS\u0027",
+      "phase": "END"
     }
   ],
   "params": {
