@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730896613703
+        "lastUpdate": 1730896629445
       }
     },
     {
@@ -194,7 +194,7 @@
         "id": "check_false_d_transactions",
         "type": "check_dataset",
         "name": "Rules",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -221,7 +221,7 @@
         "id": "report44747d7e23eee2c4a7b01e2ee3b16f5e",
         "type": "send_report",
         "name": "send message",
-        "runConditionType": "RUN_CONDITIONALLY",
+        "runConditionType": "DISABLED",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -381,7 +381,7 @@
       {
         "id": "def_scenar_vars_",
         "type": "define_vars",
-        "name": "Step #10",
+        "name": "Define Scenario Var",
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
