@@ -1,7 +1,7 @@
 {
   "type": "step_based",
   "name": "reporters examples",
-  "active": true,
+  "active": false,
   "runAsUser": "admin",
   "checklists": {
     "checklists": []
