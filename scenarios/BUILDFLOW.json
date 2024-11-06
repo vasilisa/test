@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730895205251
+        "lastUpdate": 1730896127067
       }
     },
     {
@@ -376,6 +376,30 @@
           "refreshHiveMetastore": true,
           "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "def_scenar_vars_",
+        "type": "define_vars",
+        "name": "Step #10",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "variables": {},
+          "definitions": [
+            {
+              "key": "",
+              "value": "toNumber(filter(parseJson(stepOutput_Compute_Metrics)[\u0027ProjectID.FolderID_NP\u0027][\u0027computed\u0027], x, x[\"metricId\"]\u003d\u003d\"basic:COUNT_FILES\")[0].value)"
+            }
+          ],
+          "evaluateValues": true
         }
       }
     ]
