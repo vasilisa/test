@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730898264534
+        "lastUpdate": 1730898433852
       }
     },
     {
@@ -246,10 +246,10 @@
         }
       },
       {
-        "id": "build_0_true_d_transactions_MES_filtered_scored",
-        "type": "build_flowitem",
-        "name": "Score unknown transactions",
-        "runConditionType": "DISABLED",
+        "id": "custom_python_2irEzGJljH3/QOL5k7/MeA",
+        "type": "custom_python",
+        "name": "ExtractMetrics",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -259,7 +259,34 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "builds": [],
+          "script": "import dataiku\nfrom dataiku.scenario import Scenario\n\nclient  \u003d dataiku.api_client()\nproject \u003d client.get_project(dataiku.default_project_key())\n\ndataset \u003d project.get_dataset(\"transactions_joined\")\nruleset \u003d dataset.get_data_quality_rules()\nrules   \u003d ruleset.list_rules()\n\n# Returns a list of DSSDataQualityRule\n\nfor rule in rules:\n        # Access to main information of the rule\n        print(\"Rule id: %s\" % rule.id)\n        print(\"name: %s\" % rule.name)\n        \n        \n# get a specific rule and it\u0027s outcome: get the first rule \nrule \u003d ruleset.get_last_rules_results()[0]\nprint(rule.get_raw())\n\n# set Rule outcome as the Scenario Variable \nScenario().set_scenario_variables(VariableName_column_count_status\u003drule.outcome)",
+          "envSelection": {
+            "envMode": "INHERIT"
+          },
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_0_true_d_transactions_MES_filtered_scored",
+        "type": "build_flowitem",
+        "name": "Score unknown transactions",
+        "runConditionType": "RUN_CONDITIONALLY",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "stepOutput_ExtractMetrics \u003d\u003d\u0027OK\u0027",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_MES_filtered",
+              "partitionsSpec": ""
+            }
+          ],
           "jobType": "RECURSIVE_BUILD",
           "autoUpdateSchemaBeforeEachRecipeRun": false,
           "stopAtFlowZoneBoundary": false,
@@ -375,27 +402,6 @@
           "stopAtFlowZoneBoundary": false,
           "refreshHiveMetastore": true,
           "handleWarningsAs": "WARNING",
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "custom_python_2irEzGJljH3/QOL5k7/MeA",
-        "type": "custom_python",
-        "name": "ExtractMetrics",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "script": "import dataiku\nfrom dataiku.scenario import Scenario\n\nclient  \u003d dataiku.api_client()\nproject \u003d client.get_project(dataiku.default_project_key())\n\ndataset \u003d project.get_dataset(\"transactions_joined\")\nruleset \u003d dataset.get_data_quality_rules()\nrules   \u003d ruleset.list_rules()\n\n# Returns a list of DSSDataQualityRule\n\nfor rule in rules:\n        # Access to main information of the rule\n        print(\"Rule id: %s\" % rule.id)\n        print(\"name: %s\" % rule.name)\n        \n        \n# get a specific rule and it\u0027s outcome: get the first rule \nrule \u003d ruleset.get_last_rules_results()[0]\nprint(rule.get_raw())\n\n# set Rule outcome as the Scenario Variable \nScenario().set_scenario_variables(VariableName_column_count_status\u003drule.outcome)",
-          "envSelection": {
-            "envMode": "INHERIT"
-          },
           "proceedOnFailure": false
         }
       }
