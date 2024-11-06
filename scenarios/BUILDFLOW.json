@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730875354519
+        "lastUpdate": 1730876439366
       }
     }
   ],
@@ -163,6 +163,32 @@
           "computeAutomaticRules": true,
           "ignorePartitionSelectionMode": true,
           "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "report44747d7e23eee2c4a7b01e2ee3b16f5e",
+        "type": "send_report",
+        "name": "send message",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "failOnMessageNotSent": true,
+          "messaging": {
+            "type": "msft-teams-scenario",
+            "configuration": {
+              "message": "${if(outcome \u003d\u003d \u0027SUCCESS\u0027, \u0027✅\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027FAILED\u0027, \u0027🔴\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027WARNING\u0027, \u0027🔶\u0027, \u0027\u0027)}${if(outcome \u003d\u003d \u0027\u0027 || outcome \u003d\u003d \u0027N/A\u0027, \u0027🔔\u0027, \u0027\u0027)} DSS Scenario [${scenarioName}](${scenarioRunURL}) triggered by ${triggerName}: **${outcome}**",
+              "webhookUrl": "https://hooks.slack.com/services/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",
+              "webhookType": "WORKFLOWS",
+              "useProxy": true
+            }
+          }
         }
       },
       {
