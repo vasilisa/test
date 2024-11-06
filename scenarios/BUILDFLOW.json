@@ -33,7 +33,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730900529341
+        "lastUpdate": 1730900557303
       }
     },
     {
@@ -393,64 +393,6 @@
         "maxRetriesOnFail": 0,
         "params": {
           "builds": [],
-          "jobType": "RECURSIVE_BUILD",
-          "autoUpdateSchemaBeforeEachRecipeRun": false,
-          "stopAtFlowZoneBoundary": false,
-          "refreshHiveMetastore": true,
-          "handleWarningsAs": "WARNING",
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "build_0_true_e_Rci28BcL",
-        "type": "build_flowitem",
-        "name": "Build MES",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "builds": [
-            {
-              "type": "MODEL_EVALUATION_STORE",
-              "itemId": "Rci28BcL",
-              "partitionsSpec": ""
-            }
-          ],
-          "jobType": "RECURSIVE_BUILD",
-          "autoUpdateSchemaBeforeEachRecipeRun": false,
-          "stopAtFlowZoneBoundary": false,
-          "refreshHiveMetastore": true,
-          "handleWarningsAs": "WARNING",
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "build_0_true_d_Rci28BcL_metrics",
-        "type": "build_flowitem",
-        "name": "Build MES metrics",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "builds": [
-            {
-              "type": "MODEL_EVALUATION_STORE",
-              "itemId": "Rci28BcL",
-              "partitionsSpec": ""
-            }
-          ],
           "jobType": "RECURSIVE_BUILD",
           "autoUpdateSchemaBeforeEachRecipeRun": false,
           "stopAtFlowZoneBoundary": false,
