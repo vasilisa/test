@@ -11,7 +11,10 @@
     "squashDelayedTriggers": true,
     "suppressTriggersWhileRunning": true
   },
-  "tags": [],
+  "tags": [
+    "custom python steps",
+    "scenario variables"
+  ],
   "triggers": [
     {
       "id": "CmOqcp7G",
@@ -30,7 +33,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730899380261
+        "lastUpdate": 1730900308196
       }
     },
     {
