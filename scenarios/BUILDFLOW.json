@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730894666031
+        "lastUpdate": 1730894720936
       }
     },
     {
@@ -117,7 +117,7 @@
       "phase": "START"
     },
     {
-      "active": true,
+      "active": false,
       "messaging": {
         "type": "msft-teams-scenario",
         "configuration": {
