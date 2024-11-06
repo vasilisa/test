@@ -215,7 +215,7 @@
     ],
     "alsoDisplayedLabels": [],
     "barLabels": [],
-    "graphStyle": "BAR",
+    "graphStyle": "LINE",
     "sortColumn": "refStr",
     "sortDescending": true,
     "showConfidenceIntervals": true,
