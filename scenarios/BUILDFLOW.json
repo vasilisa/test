@@ -30,7 +30,7 @@
         "minute": 30,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1730899292542
+        "lastUpdate": 1730899380261
       }
     },
     {
@@ -246,6 +246,59 @@
         }
       },
       {
+        "id": "build_0_true_d_transactions_joined",
+        "type": "build_flowitem",
+        "name": "build transactions joined",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "comp_metrics_d_transactions_joined",
+        "type": "compute_metrics",
+        "name": "metrics transactions joined",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "computes": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_joined",
+              "partitionsSpec": ""
+            }
+          ],
+          "proceedOnFailure": false
+        }
+      },
+      {
         "id": "custom_python_2irEzGJljH3/QOL5k7/MeA",
         "type": "custom_python",
         "name": "ExtractMetrics",
@@ -263,35 +316,6 @@
           "envSelection": {
             "envMode": "INHERIT"
           },
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "build_0_true_d_transactions_MES_filtered_scored",
-        "type": "build_flowitem",
-        "name": "Score unknown transactions",
-        "runConditionType": "RUN_CONDITIONALLY",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "VariableName_column_count_status\u003d\u003d\u0027OK\u0027",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "builds": [
-            {
-              "type": "DATASET",
-              "itemId": "transactions_MES_filtered_scored",
-              "partitionsSpec": ""
-            }
-          ],
-          "jobType": "RECURSIVE_BUILD",
-          "autoUpdateSchemaBeforeEachRecipeRun": false,
-          "stopAtFlowZoneBoundary": false,
-          "refreshHiveMetastore": true,
-          "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
         }
       },
@@ -321,6 +345,35 @@
               "channelId": "REPORTER"
             }
           }
+        }
+      },
+      {
+        "id": "build_0_true_d_transactions_MES_filtered_scored",
+        "type": "build_flowitem",
+        "name": "Score unknown transactions",
+        "runConditionType": "RUN_CONDITIONALLY",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "VariableName_column_count_status\u003d\u003d\u0027OK\u0027",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "transactions_MES_filtered_scored",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
+          "refreshHiveMetastore": true,
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
         }
       },
       {
@@ -393,64 +446,6 @@
             {
               "type": "MODEL_EVALUATION_STORE",
               "itemId": "Rci28BcL",
-              "partitionsSpec": ""
-            }
-          ],
-          "jobType": "RECURSIVE_BUILD",
-          "autoUpdateSchemaBeforeEachRecipeRun": false,
-          "stopAtFlowZoneBoundary": false,
-          "refreshHiveMetastore": true,
-          "handleWarningsAs": "WARNING",
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "build_0_true_d_transactions_MES_filtered",
-        "type": "build_flowitem",
-        "name": "Step #9",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "builds": [
-            {
-              "type": "DATASET",
-              "itemId": "transactions_MES_filtered",
-              "partitionsSpec": ""
-            }
-          ],
-          "jobType": "RECURSIVE_BUILD",
-          "autoUpdateSchemaBeforeEachRecipeRun": false,
-          "stopAtFlowZoneBoundary": false,
-          "refreshHiveMetastore": true,
-          "handleWarningsAs": "WARNING",
-          "proceedOnFailure": false
-        }
-      },
-      {
-        "id": "build_0_true_d_transactions_joined",
-        "type": "build_flowitem",
-        "name": "build transactions joined",
-        "runConditionType": "RUN_IF_STATUS_MATCH",
-        "runConditionStatuses": [
-          "SUCCESS",
-          "WARNING"
-        ],
-        "runConditionExpression": "",
-        "resetScenarioStatus": false,
-        "delayBetweenRetries": 10,
-        "maxRetriesOnFail": 0,
-        "params": {
-          "builds": [
-            {
-              "type": "DATASET",
-              "itemId": "transactions_joined",
               "partitionsSpec": ""
             }
           ],
