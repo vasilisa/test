@@ -308,6 +308,27 @@
           ],
           "evaluateValues": true
         }
+      },
+      {
+        "id": "custom_python_9PW1i8uXXyq8ORdJbCJ++w",
+        "type": "custom_python",
+        "name": "Last_AUC",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "script": "import dataiku\nfrom dataiku.scenario import Scenario\n\nclient  \u003d dataiku.api_client()\nproject \u003d client.get_project(dataiku.default_project_key())\n\n\nmes           \u003d project.get_model_evaluation_store(\u0027Rci28BcL\u0027)\nAUC_last_value \u003d float(mes.get_last_metric_values().get_raw().get(\u0027metrics\u0027)[0].get(\u0027lastValues\u0027)[0].get(\u0027value\u0027))",
+          "envSelection": {
+            "envMode": "INHERIT"
+          },
+          "proceedOnFailure": false
+        }
       }
     ]
   },
