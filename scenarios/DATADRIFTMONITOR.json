@@ -11,7 +11,11 @@
     "squashDelayedTriggers": true,
     "suppressTriggersWhileRunning": true
   },
-  "tags": [],
+  "tags": [
+    "custom python steps",
+    "metrics\u0026checks",
+    "scenario variables"
+  ],
   "triggers": [
     {
       "id": "6WMKkDeM",

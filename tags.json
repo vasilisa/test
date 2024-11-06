@@ -44,6 +44,8 @@
     "academy": {
       "color": "#d66b9b"
     },
-    "custom python scenario": {}
+    "custom python scenario": {},
+    "custom python steps": {},
+    "scenario variables": {}
   }
 }
