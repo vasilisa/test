@@ -77,6 +77,26 @@
           },
           "proceedOnFailure": false
         }
+      },
+      {
+        "id": "custom_python_2",
+        "type": "custom_python",
+        "name": "Activate Challenger",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "envSelection": {
+            "envMode": "INHERIT"
+          },
+          "proceedOnFailure": false
+        }
       }
     ]
   },
