@@ -155,6 +155,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
+          "script": "import dataiku \nclient  \u003d dataiku.api_client()\nproject \u003d client.get_default_project() \nmodel   \u003d project.get_saved_model(\u0027MODELID\u0027)\n\nvariables \u003d project.get_variables() \nvariables[\u0027standard\u0027][\u0027champion\u0027] \u003d \u0027champion\u0027\n\nproject.set_variables(variables)\n\nIf(variables[\u0027standard\u0027][\u0027champion_auc\u0027]\u003cvariables[\u0027standard\u0027][\u0027challenger_auc\u0027]):\n    model.set_active_version(variables[\u0027standard\u0027][\u0027challenger_model_id\u0027])\n\n",
           "envSelection": {
             "envMode": "INHERIT"
           },
