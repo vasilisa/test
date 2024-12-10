@@ -140,6 +140,26 @@
           },
           "proceedOnFailure": false
         }
+      },
+      {
+        "id": "custom_python_4",
+        "type": "custom_python",
+        "name": "Determine Champion",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "envSelection": {
+            "envMode": "INHERIT"
+          },
+          "proceedOnFailure": false
+        }
       }
     ]
   },
