@@ -1,83 +1,96 @@
 {
-    "displayName": "Compare 2 models from Predict authorized_flag",
-    "predictionType": "BINARY_CLASSIFICATION",
-    "comparedModels": [
-        {
-            "smartId": "A-*-kzDEbQjE-tVWZ7zNv-s4-pp1-m1",
-            "isSelected": true,
-            "color": "#1f77b4",
-            "isChampion": false
-        },
-        {
-            "smartId": "A-*-kzDEbQjE-tVWZ7zNv-s4-pp2-m1",
-            "isSelected": true,
-            "color": "#ff7f0e",
-            "isChampion": false
-        },
-        {
-            "smartId": "ME-*-Rci28BcL-OTKI10YIrqt1",
-            "isSelected": true,
-            "color": "#2ca02c",
-            "isChampion": false
-        },
-        {
-            "smartId": "ME-*-Rci28BcL-3RTnf2C1kAo5",
-            "isSelected": true,
-            "color": "#d62728",
-            "isChampion": false
-        }
-    ],
-    "displayParams": {
-        "displayedMetrics": [
-            "ACCURACY",
-            "PRECISION",
-            "RECALL",
-            "F1",
-            "COST_MATRIX",
-            "LOG_LOSS",
-            "ROC_AUC",
-            "CALIBRATION_LOSS",
-            "CUMULATIVE_LIFT"
-        ],
-        "predictionType": "BINARY_CLASSIFICATION",
-        "pinnedMetrics": [
-            "ROC_AUC"
-        ],
-        "xLabel": "model:date",
-        "yLabels": [
-            "model:algorithm",
-            "evaluation:date",
-            "evaluationDataset:dataset-name"
-        ],
-        "alsoDisplayedLabels": [],
-        "barLabels": [
-            "evaluation:date",
-            "model:name",
-            "evaluationDataset:dataset-name"
-        ],
-        "graphStyle": "BAR",
-        "sortColumn": "",
-        "sortDescending": false,
-        "showConfidenceIntervals": true,
-        "disabledMERunIds": []
+  "displayName": "Compare 2 models from Predict authorized_flag",
+  "modelTaskType": "BINARY_CLASSIFICATION",
+  "comparedModels": [
+    {
+      "smartId": "A-*-kzDEbQjE-tVWZ7zNv-s4-pp1-m1",
+      "isSelected": true,
+      "color": "#1f77b4",
+      "isChampion": false
     },
-    "versionTag": {
-        "versionNumber": 15,
-        "lastModifiedBy": {
-            "login": "admin"
-        },
-        "lastModifiedOn": 1660139860015
+    {
+      "smartId": "A-*-kzDEbQjE-tVWZ7zNv-s4-pp2-m1",
+      "isSelected": true,
+      "color": "#ff7f0e",
+      "isChampion": false
     },
-    "creationTag": {
-        "versionNumber": 0,
-        "lastModifiedBy": {
-            "login": "admin"
-        },
-        "lastModifiedOn": 1659444594541
+    {
+      "smartId": "ME-*-Rci28BcL-J7vyLF1u5sLw",
+      "isSelected": true,
+      "color": "#9467bd",
+      "isChampion": false
     },
-    "tags": [],
-    "customFields": {},
-    "checklists": {
-        "checklists": []
+    {
+      "smartId": "ME-*-Rci28BcL-zktyFULX7B8P",
+      "isSelected": true,
+      "color": "#8c564b",
+      "isChampion": false
     }
+  ],
+  "displayParams": {
+    "displayedMetrics": [
+      "ACCURACY",
+      "PRECISION",
+      "RECALL",
+      "F1",
+      "COST_MATRIX",
+      "LOG_LOSS",
+      "ROC_AUC",
+      "CALIBRATION_LOSS",
+      "CUMULATIVE_LIFT"
+    ],
+    "allAvailableMetrics": [
+      "ACCURACY",
+      "PRECISION",
+      "RECALL",
+      "F1",
+      "COST_MATRIX",
+      "ROC_AUC",
+      "CUMULATIVE_LIFT",
+      "AVERAGE_PRECISION",
+      "LOG_LOSS",
+      "CALIBRATION_LOSS",
+      "DATA_DRIFT",
+      "DATA_DRIFT_PVALUE",
+      "MIN_KS",
+      "MIN_CHISQUARE",
+      "MAX_PSI",
+      "PREDICTION_DRIFT_PSI",
+      "PREDICTION_DRIFT_CHISQUARE"
+    ],
+    "predictionType": "BINARY_CLASSIFICATION",
+    "pinnedMetrics": [
+      "ROC_AUC"
+    ],
+    "xLabel": "model:date",
+    "yLabels": [
+      "model:algorithm",
+      "evaluation:date",
+      "evaluationDataset:dataset-name"
+    ],
+    "alsoDisplayedLabels": [],
+    "barLabels": [
+      "evaluation:date",
+      "model:name",
+      "evaluationDataset:dataset-name"
+    ],
+    "graphStyle": "BAR",
+    "sortColumn": "",
+    "sortDescending": false,
+    "showConfidenceIntervals": true,
+    "disabledMERunIds": []
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1659444594541,
+    "extendedProperties": {}
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
 }
