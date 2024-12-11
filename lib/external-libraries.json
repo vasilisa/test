@@ -9,12 +9,19 @@
       "resolvedFiles": [],
       "faultyHash": "",
       "isDirty": true
+    },
+    "python/test": {
+      "remote": "git@github.com:dataiku/academy-samples.git",
+      "checkout": "",
+      "remotePath": "live-training",
+      "isDirty": false
     }
   },
   "pythonPath": [
     "python/BayesianMMM",
     "python/CI-CD",
-    "python/"
+    "python/",
+    "python/test"
   ],
   "rsrcPath": [
     "R"
