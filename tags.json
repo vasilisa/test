@@ -24,7 +24,9 @@
     "MLops": {
       "color": "#a088bd"
     },
-    "deleted-recipe-editor": {},
+    "deleted-recipe-editor": {
+      "color": "#90a8b7"
+    },
     "downloads": {
       "color": "#de1ea5"
     },
@@ -34,7 +36,15 @@
     "imported": {
       "color": "#263238"
     },
-    "metrics\u0026checks": {},
+    "metrics\u0026checks": {
+      "color": "#FFD83D"
+    },
+    "custom python steps": {
+      "color": "#FFD83D"
+    },
+    "custom python scenario": {
+      "color": "#de1ea5"
+    },
     "tutorial": {
       "color": "#FFD83D"
     },
@@ -44,8 +54,8 @@
     "academy": {
       "color": "#d66b9b"
     },
-    "custom python scenario": {},
-    "custom python steps": {},
-    "scenario variables": {}
+    "scenario variables": {
+      "color": "#de1ea5"
+    }
   }
 }
