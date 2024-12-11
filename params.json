@@ -123,24 +123,32 @@
       "exportAllDatasets": false,
       "exportAllInputManagedFolders": false,
       "exportGitRepository": false,
-      "exportInsightsData": false,
+      "exportInsightsData": true,
       "useManualPluginsInfo": false,
-      "exportSavedModelsRequiredVersions": false,
+      "exportSavedModelsRequiredVersions": true,
       "exportNotebooksWithOutputs": true,
       "exportForNewBranch": false,
       "exportKnowledgeBanks": false,
       "exportEditableDatasets": true,
       "includedDatasetsData": [
         {
+          "name": "merchant_info_SQL",
+          "type": "PostgreSQL"
+        },
+        {
+          "name": "cardholder_info_filtered",
+          "type": "PostgreSQL"
+        },
+        {
+          "name": "merchant_info_copy",
+          "type": "Filesystem"
+        },
+        {
           "name": "transactions",
           "type": "UploadedFiles"
         }
       ],
       "includedSavedModels": [
-        {
-          "id": "h2pmDYwT",
-          "name": "custom algo (binary)"
-        },
         {
           "id": "S7Ap55jW",
           "name": "Predict authorized_flag (binary)"
