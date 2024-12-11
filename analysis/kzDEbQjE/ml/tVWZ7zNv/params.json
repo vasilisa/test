@@ -50,12 +50,12 @@
       {
         "sourceValue": "0",
         "mappedValue": 0,
-        "sampleFreq": 1137
+        "sampleFreq": 1023
       },
       {
         "sourceValue": "1",
         "mappedValue": 1,
-        "sampleFreq": 8863
+        "sampleFreq": 8977
       }
     ],
     "per_feature": {
@@ -74,44 +74,9 @@
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
-        },
-        "customHandlingCode": "",
-        "customProcessorWantsMatrix": false,
-        "sendToInput": "main"
-      },
-      "merchant_merchant_id": {
-        "category_handling": "DUMMIFY",
-        "missing_handling": "NONE",
-        "missing_impute_with": "MODE",
-        "dummy_clip": "MAX_NB_CATEGORIES",
-        "cumulative_proportion": 0.95,
-        "min_samples": 10,
-        "max_nb_categories": 100,
-        "max_cat_safety": 200,
-        "nb_bins_hashing": 1048576,
-        "hash_whole_categories": true,
-        "dummy_drop": "AUTO",
-        "impact_method": "M_ESTIMATOR",
-        "impact_m": 10,
-        "impact_kfold": true,
-        "impact_kfold_k": 5,
-        "impact_kfold_seed": 1337,
-        "ordinal_order": "COUNT",
-        "ordinal_ascending": false,
-        "ordinal_default_mode": "HIGHEST",
-        "ordinal_default_value": 0,
-        "frequency_default_mode": "EXPLICIT",
-        "frequency_default_value": 0.0,
-        "frequency_normalized": true,
-        "role": "REJECT",
-        "type": "CATEGORY",
-        "state": {
-          "userModified": false,
-          "autoModifiedByDSS": false,
-          "recordedMeaning": "Text"
         },
         "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
@@ -132,7 +97,7 @@
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -155,7 +120,7 @@
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -178,9 +143,9 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
-          "recordedMeaning": "DoubleMeaning"
+          "recordedMeaning": "LongMeaning"
         },
         "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
@@ -213,7 +178,7 @@
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -236,44 +201,9 @@
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
-        },
-        "customHandlingCode": "",
-        "customProcessorWantsMatrix": false,
-        "sendToInput": "main"
-      },
-      "card_internal_card_mapping": {
-        "category_handling": "DUMMIFY",
-        "missing_handling": "NONE",
-        "missing_impute_with": "MODE",
-        "dummy_clip": "MAX_NB_CATEGORIES",
-        "cumulative_proportion": 0.95,
-        "min_samples": 10,
-        "max_nb_categories": 100,
-        "max_cat_safety": 200,
-        "nb_bins_hashing": 1048576,
-        "hash_whole_categories": true,
-        "dummy_drop": "AUTO",
-        "impact_method": "M_ESTIMATOR",
-        "impact_m": 10,
-        "impact_kfold": true,
-        "impact_kfold_k": 5,
-        "impact_kfold_seed": 1337,
-        "ordinal_order": "COUNT",
-        "ordinal_ascending": false,
-        "ordinal_default_mode": "HIGHEST",
-        "ordinal_default_value": 0,
-        "frequency_default_mode": "EXPLICIT",
-        "frequency_default_value": 0.0,
-        "frequency_normalized": true,
-        "role": "REJECT",
-        "type": "CATEGORY",
-        "state": {
-          "userModified": false,
-          "autoModifiedByDSS": false,
-          "recordedMeaning": "Text"
         },
         "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
@@ -303,10 +233,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -341,7 +271,7 @@
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "USStateMeaning"
         },
@@ -363,7 +293,7 @@
           "MONTH",
           "WEEK"
         ],
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
           "userModified": true,
@@ -398,10 +328,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "USStateMeaning"
         },
@@ -436,7 +366,7 @@
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "USStateMeaning"
         },
@@ -445,32 +375,19 @@
         "sendToInput": "main"
       },
       "signature_provided": {
-        "impute_constant_value": "0",
-        "category_handling": "DUMMIFY",
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
         "missing_handling": "IMPUTE",
-        "missing_impute_with": "MODE",
-        "dummy_clip": "CUMULATIVE_PROPORTION",
-        "cumulative_proportion": 0.95,
-        "min_samples": 10,
-        "max_nb_categories": 100,
-        "max_cat_safety": 200,
-        "nb_bins_hashing": 1048576,
-        "hash_whole_categories": true,
-        "dummy_drop": "AUTO",
-        "impact_method": "M_ESTIMATOR",
-        "impact_m": 10,
-        "impact_kfold": true,
-        "impact_kfold_k": 5,
-        "impact_kfold_seed": 1337,
-        "ordinal_order": "COUNT",
-        "ordinal_ascending": false,
-        "ordinal_default_mode": "HIGHEST",
-        "ordinal_default_value": 0,
-        "frequency_default_mode": "EXPLICIT",
-        "frequency_default_value": 0.0,
-        "frequency_normalized": true,
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "keep_regular": false,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "datetime_cyclical_periods": [],
         "role": "INPUT",
-        "type": "CATEGORY",
+        "type": "NUMERIC",
         "state": {
           "userModified": true,
           "autoModifiedByDSS": false,
@@ -495,7 +412,7 @@
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -518,9 +435,9 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
-          "recordedMeaning": "DoubleMeaning"
+          "recordedMeaning": "LongMeaning"
         },
         "customHandlingCode": "",
         "customProcessorWantsMatrix": false,
@@ -538,10 +455,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
@@ -560,14 +477,14 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [
-          "QUARTER",
           "YEAR",
+          "QUARTER",
           "WEEK"
         ],
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Date"
         },
@@ -577,8 +494,12 @@
       },
       "transaction_id": {
         "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEDIAN",
         "impute_constant_value": 0.0,
         "keep_regular": false,
+        "rescaling": "AVGSTD",
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
@@ -616,32 +537,19 @@
         "sendToInput": "main"
       },
       "purchase_weekend": {
-        "impute_constant_value": "0",
-        "category_handling": "DUMMIFY",
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
         "missing_handling": "IMPUTE",
-        "missing_impute_with": "MODE",
-        "dummy_clip": "CUMULATIVE_PROPORTION",
-        "cumulative_proportion": 0.95,
-        "min_samples": 10,
-        "max_nb_categories": 100,
-        "max_cat_safety": 200,
-        "nb_bins_hashing": 1048576,
-        "hash_whole_categories": true,
-        "dummy_drop": "AUTO",
-        "impact_method": "M_ESTIMATOR",
-        "impact_m": 10,
-        "impact_kfold": true,
-        "impact_kfold_k": 5,
-        "impact_kfold_seed": 1337,
-        "ordinal_order": "COUNT",
-        "ordinal_ascending": false,
-        "ordinal_default_mode": "HIGHEST",
-        "ordinal_default_value": 0,
-        "frequency_default_mode": "EXPLICIT",
-        "frequency_default_value": 0.0,
-        "frequency_normalized": true,
-        "role": "INPUT",
-        "type": "CATEGORY",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "keep_regular": false,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "datetime_cyclical_periods": [],
+        "role": "REJECT",
+        "type": "NUMERIC",
         "state": {
           "userModified": true,
           "autoModifiedByDSS": false,
@@ -678,7 +586,7 @@
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DateSource"
         },
@@ -698,10 +606,10 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -724,7 +632,7 @@
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
@@ -759,7 +667,7 @@
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "GeoPoint"
         },
@@ -782,30 +690,7 @@
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
-          "autoModifiedByDSS": false,
-          "recordedMeaning": "LongMeaning"
-        },
-        "customHandlingCode": "",
-        "customProcessorWantsMatrix": false,
-        "sendToInput": "main"
-      },
-      "merchant_merchant_category_id": {
-        "generate_derivative": false,
-        "numerical_handling": "REGULAR",
-        "missing_handling": "IMPUTE",
-        "missing_impute_with": "MEAN",
-        "impute_constant_value": 0.0,
-        "keep_regular": false,
-        "rescaling": "AVGSTD",
-        "quantile_bin_nb_bins": 4,
-        "binarize_threshold_mode": "MEDIAN",
-        "binarize_constant_threshold": 0.0,
-        "datetime_cyclical_periods": [],
-        "role": "REJECT",
-        "type": "NUMERIC",
-        "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "LongMeaning"
         },
@@ -840,7 +725,7 @@
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -875,7 +760,7 @@
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -898,7 +783,7 @@
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
@@ -953,7 +838,7 @@
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "GeoPoint"
         },
@@ -976,7 +861,7 @@
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DoubleMeaning"
         },
@@ -1008,10 +893,10 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "Text"
         },
@@ -1046,7 +931,7 @@
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "USStateMeaning"
         },
@@ -1081,7 +966,7 @@
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "DateSource"
         },
@@ -1281,7 +1166,7 @@
         },
         "values": [
           6,
-          16
+          15
         ],
         "range": {
           "min": 6,
@@ -2578,7 +2463,7 @@
       },
       "max_delta_step": {
         "gridMode": "EXPLICIT",
-        "randomMode": "EXPLICIT",
+        "randomMode": "RANGE",
         "limit": {
           "min": 0.0
         },
@@ -2647,7 +2532,8 @@
         "gridMode": "EXPLICIT",
         "randomMode": "RANGE",
         "limit": {
-          "min": 0.0
+          "min": 0.0,
+          "max": 1.0
         },
         "values": [
           0.0
@@ -2663,7 +2549,8 @@
         "gridMode": "EXPLICIT",
         "randomMode": "RANGE",
         "limit": {
-          "min": 1.0E-23
+          "min": 1.0E-23,
+          "max": 1.0
         },
         "values": [
           1.0
@@ -2690,9 +2577,6 @@
           "binary_logistic": {
             "enabled": false
           },
-          "count_poisson": {
-            "enabled": false
-          },
           "multi_softprob": {
             "enabled": false
           },
@@ -2703,9 +2587,6 @@
             "enabled": true
           },
           "reg_logistic": {
-            "enabled": false
-          },
-          "reg_tweedie": {
             "enabled": false
           }
         }
@@ -3162,20 +3043,78 @@
     },
     "custom_python": [],
     "plugin_python": {
-      "CustomPyPredAlgo_catboost-model_catboost-model_catboost-classifier": {
-        "pluginId": "catboost-model",
+      "CustomPyPredAlgo_discriminant-analysis_discriminant-analysis_linear": {
+        "pluginId": "discriminant-analysis",
         "pluginVersion": "0.0.1",
-        "elementId": "catboost-model_catboost-classifier",
-        "name": "Custom algo custom-catboost-classifier",
+        "elementId": "discriminant-analysis_linear",
+        "name": "Linear Discriminant Analysis",
         "params": {
-          "n_estimators": [
+          "solver": [
+            "svd"
+          ],
+          "n_components": [
+            "None"
+          ],
+          "tol": [
+            0.0001
+          ]
+        },
+        "supportsSampleWeights": false,
+        "acceptsSparseMatrix": false,
+        "enabled": false
+      },
+      "CustomPyPredAlgo_model-lightgbm_model-lightgbm_classification": {
+        "pluginId": "model-lightgbm",
+        "pluginVersion": "1.0.0",
+        "elementId": "model-lightgbm_classification",
+        "name": "LightGBM Classification",
+        "params": {
+          "boosting_type": [
+            "gbdt"
+          ],
+          "num_leaves": [
+            50,
+            100
+          ],
+          "max_depth": [
             50,
             100
           ],
           "learning_rate": [
             0.2
           ],
-          "random_state": 1337
+          "n_estimators": [
+            50,
+            100
+          ],
+          "early_stopping": false,
+          "early_stopping_rounds": 4,
+          "min_split_gain": [
+            0
+          ],
+          "min_child_weight": [
+            0.001
+          ],
+          "min_child_samples": [
+            20
+          ],
+          "subsample": [
+            1
+          ],
+          "subsample_freq": [
+            0
+          ],
+          "colsample_bytree": [
+            1
+          ],
+          "reg_alpha": [
+            0
+          ],
+          "reg_lambda": [
+            0
+          ],
+          "random_state": 1337,
+          "n_jobs": 4
         },
         "supportsSampleWeights": false,
         "acceptsSparseMatrix": false,
@@ -4192,13 +4131,13 @@
         "enabled": false,
         "rules": []
       },
-      "samplingMethod": "HEAD_SEQUENTIAL",
+      "samplingMethod": "CLASS_REBALANCE_TARGET_NB_APPROX",
       "maxRecords": 100000,
       "targetRatio": 0.02,
+      "column": "authorized_flag",
       "ascending": true,
       "withinFirstN": -1,
-      "maxReadUncompressedBytes": -1,
-      "seed": 1337
+      "maxReadUncompressedBytes": -1
     },
     "ssdTrainingRatio": 0.8,
     "ssdStratified": false,
@@ -4243,10 +4182,6 @@
       {
         "type": "ML_DIAGNOSTICS_ML_ASSERTIONS",
         "enabled": true
-      },
-      {
-        "type": "ML_DIAGNOSTICS_ABNORMAL_PREDICTIONS_DETECTION",
-        "enabled": true
       }
     ]
   },
@@ -4265,8 +4200,7 @@
     "disabledCapabilities": []
   },
   "envSelection": {
-    "envMode": "EXPLICIT_ENV",
-    "envName": "visualML"
+    "envMode": "USE_BUILTIN_MODE"
   },
   "containerSelection": {
     "containerMode": "INHERIT"
