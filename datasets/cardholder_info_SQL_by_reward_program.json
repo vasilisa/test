@@ -61,7 +61,11 @@
   },
   "schema": {
     "columns": [
-      {"name":"reward_program","type":"string","originalType":"text"},
+      {"name":"reward_program","type":"string"},
+      {"name":"latitude_avg","type":"double"},
+      {"name":"longitude_avg","type":"double"},
+      {"name":"fico_score_avg","type":"double"},
+      {"name":"age_avg","type":"double"},
       {"name":"count","type":"bigint"}
     ],
     "userModified": true
