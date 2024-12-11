@@ -103,17 +103,6 @@
             "appearOnFlow": true
           }
         ]
-      },
-      {
-        "type": "SAVED_MODEL",
-        "localName": "S7Ap55jW",
-        "quickSharingEnabled": false,
-        "rules": [
-          {
-            "targetProject": "PLAYGROUND",
-            "appearOnFlow": true
-          }
-        ]
       }
     ]
   },
