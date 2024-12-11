@@ -2,6 +2,7 @@
   "type": "step_based",
   "name": "Model Challenger",
   "active": false,
+  "runAsUser": "admin",
   "checklists": {
     "checklists": []
   },

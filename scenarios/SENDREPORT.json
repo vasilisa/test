@@ -71,5 +71,6 @@
     ]
   },
   "automationLocal": false,
-  "customFields": {}
+  "customFields": {},
+  "markedAsTest": false
 }

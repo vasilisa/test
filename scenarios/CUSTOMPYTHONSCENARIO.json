@@ -2,6 +2,7 @@
   "type": "custom_python",
   "name": "Custom Python Scenario",
   "active": false,
+  "runAsUser": "admin",
   "checklists": {
     "checklists": []
   },

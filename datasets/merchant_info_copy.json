@@ -71,7 +71,7 @@
   "tags": [],
   "params": {
     "connection": "filesystem_managed",
-    "path": "/MLOPSDEMO.merchant_info_copy",
+    "path": "/MLOPS_DEMO_DEV_1.merchant_info_copy",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
