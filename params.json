@@ -94,33 +94,6 @@
   "exposedObjects": {
     "objects": [
       {
-        "type": "DATASET",
-        "localName": "transactions_train",
-        "quickSharingEnabled": false,
-        "rules": [
-          {
-            "targetProject": "PLAYGROUND",
-            "appearOnFlow": true
-          },
-          {
-            "targetProject": "PLAYGROUND_GJhagykU",
-            "appearOnFlow": true
-          },
-          {
-            "targetProject": "PLAYGROUND_NcJpAZPV",
-            "appearOnFlow": true
-          },
-          {
-            "targetProject": "PLAYGROUND_c715fGqd",
-            "appearOnFlow": true
-          },
-          {
-            "targetProject": "VASILISA",
-            "appearOnFlow": true
-          }
-        ]
-      },
-      {
         "type": "SCENARIO",
         "localName": "TEST",
         "quickSharingEnabled": false,
