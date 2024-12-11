@@ -141,12 +141,6 @@
             "appearOnFlow": true
           }
         ]
-      },
-      {
-        "type": "DATASET",
-        "localName": "transactions_joined_prepared",
-        "quickSharingEnabled": true,
-        "rules": []
       }
     ]
   },
