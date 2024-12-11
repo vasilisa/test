@@ -1,0 +1,40 @@
+{
+  "mergeRequestIdCounter": 2,
+  "mergeRequests": {
+    "1": {
+      "id": 1,
+      "status": "MERGED",
+      "title": "merge from dev-1",
+      "type": "PROJECT",
+      "branchToMergeType": "PROJECT",
+      "description": "adding group by",
+      "baseBranch": "master",
+      "branchToMerge": "dev-1",
+      "projectToMerge": "MLOPS_DEMO_DEV_1",
+      "events": [
+        {
+          "type": "CREATED",
+          "message": "",
+          "author": "admin",
+          "creationDate": 1733917098102
+        },
+        {
+          "type": "MERGE",
+          "message": "",
+          "author": "admin",
+          "creationDate": 1733917108581
+        },
+        {
+          "type": "UPDATE",
+          "message": "changed :\n- description from \u0027\u0027 to \u0027adding group by\u0027\n",
+          "author": "admin",
+          "creationDate": 1733917115937
+        }
+      ],
+      "baseBranchCommitBeforeMerging": "052bb9ccb694b442af0c46d8ee380987ffc53941",
+      "refreshedBranchAfterMerge": true,
+      "branchToMergeCommitBeforeMerging": "3026f6a29d5f8b2ebd154cb4dc3192a95ea0c504",
+      "mergeCommitHash": "3026f6a29d5f8b2ebd154cb4dc3192a95ea0c504"
+    }
+  }
+}

@@ -41,6 +41,10 @@
     {
       "objectId": "compute_cardholder_info_SQL",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "cardholder_info_SQL_by_reward_program",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],

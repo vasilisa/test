@@ -175,7 +175,7 @@
       "zonesGraphConnectZones": true,
       "zonesGraphForJobs": true
     },
-    "gitCommitMode": "RECIPES_EXPLICIT",
+    "gitCommitMode": "AUTO",
     "disableAutomaticTriggers": false,
     "integrations": {
       "integrations": [
