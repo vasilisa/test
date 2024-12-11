@@ -5,7 +5,18 @@
   },
   "keys": [
     {
-      "column": "reward_program"
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "last": false,
+      "max": false,
+      "column": "reward_program",
+      "count": false,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "stddev": false,
+      "first": false
     }
   ],
   "values": [
@@ -15,8 +26,10 @@
       "firstLastNotNull": false,
       "column": "internal_card_mapping",
       "count": false,
+      "$idx": 0,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -31,8 +44,10 @@
       "firstLastNotNull": false,
       "column": "first_active_month",
       "count": false,
+      "$idx": 1,
       "sum": false,
       "concat": false,
+      "type": "string",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
@@ -47,13 +62,16 @@
       "firstLastNotNull": false,
       "column": "latitude",
       "count": false,
+      "$idx": 2,
       "sum": false,
       "concat": false,
+      "type": "float",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
+      "$selected": false,
       "stddev": false,
       "first": false
     },
@@ -63,13 +81,16 @@
       "firstLastNotNull": false,
       "column": "longitude",
       "count": false,
+      "$idx": 3,
       "sum": false,
       "concat": false,
+      "type": "float",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
+      "$selected": false,
       "stddev": false,
       "first": false
     },
@@ -79,13 +100,16 @@
       "firstLastNotNull": false,
       "column": "fico_score",
       "count": false,
+      "$idx": 4,
       "sum": false,
       "concat": false,
+      "type": "int",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
+      "$selected": false,
       "stddev": false,
       "first": false
     },
@@ -95,13 +119,16 @@
       "firstLastNotNull": false,
       "column": "age",
       "count": false,
+      "$idx": 5,
       "sum": false,
       "concat": false,
+      "type": "int",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
+      "$selected": false,
       "stddev": false,
       "first": false
     }
@@ -145,8 +172,41 @@
     }
   },
   "enlargeYourBits": true,
+  "outputColumnNameOverrides": {},
   "computedColumns": [],
   "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "originalType": "text",
+            "name": "reward_program",
+            "type": "string"
+          },
+          {
+            "name": "latitude_avg",
+            "type": "double"
+          },
+          {
+            "name": "longitude_avg",
+            "type": "double"
+          },
+          {
+            "name": "fico_score_avg",
+            "type": "double"
+          },
+          {
+            "name": "age_avg",
+            "type": "double"
+          },
+          {
+            "name": "count",
+            "type": "bigint"
+          }
+        ],
+        "userModified": false
+      }
+    },
     "distinct": false,
     "enabled": false
   }
