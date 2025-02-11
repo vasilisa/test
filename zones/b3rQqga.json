@@ -41,6 +41,10 @@
     {
       "objectId": "test-python",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_test-python",
+      "objectType": "RECIPE"
     }
   ],
   "shared": [],
